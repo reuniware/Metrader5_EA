@@ -8,6 +8,9 @@ You can use it in 2 ways :
 
 You must attach the EA to one financial symbol and it will scan for every symbols that have been previously added in the Market Watch window.
 
+Ichimoku main detection :
+  - When price gets over the Kumo
+
 Ichimoku validations that are checked by this EA are :
   - Validation 1 : SSA > SSB <=> Senkou Span A is greater than Senkou Span B 
   - Validation 2 : Open price > Kumo cloud (Open price of previous 15-minute japanese candlestick)
