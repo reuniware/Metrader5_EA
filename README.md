@@ -1,6 +1,6 @@
 # Metrader5_EA
 
-This Expert Advisor for Metatrader 5 will scan all financial symbols that are in the Market Watch windows of Metatrader 5 and will report those which have validated Ichimoku Kinko Hyo conditions.
+This Expert Advisor for Metatrader 5 will scan all financial symbols that are in the Market Watch window of Metatrader 5 and will report those which have validated Ichimoku Kinko Hyo conditions.
 
 You can use it in 2 ways :
   - Normal mode : It will scan for Ichimoku conditions every 15 minutes (at each start of a new 15 minute japanese candlestick).
