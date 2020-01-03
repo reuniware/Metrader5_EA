@@ -21,3 +21,6 @@ Ichimoku validations that are checked by this EA are :
   - Validation 7 : Chikou span > Tenkan sen
   - Validation 8 : Chikou span > Higher price (Higher price of previous 15-minute japanese candlestick)
  
+Feel free to contact me :
+
+e-mail : investdatasystems@yahoo.com
