@@ -4,7 +4,7 @@ This Expert Advisor for Metatrader 5 will scan all financial symbols that are in
 
 You can use it in 2 ways :
   - Normal mode : It will scan for Ichimoku conditions every 15 minutes (at each start of a new 15-minute japanese candlestick).
-  - Run only once mode : It will immediately scan for Ichimoku conditions, once and only once.
+  - Run only once mode : It will immediately scan for Ichimoku conditions, once and only once. For this mode, as soon as you attach the EA to a financial symbol, then go to "Input data" tab and set the variable "runOnlyOnce" to "true".
 
 You must attach the EA to one financial symbol and it will scan for every symbols that have been previously added in the Market Watch window.
 
