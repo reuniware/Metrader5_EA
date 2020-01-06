@@ -27,3 +27,8 @@ e-mail : investdatasystems@yahoo.com
 
 
 IchimokuUltimateScannerEA2020.Ex5 is experimental (completely new source code).
+
+IchimokuUltimateScannerEA2020_ChikouSpanScanner.Ex5 is experimental and scans for financial instruments that are in the Market Watch window of Metatrader 5, and finds those for which the Lagging span is free (uptrend or downtrend).
+
+IchimokuUltimateScannerEA2020_KijunSenScanner.Ex5 is experimental and scans for financial instruments that are in the Market Watch window of Metatrader 5, and finds thos for which the price is getting over the Kijun Sen Line or under the Kijun Sen Line.
+
