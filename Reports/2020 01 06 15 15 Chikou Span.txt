@@ -1,0 +1,356 @@
+2020.01.06 15:10:01.109	IchimokuUltimateScannerEA2020 (EURUSD,M15)	2020-01-06 16:10:00 Starting IchimokuUltimateScannerEA2020 5.3 InvestdataSystems@Yahoo.Com
+2020.01.06 15:10:02.115	IchimokuUltimateScannerEA2020 (EURUSD,M15)	Running only once.
+2020.01.06 15:10:02.815	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURUSD : Lagging Span is FREE UP in M10 --- ASK/BUY = 1.11962 --- BID/SELL = 1.11961
+2020.01.06 15:10:02.915	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURUSD : Lagging Span is FREE UP in M12 --- ASK/BUY = 1.11962 --- BID/SELL = 1.11961
+2020.01.06 15:10:02.915	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURUSD : Lagging Span is FREE UP in M15 --- ASK/BUY = 1.11962 --- BID/SELL = 1.11961
+2020.01.06 15:10:03.015	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURUSD : Lagging Span is FREE UP in M30 --- ASK/BUY = 1.11962 --- BID/SELL = 1.11961
+2020.01.06 15:10:03.515	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURUSD : Lagging Span is FREE UP in H6 --- ASK/BUY = 1.11962 --- BID/SELL = 1.11961
+2020.01.06 15:10:03.615	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURUSD : Lagging Span is FREE UP in H8 --- ASK/BUY = 1.11962 --- BID/SELL = 1.11961
+2020.01.06 15:10:03.715	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURUSD : Lagging Span is FREE UP in H12 --- ASK/BUY = 1.11962 --- BID/SELL = 1.11961
+2020.01.06 15:10:03.815	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURUSD : Lagging Span is FREE UP in D1 --- ASK/BUY = 1.11962 --- BID/SELL = 1.11961
+2020.01.06 15:10:03.815	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:10:04.615	IchimokuUltimateScannerEA2020 (EURUSD,M15)	GBPUSD : Lagging Span is FREE UP in M12 --- ASK/BUY = 1.31402 --- BID/SELL = 1.31396
+2020.01.06 15:10:04.715	IchimokuUltimateScannerEA2020 (EURUSD,M15)	GBPUSD : Lagging Span is FREE UP in M15 --- ASK/BUY = 1.31402 --- BID/SELL = 1.31396
+2020.01.06 15:10:04.815	IchimokuUltimateScannerEA2020 (EURUSD,M15)	GBPUSD : Lagging Span is FREE UP in M30 --- ASK/BUY = 1.31402 --- BID/SELL = 1.31396
+2020.01.06 15:10:05.615	IchimokuUltimateScannerEA2020 (EURUSD,M15)	GBPUSD : Lagging Span is FREE UP in D1 --- ASK/BUY = 1.31402 --- BID/SELL = 1.31396
+2020.01.06 15:10:05.615	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:10:05.715	IchimokuUltimateScannerEA2020 (EURUSD,M15)	USDCHF : Lagging Span is FREE UP in M1 --- ASK/BUY = 0.9697 --- BID/SELL = 0.96963
+2020.01.06 15:10:07.415	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:10:07.815	IchimokuUltimateScannerEA2020 (EURUSD,M15)	USDJPY : Lagging Span is FREE UP in M4 --- ASK/BUY = 108.129 --- BID/SELL = 108.126
+2020.01.06 15:10:07.915	IchimokuUltimateScannerEA2020 (EURUSD,M15)	USDJPY : Lagging Span is FREE UP in M5 --- ASK/BUY = 108.129 --- BID/SELL = 108.126
+2020.01.06 15:10:08.015	IchimokuUltimateScannerEA2020 (EURUSD,M15)	USDJPY : Lagging Span is FREE UP in M6 --- ASK/BUY = 108.129 --- BID/SELL = 108.126
+2020.01.06 15:10:08.115	IchimokuUltimateScannerEA2020 (EURUSD,M15)	USDJPY : Lagging Span is FREE UP in M10 --- ASK/BUY = 108.129 --- BID/SELL = 108.126
+2020.01.06 15:10:08.215	IchimokuUltimateScannerEA2020 (EURUSD,M15)	USDJPY : Lagging Span is FREE UP in M12 --- ASK/BUY = 108.129 --- BID/SELL = 108.126
+2020.01.06 15:10:09.215	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:10:11.015	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:10:12.815	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:10:13.615	IchimokuUltimateScannerEA2020 (EURUSD,M15)	AUDJPY : Lagging Span is FREE UP in M12 --- ASK/BUY = 75.05 --- BID/SELL = 75.042
+2020.01.06 15:10:14.615	IchimokuUltimateScannerEA2020 (EURUSD,M15)	AUDJPY : Lagging Span is FREE UP in D1 --- ASK/BUY = 75.05 --- BID/SELL = 75.042
+2020.01.06 15:10:14.615	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:10:16.415	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:10:17.915	IchimokuUltimateScannerEA2020 (EURUSD,M15)	AUDUSD : Lagging Span is FREE UP in H6 --- ASK/BUY = 0.69415 --- BID/SELL = 0.69412
+2020.01.06 15:10:18.015	IchimokuUltimateScannerEA2020 (EURUSD,M15)	AUDUSD : Lagging Span is FREE UP in H8 --- ASK/BUY = 0.69415 --- BID/SELL = 0.69412
+2020.01.06 15:10:18.115	IchimokuUltimateScannerEA2020 (EURUSD,M15)	AUDUSD : Lagging Span is FREE UP in H12 --- ASK/BUY = 0.69415 --- BID/SELL = 0.69412
+2020.01.06 15:10:18.215	IchimokuUltimateScannerEA2020 (EURUSD,M15)	AUDUSD : Lagging Span is FREE UP in D1 --- ASK/BUY = 0.69415 --- BID/SELL = 0.69412
+2020.01.06 15:10:18.215	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:10:19.415	IchimokuUltimateScannerEA2020 (EURUSD,M15)	CADCHF : Lagging Span is FREE UP in H2 --- ASK/BUY = 0.74725 --- BID/SELL = 0.74718
+2020.01.06 15:10:19.515	IchimokuUltimateScannerEA2020 (EURUSD,M15)	CADCHF : Lagging Span is FREE UP in H3 --- ASK/BUY = 0.74725 --- BID/SELL = 0.74718
+2020.01.06 15:10:19.615	IchimokuUltimateScannerEA2020 (EURUSD,M15)	CADCHF : Lagging Span is FREE UP in H4 --- ASK/BUY = 0.74725 --- BID/SELL = 0.74718
+2020.01.06 15:10:20.015	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:10:20.515	IchimokuUltimateScannerEA2020 (EURUSD,M15)	CADJPY : Lagging Span is FREE UP in M5 --- ASK/BUY = 83.322 --- BID/SELL = 83.31699999999999
+2020.01.06 15:10:20.715	IchimokuUltimateScannerEA2020 (EURUSD,M15)	CADJPY : Lagging Span is FREE UP in M10 --- ASK/BUY = 83.31999999999999 --- BID/SELL = 83.31399999999999
+2020.01.06 15:10:20.815	IchimokuUltimateScannerEA2020 (EURUSD,M15)	CADJPY : Lagging Span is FREE UP in M12 --- ASK/BUY = 83.321 --- BID/SELL = 83.315
+2020.01.06 15:10:21.515	IchimokuUltimateScannerEA2020 (EURUSD,M15)	CADJPY : Lagging Span is FREE UP in H6 --- ASK/BUY = 83.32299999999999 --- BID/SELL = 83.31699999999999
+2020.01.06 15:10:21.815	IchimokuUltimateScannerEA2020 (EURUSD,M15)	CADJPY : Lagging Span is FREE UP in D1 --- ASK/BUY = 83.32299999999999 --- BID/SELL = 83.31699999999999
+2020.01.06 15:10:21.815	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:10:22.215	IchimokuUltimateScannerEA2020 (EURUSD,M15)	CHFJPY : Lagging Span is FREE UP in M4 --- ASK/BUY = 111.512 --- BID/SELL = 111.502
+2020.01.06 15:10:22.515	IchimokuUltimateScannerEA2020 (EURUSD,M15)	CHFJPY : Lagging Span is FREE UP in M10 --- ASK/BUY = 111.512 --- BID/SELL = 111.502
+2020.01.06 15:10:22.615	IchimokuUltimateScannerEA2020 (EURUSD,M15)	CHFJPY : Lagging Span is FREE UP in M12 --- ASK/BUY = 111.512 --- BID/SELL = 111.502
+2020.01.06 15:10:22.715	IchimokuUltimateScannerEA2020 (EURUSD,M15)	CHFJPY : Lagging Span is FREE UP in M15 --- ASK/BUY = 111.512 --- BID/SELL = 111.502
+2020.01.06 15:10:23.615	IchimokuUltimateScannerEA2020 (EURUSD,M15)	CHFJPY : Lagging Span is FREE UP in D1 --- ASK/BUY = 111.512 --- BID/SELL = 111.502
+2020.01.06 15:10:23.615	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:10:23.715	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURAUD : Lagging Span is FREE UP in M1 --- ASK/BUY = 1.61306 --- BID/SELL = 1.61297
+2020.01.06 15:10:23.815	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURAUD : Lagging Span is FREE UP in M2 --- ASK/BUY = 1.61306 --- BID/SELL = 1.61296
+2020.01.06 15:10:23.915	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURAUD : Lagging Span is FREE UP in M3 --- ASK/BUY = 1.61306 --- BID/SELL = 1.61296
+2020.01.06 15:10:24.015	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURAUD : Lagging Span is FREE UP in M4 --- ASK/BUY = 1.61306 --- BID/SELL = 1.61295
+2020.01.06 15:10:24.115	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURAUD : Lagging Span is FREE UP in M5 --- ASK/BUY = 1.61306 --- BID/SELL = 1.61294
+2020.01.06 15:10:24.215	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURAUD : Lagging Span is FREE UP in M6 --- ASK/BUY = 1.61306 --- BID/SELL = 1.61295
+2020.01.06 15:10:24.315	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURAUD : Lagging Span is FREE UP in M10 --- ASK/BUY = 1.61306 --- BID/SELL = 1.61295
+2020.01.06 15:10:24.415	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURAUD : Lagging Span is FREE UP in M12 --- ASK/BUY = 1.61306 --- BID/SELL = 1.61296
+2020.01.06 15:10:24.515	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURAUD : Lagging Span is FREE UP in M15 --- ASK/BUY = 1.61306 --- BID/SELL = 1.61296
+2020.01.06 15:10:24.615	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURAUD : Lagging Span is FREE UP in M30 --- ASK/BUY = 1.61306 --- BID/SELL = 1.61296
+2020.01.06 15:10:24.715	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURAUD : Lagging Span is FREE UP in H1 --- ASK/BUY = 1.61306 --- BID/SELL = 1.61296
+2020.01.06 15:10:24.815	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURAUD : Lagging Span is FREE UP in H2 --- ASK/BUY = 1.61306 --- BID/SELL = 1.61296
+2020.01.06 15:10:25.415	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:10:25.615	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURCAD : Lagging Span is FREE UP in M2 --- ASK/BUY = 1.45299 --- BID/SELL = 1.45287
+2020.01.06 15:10:25.715	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURCAD : Lagging Span is FREE UP in M3 --- ASK/BUY = 1.45301 --- BID/SELL = 1.45287
+2020.01.06 15:10:26.115	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURCAD : Lagging Span is FREE UP in M10 --- ASK/BUY = 1.45301 --- BID/SELL = 1.45287
+2020.01.06 15:10:26.215	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURCAD : Lagging Span is FREE UP in M12 --- ASK/BUY = 1.45301 --- BID/SELL = 1.45287
+2020.01.06 15:10:26.315	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURCAD : Lagging Span is FREE UP in M15 --- ASK/BUY = 1.45301 --- BID/SELL = 1.45287
+2020.01.06 15:10:26.415	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURCAD : Lagging Span is FREE UP in M30 --- ASK/BUY = 1.45301 --- BID/SELL = 1.45287
+2020.01.06 15:10:27.215	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:10:27.315	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURCHF : Lagging Span is FREE UP in M1 --- ASK/BUY = 1.08567 --- BID/SELL = 1.0856
+2020.01.06 15:10:27.915	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURCHF : Lagging Span is FREE UP in M10 --- ASK/BUY = 1.08567 --- BID/SELL = 1.0856
+2020.01.06 15:10:28.015	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURCHF : Lagging Span is FREE UP in M12 --- ASK/BUY = 1.08567 --- BID/SELL = 1.0856
+2020.01.06 15:10:28.115	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURCHF : Lagging Span is FREE UP in M15 --- ASK/BUY = 1.08567 --- BID/SELL = 1.0856
+2020.01.06 15:10:28.215	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURCHF : Lagging Span is FREE UP in M30 --- ASK/BUY = 1.08567 --- BID/SELL = 1.0856
+2020.01.06 15:10:29.015	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:10:29.215	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURGBP : Lagging Span is FREE UP in M2 --- ASK/BUY = 0.85211 --- BID/SELL = 0.85207
+2020.01.06 15:10:29.315	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURGBP : Lagging Span is FREE UP in M3 --- ASK/BUY = 0.85211 --- BID/SELL = 0.85207
+2020.01.06 15:10:30.815	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:10:31.515	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURJPY : Lagging Span is FREE UP in M10 --- ASK/BUY = 121.057 --- BID/SELL = 121.053
+2020.01.06 15:10:31.615	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURJPY : Lagging Span is FREE UP in M12 --- ASK/BUY = 121.056 --- BID/SELL = 121.052
+2020.01.06 15:10:31.715	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURJPY : Lagging Span is FREE UP in M15 --- ASK/BUY = 121.057 --- BID/SELL = 121.053
+2020.01.06 15:10:31.815	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURJPY : Lagging Span is FREE UP in M30 --- ASK/BUY = 121.058 --- BID/SELL = 121.053
+2020.01.06 15:10:32.615	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURJPY : Lagging Span is FREE UP in D1 --- ASK/BUY = 121.058 --- BID/SELL = 121.054
+2020.01.06 15:10:32.615	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:10:34.415	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:10:36.215	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:10:36.315	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURNZD : Lagging Span is FREE UP in M1 --- ASK/BUY = 1.67918 --- BID/SELL = 1.67899
+2020.01.06 15:10:36.415	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURNZD : Lagging Span is FREE UP in M2 --- ASK/BUY = 1.67918 --- BID/SELL = 1.67899
+2020.01.06 15:10:36.515	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURNZD : Lagging Span is FREE UP in M3 --- ASK/BUY = 1.67918 --- BID/SELL = 1.67899
+2020.01.06 15:10:36.615	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURNZD : Lagging Span is FREE UP in M4 --- ASK/BUY = 1.67918 --- BID/SELL = 1.67899
+2020.01.06 15:10:36.715	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURNZD : Lagging Span is FREE UP in M5 --- ASK/BUY = 1.67918 --- BID/SELL = 1.67899
+2020.01.06 15:10:36.815	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURNZD : Lagging Span is FREE UP in M6 --- ASK/BUY = 1.67918 --- BID/SELL = 1.67899
+2020.01.06 15:10:36.915	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURNZD : Lagging Span is FREE UP in M10 --- ASK/BUY = 1.67918 --- BID/SELL = 1.67899
+2020.01.06 15:10:37.015	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURNZD : Lagging Span is FREE UP in M12 --- ASK/BUY = 1.67918 --- BID/SELL = 1.67899
+2020.01.06 15:10:37.115	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURNZD : Lagging Span is FREE UP in M15 --- ASK/BUY = 1.67918 --- BID/SELL = 1.67899
+2020.01.06 15:10:37.215	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURNZD : Lagging Span is FREE UP in M30 --- ASK/BUY = 1.67918 --- BID/SELL = 1.67899
+2020.01.06 15:10:37.315	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURNZD : Lagging Span is FREE UP in H1 --- ASK/BUY = 1.67918 --- BID/SELL = 1.67899
+2020.01.06 15:10:37.415	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURNZD : Lagging Span is FREE UP in H2 --- ASK/BUY = 1.67918 --- BID/SELL = 1.67899
+2020.01.06 15:10:38.015	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:10:38.715	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURTRY : Lagging Span is FREE UP in M10 --- ASK/BUY = 6.69191 --- BID/SELL = 6.69109
+2020.01.06 15:10:38.815	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURTRY : Lagging Span is FREE UP in M12 --- ASK/BUY = 6.69191 --- BID/SELL = 6.69109
+2020.01.06 15:10:38.915	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURTRY : Lagging Span is FREE UP in M15 --- ASK/BUY = 6.69191 --- BID/SELL = 6.69109
+2020.01.06 15:10:39.015	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURTRY : Lagging Span is FREE UP in M30 --- ASK/BUY = 6.69191 --- BID/SELL = 6.69109
+2020.01.06 15:10:39.115	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURTRY : Lagging Span is FREE UP in H1 --- ASK/BUY = 6.69191 --- BID/SELL = 6.69109
+2020.01.06 15:10:39.215	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURTRY : Lagging Span is FREE UP in H2 --- ASK/BUY = 6.69191 --- BID/SELL = 6.69109
+2020.01.06 15:10:39.315	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURTRY : Lagging Span is FREE UP in H3 --- ASK/BUY = 6.69191 --- BID/SELL = 6.69109
+2020.01.06 15:10:39.415	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURTRY : Lagging Span is FREE UP in H4 --- ASK/BUY = 6.69191 --- BID/SELL = 6.69109
+2020.01.06 15:10:39.515	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURTRY : Lagging Span is FREE UP in H6 --- ASK/BUY = 6.69191 --- BID/SELL = 6.69109
+2020.01.06 15:10:39.615	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURTRY : Lagging Span is FREE UP in H8 --- ASK/BUY = 6.69191 --- BID/SELL = 6.69109
+2020.01.06 15:10:39.715	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURTRY : Lagging Span is FREE UP in H12 --- ASK/BUY = 6.69191 --- BID/SELL = 6.69109
+2020.01.06 15:10:39.815	IchimokuUltimateScannerEA2020 (EURUSD,M15)	EURTRY : Lagging Span is FREE UP in D1 --- ASK/BUY = 6.69191 --- BID/SELL = 6.69109
+2020.01.06 15:10:39.815	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:10:39.915	IchimokuUltimateScannerEA2020 (EURUSD,M15)	GBPAUD : Lagging Span is FREE UP in M1 --- ASK/BUY = 1.89316 --- BID/SELL = 1.89302
+2020.01.06 15:10:40.015	IchimokuUltimateScannerEA2020 (EURUSD,M15)	GBPAUD : Lagging Span is FREE UP in M2 --- ASK/BUY = 1.89316 --- BID/SELL = 1.89302
+2020.01.06 15:10:40.215	IchimokuUltimateScannerEA2020 (EURUSD,M15)	GBPAUD : Lagging Span is FREE UP in M4 --- ASK/BUY = 1.89316 --- BID/SELL = 1.89302
+2020.01.06 15:10:40.515	IchimokuUltimateScannerEA2020 (EURUSD,M15)	GBPAUD : Lagging Span is FREE UP in M10 --- ASK/BUY = 1.8932 --- BID/SELL = 1.89307
+2020.01.06 15:10:40.615	IchimokuUltimateScannerEA2020 (EURUSD,M15)	GBPAUD : Lagging Span is FREE UP in M12 --- ASK/BUY = 1.89324 --- BID/SELL = 1.8931
+2020.01.06 15:10:40.715	IchimokuUltimateScannerEA2020 (EURUSD,M15)	GBPAUD : Lagging Span is FREE UP in M15 --- ASK/BUY = 1.89322 --- BID/SELL = 1.89309
+2020.01.06 15:10:40.815	IchimokuUltimateScannerEA2020 (EURUSD,M15)	GBPAUD : Lagging Span is FREE UP in M30 --- ASK/BUY = 1.89322 --- BID/SELL = 1.89309
+2020.01.06 15:10:40.915	IchimokuUltimateScannerEA2020 (EURUSD,M15)	GBPAUD : Lagging Span is FREE UP in H1 --- ASK/BUY = 1.89322 --- BID/SELL = 1.89309
+2020.01.06 15:10:41.015	IchimokuUltimateScannerEA2020 (EURUSD,M15)	GBPAUD : Lagging Span is FREE UP in H2 --- ASK/BUY = 1.89322 --- BID/SELL = 1.89309
+2020.01.06 15:10:41.615	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:10:42.315	IchimokuUltimateScannerEA2020 (EURUSD,M15)	GBPCAD : Lagging Span is FREE UP in M10 --- ASK/BUY = 1.70519 --- BID/SELL = 1.70503
+2020.01.06 15:10:42.415	IchimokuUltimateScannerEA2020 (EURUSD,M15)	GBPCAD : Lagging Span is FREE UP in M12 --- ASK/BUY = 1.70519 --- BID/SELL = 1.70503
+2020.01.06 15:10:42.515	IchimokuUltimateScannerEA2020 (EURUSD,M15)	GBPCAD : Lagging Span is FREE UP in M15 --- ASK/BUY = 1.70519 --- BID/SELL = 1.70503
+2020.01.06 15:10:43.415	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:10:45.215	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:10:45.915	IchimokuUltimateScannerEA2020 (EURUSD,M15)	GBPCHF : Lagging Span is FREE UP in M10 --- ASK/BUY = 1.27425 --- BID/SELL = 1.2741
+2020.01.06 15:10:46.015	IchimokuUltimateScannerEA2020 (EURUSD,M15)	GBPCHF : Lagging Span is FREE UP in M12 --- ASK/BUY = 1.27425 --- BID/SELL = 1.2741
+2020.01.06 15:10:46.115	IchimokuUltimateScannerEA2020 (EURUSD,M15)	GBPCHF : Lagging Span is FREE UP in M15 --- ASK/BUY = 1.27425 --- BID/SELL = 1.2741
+2020.01.06 15:10:47.015	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:10:47.715	IchimokuUltimateScannerEA2020 (EURUSD,M15)	GBPJPY : Lagging Span is FREE UP in M10 --- ASK/BUY = 142.078 --- BID/SELL = 142.065
+2020.01.06 15:10:47.815	IchimokuUltimateScannerEA2020 (EURUSD,M15)	GBPJPY : Lagging Span is FREE UP in M12 --- ASK/BUY = 142.078 --- BID/SELL = 142.065
+2020.01.06 15:10:47.915	IchimokuUltimateScannerEA2020 (EURUSD,M15)	GBPJPY : Lagging Span is FREE UP in M15 --- ASK/BUY = 142.078 --- BID/SELL = 142.065
+2020.01.06 15:10:48.815	IchimokuUltimateScannerEA2020 (EURUSD,M15)	GBPJPY : Lagging Span is FREE UP in D1 --- ASK/BUY = 142.078 --- BID/SELL = 142.065
+2020.01.06 15:10:48.815	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:10:49.615	IchimokuUltimateScannerEA2020 (EURUSD,M15)	GBPTRY : Lagging Span is FREE UP in M12 --- ASK/BUY = 7.85423 --- BID/SELL = 7.85241
+2020.01.06 15:10:49.715	IchimokuUltimateScannerEA2020 (EURUSD,M15)	GBPTRY : Lagging Span is FREE UP in M15 --- ASK/BUY = 7.85423 --- BID/SELL = 7.85241
+2020.01.06 15:10:49.815	IchimokuUltimateScannerEA2020 (EURUSD,M15)	GBPTRY : Lagging Span is FREE UP in M30 --- ASK/BUY = 7.85423 --- BID/SELL = 7.85241
+2020.01.06 15:10:50.115	IchimokuUltimateScannerEA2020 (EURUSD,M15)	GBPTRY : Lagging Span is FREE UP in H3 --- ASK/BUY = 7.85423 --- BID/SELL = 7.85241
+2020.01.06 15:10:50.215	IchimokuUltimateScannerEA2020 (EURUSD,M15)	GBPTRY : Lagging Span is FREE UP in H4 --- ASK/BUY = 7.85423 --- BID/SELL = 7.85241
+2020.01.06 15:10:50.315	IchimokuUltimateScannerEA2020 (EURUSD,M15)	GBPTRY : Lagging Span is FREE UP in H6 --- ASK/BUY = 7.85423 --- BID/SELL = 7.85241
+2020.01.06 15:10:50.415	IchimokuUltimateScannerEA2020 (EURUSD,M15)	GBPTRY : Lagging Span is FREE UP in H8 --- ASK/BUY = 7.85423 --- BID/SELL = 7.85241
+2020.01.06 15:10:50.515	IchimokuUltimateScannerEA2020 (EURUSD,M15)	GBPTRY : Lagging Span is FREE UP in H12 --- ASK/BUY = 7.85423 --- BID/SELL = 7.85241
+2020.01.06 15:10:50.615	IchimokuUltimateScannerEA2020 (EURUSD,M15)	GBPTRY : Lagging Span is FREE UP in D1 --- ASK/BUY = 7.8542 --- BID/SELL = 7.85247
+2020.01.06 15:10:50.615	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:10:52.415	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:10:52.516	IchimokuUltimateScannerEA2020 (EURUSD,M15)	GBPNZD : Lagging Span is FREE UP in M1 --- ASK/BUY = 1.97073 --- BID/SELL = 1.97053
+2020.01.06 15:10:53.216	IchimokuUltimateScannerEA2020 (EURUSD,M15)	GBPNZD : Lagging Span is FREE UP in M12 --- ASK/BUY = 1.97072 --- BID/SELL = 1.97052
+2020.01.06 15:10:53.316	IchimokuUltimateScannerEA2020 (EURUSD,M15)	GBPNZD : Lagging Span is FREE UP in M15 --- ASK/BUY = 1.97072 --- BID/SELL = 1.97052
+2020.01.06 15:10:53.416	IchimokuUltimateScannerEA2020 (EURUSD,M15)	GBPNZD : Lagging Span is FREE UP in M30 --- ASK/BUY = 1.97072 --- BID/SELL = 1.97052
+2020.01.06 15:10:53.516	IchimokuUltimateScannerEA2020 (EURUSD,M15)	GBPNZD : Lagging Span is FREE UP in H1 --- ASK/BUY = 1.97072 --- BID/SELL = 1.97052
+2020.01.06 15:10:54.216	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:10:54.916	IchimokuUltimateScannerEA2020 (EURUSD,M15)	NZDCAD : Lagging Span is FREE UP in M10 --- ASK/BUY = 0.86532 --- BID/SELL = 0.86525
+2020.01.06 15:10:55.016	IchimokuUltimateScannerEA2020 (EURUSD,M15)	NZDCAD : Lagging Span is FREE UP in M12 --- ASK/BUY = 0.86532 --- BID/SELL = 0.86525
+2020.01.06 15:10:56.016	IchimokuUltimateScannerEA2020 (EURUSD,M15)	NZDCAD : Lagging Span is FREE UP in D1 --- ASK/BUY = 0.86527 --- BID/SELL = 0.86519
+2020.01.06 15:10:56.016	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:10:57.816	IchimokuUltimateScannerEA2020 (EURUSD,M15)	NZDCHF : Lagging Span is FREE UP in D1 --- ASK/BUY = 0.64657 --- BID/SELL = 0.6465
+2020.01.06 15:10:57.816	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:10:58.516	IchimokuUltimateScannerEA2020 (EURUSD,M15)	NZDJPY : Lagging Span is FREE UP in M10 --- ASK/BUY = 72.096 --- BID/SELL = 72.09
+2020.01.06 15:10:58.616	IchimokuUltimateScannerEA2020 (EURUSD,M15)	NZDJPY : Lagging Span is FREE UP in M12 --- ASK/BUY = 72.096 --- BID/SELL = 72.09
+2020.01.06 15:10:58.716	IchimokuUltimateScannerEA2020 (EURUSD,M15)	NZDJPY : Lagging Span is FREE UP in M15 --- ASK/BUY = 72.096 --- BID/SELL = 72.09
+2020.01.06 15:10:59.616	IchimokuUltimateScannerEA2020 (EURUSD,M15)	NZDJPY : Lagging Span is FREE UP in D1 --- ASK/BUY = 72.095 --- BID/SELL = 72.089
+2020.01.06 15:10:59.616	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:11:00.416	IchimokuUltimateScannerEA2020 (EURUSD,M15)	NZDUSD : Lagging Span is FREE UP in M12 --- ASK/BUY = 0.66678 --- BID/SELL = 0.66673
+2020.01.06 15:11:00.516	IchimokuUltimateScannerEA2020 (EURUSD,M15)	NZDUSD : Lagging Span is FREE UP in M15 --- ASK/BUY = 0.66678 --- BID/SELL = 0.66673
+2020.01.06 15:11:01.116	IchimokuUltimateScannerEA2020 (EURUSD,M15)	NZDUSD : Lagging Span is FREE UP in H6 --- ASK/BUY = 0.66678 --- BID/SELL = 0.66673
+2020.01.06 15:11:01.216	IchimokuUltimateScannerEA2020 (EURUSD,M15)	NZDUSD : Lagging Span is FREE UP in H8 --- ASK/BUY = 0.66678 --- BID/SELL = 0.66673
+2020.01.06 15:11:01.316	IchimokuUltimateScannerEA2020 (EURUSD,M15)	NZDUSD : Lagging Span is FREE UP in H12 --- ASK/BUY = 0.66678 --- BID/SELL = 0.66673
+2020.01.06 15:11:01.416	IchimokuUltimateScannerEA2020 (EURUSD,M15)	NZDUSD : Lagging Span is FREE UP in D1 --- ASK/BUY = 0.66678 --- BID/SELL = 0.66673
+2020.01.06 15:11:01.416	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:11:01.516	IchimokuUltimateScannerEA2020 (EURUSD,M15)	USDCAD : Lagging Span is FREE UP in M1 --- ASK/BUY = 1.29773 --- BID/SELL = 1.29765
+2020.01.06 15:11:01.716	IchimokuUltimateScannerEA2020 (EURUSD,M15)	USDCAD : Lagging Span is FREE UP in M3 --- ASK/BUY = 1.29773 --- BID/SELL = 1.29765
+2020.01.06 15:11:01.816	IchimokuUltimateScannerEA2020 (EURUSD,M15)	USDCAD : Lagging Span is FREE UP in M4 --- ASK/BUY = 1.29773 --- BID/SELL = 1.29765
+2020.01.06 15:11:03.216	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:11:05.016	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:11:06.816	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:11:06.916	IchimokuUltimateScannerEA2020 (EURUSD,M15)	USDSGD : Lagging Span is FREE UP in M1 --- ASK/BUY = 1.34985 --- BID/SELL = 1.34977
+2020.01.06 15:11:07.116	IchimokuUltimateScannerEA2020 (EURUSD,M15)	USDSGD : Lagging Span is FREE UP in M3 --- ASK/BUY = 1.34985 --- BID/SELL = 1.34977
+2020.01.06 15:11:08.616	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:11:08.716	IchimokuUltimateScannerEA2020 (EURUSD,M15)	USDSEK : Lagging Span is FREE UP in M1 --- ASK/BUY = 9.40893 --- BID/SELL = 9.40771
+2020.01.06 15:11:08.816	IchimokuUltimateScannerEA2020 (EURUSD,M15)	USDSEK : Lagging Span is FREE UP in M2 --- ASK/BUY = 9.40893 --- BID/SELL = 9.407819999999999
+2020.01.06 15:11:09.816	IchimokuUltimateScannerEA2020 (EURUSD,M15)	USDSEK : Lagging Span is FREE UP in H2 --- ASK/BUY = 9.40907 --- BID/SELL = 9.40793
+2020.01.06 15:11:10.416	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:11:11.316	IchimokuUltimateScannerEA2020 (EURUSD,M15)	USDTRY : Lagging Span is FREE UP in M15 --- ASK/BUY = 5.97532 --- BID/SELL = 5.975
+2020.01.06 15:11:11.416	IchimokuUltimateScannerEA2020 (EURUSD,M15)	USDTRY : Lagging Span is FREE UP in M30 --- ASK/BUY = 5.97532 --- BID/SELL = 5.975
+2020.01.06 15:11:11.616	IchimokuUltimateScannerEA2020 (EURUSD,M15)	USDTRY : Lagging Span is FREE UP in H2 --- ASK/BUY = 5.97532 --- BID/SELL = 5.975
+2020.01.06 15:11:11.716	IchimokuUltimateScannerEA2020 (EURUSD,M15)	USDTRY : Lagging Span is FREE UP in H3 --- ASK/BUY = 5.97532 --- BID/SELL = 5.975
+2020.01.06 15:11:11.816	IchimokuUltimateScannerEA2020 (EURUSD,M15)	USDTRY : Lagging Span is FREE UP in H4 --- ASK/BUY = 5.97532 --- BID/SELL = 5.975
+2020.01.06 15:11:11.916	IchimokuUltimateScannerEA2020 (EURUSD,M15)	USDTRY : Lagging Span is FREE UP in H6 --- ASK/BUY = 5.97532 --- BID/SELL = 5.975
+2020.01.06 15:11:12.016	IchimokuUltimateScannerEA2020 (EURUSD,M15)	USDTRY : Lagging Span is FREE UP in H8 --- ASK/BUY = 5.97532 --- BID/SELL = 5.975
+2020.01.06 15:11:12.116	IchimokuUltimateScannerEA2020 (EURUSD,M15)	USDTRY : Lagging Span is FREE UP in H12 --- ASK/BUY = 5.97532 --- BID/SELL = 5.975
+2020.01.06 15:11:12.216	IchimokuUltimateScannerEA2020 (EURUSD,M15)	USDTRY : Lagging Span is FREE UP in D1 --- ASK/BUY = 5.97532 --- BID/SELL = 5.975
+2020.01.06 15:11:12.216	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:11:13.316	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XAGUSD : Lagging Span is FREE UP in H1 --- ASK/BUY = 18.356 --- BID/SELL = 18.352
+2020.01.06 15:11:13.416	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XAGUSD : Lagging Span is FREE UP in H2 --- ASK/BUY = 18.356 --- BID/SELL = 18.352
+2020.01.06 15:11:13.516	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XAGUSD : Lagging Span is FREE UP in H3 --- ASK/BUY = 18.356 --- BID/SELL = 18.352
+2020.01.06 15:11:13.616	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XAGUSD : Lagging Span is FREE UP in H4 --- ASK/BUY = 18.356 --- BID/SELL = 18.352
+2020.01.06 15:11:13.716	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XAGUSD : Lagging Span is FREE UP in H6 --- ASK/BUY = 18.356 --- BID/SELL = 18.352
+2020.01.06 15:11:13.816	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XAGUSD : Lagging Span is FREE UP in H8 --- ASK/BUY = 18.356 --- BID/SELL = 18.352
+2020.01.06 15:11:13.916	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XAGUSD : Lagging Span is FREE UP in H12 --- ASK/BUY = 18.356 --- BID/SELL = 18.352
+2020.01.06 15:11:14.016	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XAGUSD : Lagging Span is FREE UP in D1 --- ASK/BUY = 18.356 --- BID/SELL = 18.352
+2020.01.06 15:11:14.016	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:11:15.116	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XAUUSD : Lagging Span is FREE UP in H1 --- ASK/BUY = 1574.57 --- BID/SELL = 1574.47
+2020.01.06 15:11:15.216	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XAUUSD : Lagging Span is FREE UP in H2 --- ASK/BUY = 1574.57 --- BID/SELL = 1574.47
+2020.01.06 15:11:15.316	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XAUUSD : Lagging Span is FREE UP in H3 --- ASK/BUY = 1574.57 --- BID/SELL = 1574.47
+2020.01.06 15:11:15.416	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XAUUSD : Lagging Span is FREE UP in H4 --- ASK/BUY = 1574.56 --- BID/SELL = 1574.47
+2020.01.06 15:11:15.516	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XAUUSD : Lagging Span is FREE UP in H6 --- ASK/BUY = 1574.56 --- BID/SELL = 1574.47
+2020.01.06 15:11:15.616	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XAUUSD : Lagging Span is FREE UP in H8 --- ASK/BUY = 1574.56 --- BID/SELL = 1574.47
+2020.01.06 15:11:15.716	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XAUUSD : Lagging Span is FREE UP in H12 --- ASK/BUY = 1574.56 --- BID/SELL = 1574.47
+2020.01.06 15:11:15.816	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XAUUSD : Lagging Span is FREE UP in D1 --- ASK/BUY = 1574.56 --- BID/SELL = 1574.47
+2020.01.06 15:11:15.816	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:11:16.016	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XPDUSD : Lagging Span is FREE UP in M2 --- ASK/BUY = 1330.9 --- BID/SELL = 1320.9
+2020.01.06 15:11:16.916	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XPDUSD : Lagging Span is FREE UP in H1 --- ASK/BUY = 1330.9 --- BID/SELL = 1320.9
+2020.01.06 15:11:17.316	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XPDUSD : Lagging Span is FREE UP in H6 --- ASK/BUY = 1330.9 --- BID/SELL = 1320.9
+2020.01.06 15:11:17.416	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XPDUSD : Lagging Span is FREE UP in H8 --- ASK/BUY = 1330.9 --- BID/SELL = 1320.9
+2020.01.06 15:11:17.516	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XPDUSD : Lagging Span is FREE UP in H12 --- ASK/BUY = 1330.9 --- BID/SELL = 1320.9
+2020.01.06 15:11:17.616	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XPDUSD : Lagging Span is FREE UP in D1 --- ASK/BUY = 1330.9 --- BID/SELL = 1320.9
+2020.01.06 15:11:17.616	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:11:19.416	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:11:19.916	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XNGUSD : Lagging Span is FREE UP in M5 --- ASK/BUY = 2.142 --- BID/SELL = 2.139
+2020.01.06 15:11:20.016	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XNGUSD : Lagging Span is FREE UP in M6 --- ASK/BUY = 2.142 --- BID/SELL = 2.139
+2020.01.06 15:11:20.116	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XNGUSD : Lagging Span is FREE UP in M10 --- ASK/BUY = 2.142 --- BID/SELL = 2.139
+2020.01.06 15:11:20.216	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XNGUSD : Lagging Span is FREE UP in M12 --- ASK/BUY = 2.142 --- BID/SELL = 2.139
+2020.01.06 15:11:20.316	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XNGUSD : Lagging Span is FREE UP in M15 --- ASK/BUY = 2.142 --- BID/SELL = 2.139
+2020.01.06 15:11:20.416	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XNGUSD : Lagging Span is FREE UP in M30 --- ASK/BUY = 2.142 --- BID/SELL = 2.139
+2020.01.06 15:11:21.216	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:11:21.416	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XTIUSD : Lagging Span is FREE UP in M2 --- ASK/BUY = 63.68 --- BID/SELL = 63.65
+2020.01.06 15:11:22.416	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XTIUSD : Lagging Span is FREE UP in H2 --- ASK/BUY = 63.68 --- BID/SELL = 63.65
+2020.01.06 15:11:22.516	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XTIUSD : Lagging Span is FREE UP in H3 --- ASK/BUY = 63.68 --- BID/SELL = 63.65
+2020.01.06 15:11:22.616	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XTIUSD : Lagging Span is FREE UP in H4 --- ASK/BUY = 63.68 --- BID/SELL = 63.65
+2020.01.06 15:11:22.716	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XTIUSD : Lagging Span is FREE UP in H6 --- ASK/BUY = 63.68 --- BID/SELL = 63.65
+2020.01.06 15:11:22.816	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XTIUSD : Lagging Span is FREE UP in H8 --- ASK/BUY = 63.68 --- BID/SELL = 63.65
+2020.01.06 15:11:22.916	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XTIUSD : Lagging Span is FREE UP in H12 --- ASK/BUY = 63.68 --- BID/SELL = 63.65
+2020.01.06 15:11:23.016	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XTIUSD : Lagging Span is FREE UP in D1 --- ASK/BUY = 63.67 --- BID/SELL = 63.64
+2020.01.06 15:11:23.016	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:11:24.616	IchimokuUltimateScannerEA2020 (EURUSD,M15)	WS30 : Lagging Span is FREE UP in H8 --- ASK/BUY = 28481.0 --- BID/SELL = 28479.0
+2020.01.06 15:11:24.716	IchimokuUltimateScannerEA2020 (EURUSD,M15)	WS30 : Lagging Span is FREE UP in H12 --- ASK/BUY = 28481.0 --- BID/SELL = 28479.0
+2020.01.06 15:11:24.816	IchimokuUltimateScannerEA2020 (EURUSD,M15)	WS30 : Lagging Span is FREE UP in D1 --- ASK/BUY = 28481.0 --- BID/SELL = 28479.0
+2020.01.06 15:11:24.816	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:11:25.316	IchimokuUltimateScannerEA2020 (EURUSD,M15)	J225 : Lagging Span is FREE UP in M5 --- ASK/BUY = 23165.0 --- BID/SELL = 23158.0
+2020.01.06 15:11:25.416	IchimokuUltimateScannerEA2020 (EURUSD,M15)	J225 : Lagging Span is FREE UP in M6 --- ASK/BUY = 23165.0 --- BID/SELL = 23158.0
+2020.01.06 15:11:26.616	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:11:28.216	IchimokuUltimateScannerEA2020 (EURUSD,M15)	WS30m : Lagging Span is FREE UP in H8 --- ASK/BUY = 28482.0 --- BID/SELL = 28480.0
+2020.01.06 15:11:28.316	IchimokuUltimateScannerEA2020 (EURUSD,M15)	WS30m : Lagging Span is FREE UP in H12 --- ASK/BUY = 28482.0 --- BID/SELL = 28480.0
+2020.01.06 15:11:28.416	IchimokuUltimateScannerEA2020 (EURUSD,M15)	WS30m : Lagging Span is FREE UP in D1 --- ASK/BUY = 28482.0 --- BID/SELL = 28480.0
+2020.01.06 15:11:28.416	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:11:30.016	IchimokuUltimateScannerEA2020 (EURUSD,M15)	SPX500 : Lagging Span is FREE UP in H8 --- ASK/BUY = 3219.1 --- BID/SELL = 3218.7
+2020.01.06 15:11:30.116	IchimokuUltimateScannerEA2020 (EURUSD,M15)	SPX500 : Lagging Span is FREE UP in H12 --- ASK/BUY = 3219.1 --- BID/SELL = 3218.7
+2020.01.06 15:11:30.216	IchimokuUltimateScannerEA2020 (EURUSD,M15)	SPX500 : Lagging Span is FREE UP in D1 --- ASK/BUY = 3219.1 --- BID/SELL = 3218.7
+2020.01.06 15:11:30.216	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:11:30.316	IchimokuUltimateScannerEA2020 (EURUSD,M15)	UK100 : Lagging Span is FREE UP in M1 --- ASK/BUY = 7563.4 --- BID/SELL = 7562.6
+2020.01.06 15:11:30.416	IchimokuUltimateScannerEA2020 (EURUSD,M15)	UK100 : Lagging Span is FREE UP in M2 --- ASK/BUY = 7563.4 --- BID/SELL = 7562.6
+2020.01.06 15:11:30.516	IchimokuUltimateScannerEA2020 (EURUSD,M15)	UK100 : Lagging Span is FREE UP in M3 --- ASK/BUY = 7563.4 --- BID/SELL = 7562.6
+2020.01.06 15:11:30.616	IchimokuUltimateScannerEA2020 (EURUSD,M15)	UK100 : Lagging Span is FREE UP in M4 --- ASK/BUY = 7563.4 --- BID/SELL = 7562.6
+2020.01.06 15:11:30.716	IchimokuUltimateScannerEA2020 (EURUSD,M15)	UK100 : Lagging Span is FREE UP in M5 --- ASK/BUY = 7563.4 --- BID/SELL = 7562.6
+2020.01.06 15:11:30.816	IchimokuUltimateScannerEA2020 (EURUSD,M15)	UK100 : Lagging Span is FREE UP in M6 --- ASK/BUY = 7563.4 --- BID/SELL = 7562.6
+2020.01.06 15:11:31.916	IchimokuUltimateScannerEA2020 (EURUSD,M15)	UK100 : Lagging Span is FREE UP in H12 --- ASK/BUY = 7563.4 --- BID/SELL = 7562.6
+2020.01.06 15:11:32.016	IchimokuUltimateScannerEA2020 (EURUSD,M15)	UK100 : Lagging Span is FREE UP in D1 --- ASK/BUY = 7563.4 --- BID/SELL = 7562.6
+2020.01.06 15:11:32.016	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:11:32.116	IchimokuUltimateScannerEA2020 (EURUSD,M15)	STOXX50E : Lagging Span is FREE UP in M1 --- ASK/BUY = 3739.8 --- BID/SELL = 3738.4
+2020.01.06 15:11:32.216	IchimokuUltimateScannerEA2020 (EURUSD,M15)	STOXX50E : Lagging Span is FREE UP in M2 --- ASK/BUY = 3739.8 --- BID/SELL = 3738.4
+2020.01.06 15:11:32.316	IchimokuUltimateScannerEA2020 (EURUSD,M15)	STOXX50E : Lagging Span is FREE UP in M3 --- ASK/BUY = 3739.8 --- BID/SELL = 3738.4
+2020.01.06 15:11:32.416	IchimokuUltimateScannerEA2020 (EURUSD,M15)	STOXX50E : Lagging Span is FREE UP in M4 --- ASK/BUY = 3739.8 --- BID/SELL = 3738.4
+2020.01.06 15:11:32.516	IchimokuUltimateScannerEA2020 (EURUSD,M15)	STOXX50E : Lagging Span is FREE UP in M5 --- ASK/BUY = 3739.8 --- BID/SELL = 3738.4
+2020.01.06 15:11:32.616	IchimokuUltimateScannerEA2020 (EURUSD,M15)	STOXX50E : Lagging Span is FREE UP in M6 --- ASK/BUY = 3739.8 --- BID/SELL = 3738.4
+2020.01.06 15:11:33.716	IchimokuUltimateScannerEA2020 (EURUSD,M15)	STOXX50E : Lagging Span is FREE UP in H12 --- ASK/BUY = 3739.8 --- BID/SELL = 3738.4
+2020.01.06 15:11:33.816	IchimokuUltimateScannerEA2020 (EURUSD,M15)	STOXX50E : Lagging Span is FREE UP in D1 --- ASK/BUY = 3739.8 --- BID/SELL = 3738.4
+2020.01.06 15:11:33.816	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:11:33.916	IchimokuUltimateScannerEA2020 (EURUSD,M15)	NDX : Lagging Span is FREE UP in M1 --- ASK/BUY = 8740.9 --- BID/SELL = 8740.1
+2020.01.06 15:11:34.016	IchimokuUltimateScannerEA2020 (EURUSD,M15)	NDX : Lagging Span is FREE UP in M2 --- ASK/BUY = 8740.9 --- BID/SELL = 8740.1
+2020.01.06 15:11:35.316	IchimokuUltimateScannerEA2020 (EURUSD,M15)	NDX : Lagging Span is FREE UP in H6 --- ASK/BUY = 8740.9 --- BID/SELL = 8740.1
+2020.01.06 15:11:35.416	IchimokuUltimateScannerEA2020 (EURUSD,M15)	NDX : Lagging Span is FREE UP in H8 --- ASK/BUY = 8740.9 --- BID/SELL = 8740.1
+2020.01.06 15:11:35.516	IchimokuUltimateScannerEA2020 (EURUSD,M15)	NDX : Lagging Span is FREE UP in H12 --- ASK/BUY = 8740.9 --- BID/SELL = 8740.1
+2020.01.06 15:11:35.616	IchimokuUltimateScannerEA2020 (EURUSD,M15)	NDX : Lagging Span is FREE UP in D1 --- ASK/BUY = 8740.9 --- BID/SELL = 8740.1
+2020.01.06 15:11:35.616	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:11:35.716	IchimokuUltimateScannerEA2020 (EURUSD,M15)	FCHI40 : Lagging Span is FREE UP in M1 --- ASK/BUY = 5992.7 --- BID/SELL = 5991.8
+2020.01.06 15:11:35.816	IchimokuUltimateScannerEA2020 (EURUSD,M15)	FCHI40 : Lagging Span is FREE UP in M2 --- ASK/BUY = 5992.7 --- BID/SELL = 5991.8
+2020.01.06 15:11:35.916	IchimokuUltimateScannerEA2020 (EURUSD,M15)	FCHI40 : Lagging Span is FREE UP in M3 --- ASK/BUY = 5992.7 --- BID/SELL = 5991.8
+2020.01.06 15:11:36.016	IchimokuUltimateScannerEA2020 (EURUSD,M15)	FCHI40 : Lagging Span is FREE UP in M4 --- ASK/BUY = 5992.7 --- BID/SELL = 5991.8
+2020.01.06 15:11:36.116	IchimokuUltimateScannerEA2020 (EURUSD,M15)	FCHI40 : Lagging Span is FREE UP in M5 --- ASK/BUY = 5992.7 --- BID/SELL = 5991.8
+2020.01.06 15:11:36.216	IchimokuUltimateScannerEA2020 (EURUSD,M15)	FCHI40 : Lagging Span is FREE UP in M6 --- ASK/BUY = 5992.7 --- BID/SELL = 5991.8
+2020.01.06 15:11:37.216	IchimokuUltimateScannerEA2020 (EURUSD,M15)	FCHI40 : Lagging Span is FREE UP in H8 --- ASK/BUY = 5992.7 --- BID/SELL = 5991.8
+2020.01.06 15:11:37.316	IchimokuUltimateScannerEA2020 (EURUSD,M15)	FCHI40 : Lagging Span is FREE UP in H12 --- ASK/BUY = 5992.7 --- BID/SELL = 5991.8
+2020.01.06 15:11:37.416	IchimokuUltimateScannerEA2020 (EURUSD,M15)	FCHI40 : Lagging Span is FREE UP in D1 --- ASK/BUY = 5992.7 --- BID/SELL = 5991.8
+2020.01.06 15:11:37.416	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:11:37.516	IchimokuUltimateScannerEA2020 (EURUSD,M15)	AUS200 : Lagging Span is FREE UP in M1 --- ASK/BUY = 6725.4 --- BID/SELL = 6723.6
+2020.01.06 15:11:37.616	IchimokuUltimateScannerEA2020 (EURUSD,M15)	AUS200 : Lagging Span is FREE UP in M2 --- ASK/BUY = 6725.4 --- BID/SELL = 6723.6
+2020.01.06 15:11:37.716	IchimokuUltimateScannerEA2020 (EURUSD,M15)	AUS200 : Lagging Span is FREE UP in M3 --- ASK/BUY = 6725.4 --- BID/SELL = 6723.6
+2020.01.06 15:11:37.816	IchimokuUltimateScannerEA2020 (EURUSD,M15)	AUS200 : Lagging Span is FREE UP in M4 --- ASK/BUY = 6725.4 --- BID/SELL = 6723.6
+2020.01.06 15:11:37.916	IchimokuUltimateScannerEA2020 (EURUSD,M15)	AUS200 : Lagging Span is FREE UP in M5 --- ASK/BUY = 6725.4 --- BID/SELL = 6723.6
+2020.01.06 15:11:38.016	IchimokuUltimateScannerEA2020 (EURUSD,M15)	AUS200 : Lagging Span is FREE UP in M6 --- ASK/BUY = 6725.4 --- BID/SELL = 6723.6
+2020.01.06 15:11:38.116	IchimokuUltimateScannerEA2020 (EURUSD,M15)	AUS200 : Lagging Span is FREE UP in M10 --- ASK/BUY = 6725.4 --- BID/SELL = 6723.6
+2020.01.06 15:11:38.216	IchimokuUltimateScannerEA2020 (EURUSD,M15)	AUS200 : Lagging Span is FREE UP in M12 --- ASK/BUY = 6725.4 --- BID/SELL = 6723.6
+2020.01.06 15:11:39.216	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:11:39.316	IchimokuUltimateScannerEA2020 (EURUSD,M15)	GDAXI : Lagging Span is FREE UP in M1 --- ASK/BUY = 13065.4 --- BID/SELL = 13064.9
+2020.01.06 15:11:39.416	IchimokuUltimateScannerEA2020 (EURUSD,M15)	GDAXI : Lagging Span is FREE UP in M2 --- ASK/BUY = 13065.4 --- BID/SELL = 13064.9
+2020.01.06 15:11:39.516	IchimokuUltimateScannerEA2020 (EURUSD,M15)	GDAXI : Lagging Span is FREE UP in M3 --- ASK/BUY = 13065.0 --- BID/SELL = 13064.5
+2020.01.06 15:11:39.616	IchimokuUltimateScannerEA2020 (EURUSD,M15)	GDAXI : Lagging Span is FREE UP in M4 --- ASK/BUY = 13065.0 --- BID/SELL = 13064.5
+2020.01.06 15:11:39.716	IchimokuUltimateScannerEA2020 (EURUSD,M15)	GDAXI : Lagging Span is FREE UP in M5 --- ASK/BUY = 13065.0 --- BID/SELL = 13064.5
+2020.01.06 15:11:39.816	IchimokuUltimateScannerEA2020 (EURUSD,M15)	GDAXI : Lagging Span is FREE UP in M6 --- ASK/BUY = 13065.0 --- BID/SELL = 13064.5
+2020.01.06 15:11:41.016	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:11:41.516	IchimokuUltimateScannerEA2020 (EURUSD,M15)	SPA35 : Lagging Span is FREE UP in M5 --- ASK/BUY = 9592.9 --- BID/SELL = 9586.799999999999
+2020.01.06 15:11:41.616	IchimokuUltimateScannerEA2020 (EURUSD,M15)	SPA35 : Lagging Span is FREE UP in M6 --- ASK/BUY = 9592.9 --- BID/SELL = 9586.799999999999
+2020.01.06 15:11:42.616	IchimokuUltimateScannerEA2020 (EURUSD,M15)	SPA35 : Lagging Span is FREE UP in H8 --- ASK/BUY = 9592.9 --- BID/SELL = 9586.799999999999
+2020.01.06 15:11:42.816	IchimokuUltimateScannerEA2020 (EURUSD,M15)	SPA35 : Lagging Span is FREE UP in D1 --- ASK/BUY = 9592.9 --- BID/SELL = 9586.799999999999
+2020.01.06 15:11:42.816	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:11:43.716	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XETUSD : Lagging Span is FREE UP in M15 --- ASK/BUY = 140.7 --- BID/SELL = 140.58
+2020.01.06 15:11:43.816	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XETUSD : Lagging Span is FREE UP in M30 --- ASK/BUY = 140.71 --- BID/SELL = 140.57
+2020.01.06 15:11:43.916	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XETUSD : Lagging Span is FREE UP in H1 --- ASK/BUY = 140.7 --- BID/SELL = 140.58
+2020.01.06 15:11:44.016	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XETUSD : Lagging Span is FREE UP in H2 --- ASK/BUY = 140.7 --- BID/SELL = 140.58
+2020.01.06 15:11:44.116	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XETUSD : Lagging Span is FREE UP in H3 --- ASK/BUY = 140.7 --- BID/SELL = 140.58
+2020.01.06 15:11:44.216	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XETUSD : Lagging Span is FREE UP in H4 --- ASK/BUY = 140.7 --- BID/SELL = 140.58
+2020.01.06 15:11:44.316	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XETUSD : Lagging Span is FREE UP in H6 --- ASK/BUY = 140.7 --- BID/SELL = 140.58
+2020.01.06 15:11:44.616	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:11:45.516	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XBTUSD : Lagging Span is FREE UP in M15 --- ASK/BUY = 7526.08 --- BID/SELL = 7524.43
+2020.01.06 15:11:45.616	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XBTUSD : Lagging Span is FREE UP in M30 --- ASK/BUY = 7526.08 --- BID/SELL = 7524.43
+2020.01.06 15:11:45.716	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XBTUSD : Lagging Span is FREE UP in H1 --- ASK/BUY = 7526.08 --- BID/SELL = 7524.43
+2020.01.06 15:11:45.816	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XBTUSD : Lagging Span is FREE UP in H2 --- ASK/BUY = 7526.08 --- BID/SELL = 7524.43
+2020.01.06 15:11:45.916	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XBTUSD : Lagging Span is FREE UP in H3 --- ASK/BUY = 7526.08 --- BID/SELL = 7524.43
+2020.01.06 15:11:46.016	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XBTUSD : Lagging Span is FREE UP in H4 --- ASK/BUY = 7526.08 --- BID/SELL = 7524.43
+2020.01.06 15:11:46.116	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XBTUSD : Lagging Span is FREE UP in H6 --- ASK/BUY = 7526.08 --- BID/SELL = 7524.43
+2020.01.06 15:11:46.216	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XBTUSD : Lagging Span is FREE UP in H8 --- ASK/BUY = 7526.08 --- BID/SELL = 7524.43
+2020.01.06 15:11:46.416	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:11:47.416	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XBNUSD : Lagging Span is FREE UP in M30 --- ASK/BUY = 234.731 --- BID/SELL = 234.51
+2020.01.06 15:11:47.516	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XBNUSD : Lagging Span is FREE UP in H1 --- ASK/BUY = 234.731 --- BID/SELL = 234.51
+2020.01.06 15:11:47.616	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XBNUSD : Lagging Span is FREE UP in H2 --- ASK/BUY = 234.731 --- BID/SELL = 234.51
+2020.01.06 15:11:47.716	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XBNUSD : Lagging Span is FREE UP in H3 --- ASK/BUY = 234.731 --- BID/SELL = 234.51
+2020.01.06 15:11:47.816	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XBNUSD : Lagging Span is FREE UP in H4 --- ASK/BUY = 234.731 --- BID/SELL = 234.51
+2020.01.06 15:11:47.916	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XBNUSD : Lagging Span is FREE UP in H6 --- ASK/BUY = 234.731 --- BID/SELL = 234.51
+2020.01.06 15:11:48.016	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XBNUSD : Lagging Span is FREE UP in H8 --- ASK/BUY = 234.731 --- BID/SELL = 234.51
+2020.01.06 15:11:48.216	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:11:48.616	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XRPUSD : Lagging Span is FREE UP in M4 --- ASK/BUY = 0.2134 --- BID/SELL = 0.2127
+2020.01.06 15:11:48.716	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XRPUSD : Lagging Span is FREE UP in M5 --- ASK/BUY = 0.2134 --- BID/SELL = 0.2127
+2020.01.06 15:11:48.816	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XRPUSD : Lagging Span is FREE UP in M6 --- ASK/BUY = 0.2134 --- BID/SELL = 0.2128
+2020.01.06 15:11:48.916	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XRPUSD : Lagging Span is FREE UP in M10 --- ASK/BUY = 0.2134 --- BID/SELL = 0.2128
+2020.01.06 15:11:49.016	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XRPUSD : Lagging Span is FREE UP in M12 --- ASK/BUY = 0.2134 --- BID/SELL = 0.2128
+2020.01.06 15:11:49.116	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XRPUSD : Lagging Span is FREE UP in M15 --- ASK/BUY = 0.2134 --- BID/SELL = 0.2128
+2020.01.06 15:11:49.216	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XRPUSD : Lagging Span is FREE UP in M30 --- ASK/BUY = 0.2134 --- BID/SELL = 0.2128
+2020.01.06 15:11:49.316	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XRPUSD : Lagging Span is FREE UP in H1 --- ASK/BUY = 0.2134 --- BID/SELL = 0.2128
+2020.01.06 15:11:49.416	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XRPUSD : Lagging Span is FREE UP in H2 --- ASK/BUY = 0.2134 --- BID/SELL = 0.2128
+2020.01.06 15:11:49.516	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XRPUSD : Lagging Span is FREE UP in H3 --- ASK/BUY = 0.2134 --- BID/SELL = 0.2128
+2020.01.06 15:11:49.616	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XRPUSD : Lagging Span is FREE UP in H4 --- ASK/BUY = 0.2135 --- BID/SELL = 0.2128
+2020.01.06 15:11:49.716	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XRPUSD : Lagging Span is FREE UP in H6 --- ASK/BUY = 0.2135 --- BID/SELL = 0.2128
+2020.01.06 15:11:50.016	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:11:51.016	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XLCUSD : Lagging Span is FREE UP in M30 --- ASK/BUY = 44.369 --- BID/SELL = 44.262
+2020.01.06 15:11:51.116	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XLCUSD : Lagging Span is FREE UP in H1 --- ASK/BUY = 44.369 --- BID/SELL = 44.262
+2020.01.06 15:11:51.216	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XLCUSD : Lagging Span is FREE UP in H2 --- ASK/BUY = 44.369 --- BID/SELL = 44.262
+2020.01.06 15:11:51.316	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XLCUSD : Lagging Span is FREE UP in H3 --- ASK/BUY = 44.369 --- BID/SELL = 44.262
+2020.01.06 15:11:51.416	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XLCUSD : Lagging Span is FREE UP in H4 --- ASK/BUY = 44.369 --- BID/SELL = 44.262
+2020.01.06 15:11:51.516	IchimokuUltimateScannerEA2020 (EURUSD,M15)	XLCUSD : Lagging Span is FREE UP in H6 --- ASK/BUY = 44.369 --- BID/SELL = 44.262
+2020.01.06 15:11:51.816	IchimokuUltimateScannerEA2020 (EURUSD,M15)	*
+2020.01.06 15:11:51.990	IchimokuUltimateScannerEA2020 (EURUSD,M15)	IchimokuUltimateScannerEA2020 (PERIOD_M15) : Total processing time = 109699ms = 109s Memory used = 123351 Memory total = 130782
+-----+++
