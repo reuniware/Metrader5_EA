@@ -24,3 +24,6 @@ Ichimoku validations that are checked by this EA are :
 Feel free to contact me :
 
 e-mail : investdatasystems@yahoo.com
+
+
+IchimokuUltimateScannerEA2020.Ex5 is experimental (completely new source code).
