@@ -34,4 +34,4 @@ IchimokuUltimateScannerEA2020_KijunSenScanner.Ex5 is experimental and scans for 
 
 IchimokuUltimateScannerEA2020_PriceAndChikouScanner.Ex5 is experimental and scans for financial instruments that are in the Market Watch window of Metatrader 5, and finds those for which the price and the Chikou Span Line are free of obstacles <=> Free of going on their trend.
 
-There are examples of outputs in the Reports folder : https://github.com/reuniware/Metrader5_EA/tree/master/Reports
+There are samples of outputs in the Reports folder : https://github.com/reuniware/Metrader5_EA/tree/master/Reports
