@@ -41,7 +41,7 @@ https://finance.forumactif.com
 https://ichimokuscanner.000webhostapp.com
 
 
-You might also be interested  in the following links with my latest Ichimoku Scanners EA with licence expiring on 31st of december 2020 :
+You might also be interested  in the following links with my latest Ichimoku Ultimate Scanner EA 2020 with licences expiring on 31st of december 2020 :
 
 https://finance.forumactif.com/t25-ichimoku-ultimate-scanner-ea-2020-version-kumo-scanner
 
