@@ -53,7 +53,9 @@ The most advanced Ichimoku Scanner that I have coded until now is IchimokuUltima
 It scans in loop, and scans all financial instruments that are in the Market Watch window of Metatrader 5 (you must attach it to only one financial instrument, eg. EURUSD, and it will scan all the ones that are in the Market Watch windows).
 
 It writes few outputs, but accurate ones. It scans for prices that are getting over or under the kumo cloud in 15-minute timeframe 
+
 <=> Current japanese candlestick open price is below the higher line of the kumo and current close price is over it
+
 <=> Current japanese candlestick open price is over the lower line of the kumo and current close price is under it
 
 
