@@ -46,3 +46,14 @@ You might also be interested  in the following links with my latest Ichimoku Ult
 https://finance.forumactif.com/t25-ichimoku-ultimate-scanner-ea-2020-version-kumo-scanner
 
 https://finance.forumactif.com/t27-ichimoku-ultimate-scanner-ea-2020-kijun-sen-scanner
+
+
+The most advanced Ichimoku Scanner that I have coded until now is IchimokuUltimateScannerEA2020-RT-KumoScanner-15M.ex5
+
+It scans in loop, and scans all financial instruments that are in the Market Watch window of Metatrader 5 (you must attach it to only one financial instrument, eg. EURUSD, and it will scan all the ones that are in the Market Watch windows).
+
+This has few outputs, but accurate ones. It scans for prices that are getting over or under the kumo cloud in 15-minute timeframe.
+
+
+
+
