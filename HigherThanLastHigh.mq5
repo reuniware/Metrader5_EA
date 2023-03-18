@@ -61,6 +61,7 @@ void OnTick()
       //datetime d1=TimeCurrent();
       //datetime d2=TimeCurrent()-Interval*60;
       MqlRates mql_rates[];
+      ArraySetAsSeries(mql_rates,true);
       if(CopyRates(Symbol(), PERIOD_CURRENT, 0, 32, mql_rates)>0)
         {
          //Print("mql_rates array:");
@@ -90,7 +91,7 @@ void OnTick()
 
       highest_26 = 0;
       lowest_26 = 0x6FFFFFFF;
-      for(i=1; i<27; i++)
+      for(i=0; i<26; i++)
         {
          if(mql_rates[i].high > highest_26)
            {
