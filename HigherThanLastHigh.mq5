@@ -11,7 +11,7 @@
 //+------------------------------------------------------------------+
 int OnInit()
   {
-   //printf(TerminalInfoString(TERMINAL_PATH));
+//printf(TerminalInfoString(TERMINAL_PATH));
    return(INIT_SUCCEEDED);
   }
 //+------------------------------------------------------------------+
@@ -47,14 +47,14 @@ double open_array[];
 double high_array[];
 double low_array[];
 double close_array[];
-double previous_ask;
+double previous_ask, previous_bid;
 double highest_26 = 0;
 double lowest_26 = 0;
 void OnTick()
   {
    if(done == false)
      {
-
+      // CopyOpen copies bid prices
       ArraySetAsSeries(open_array, true);
       numO=CopyOpen(Symbol(), PERIOD_CURRENT, 0, 32, open_array);
       ArraySetAsSeries(high_array, true);
@@ -70,29 +70,35 @@ void OnTick()
 
       bid = SymbolInfoDouble(Symbol(), SYMBOL_BID);
       ask = SymbolInfoDouble(Symbol(), SYMBOL_ASK);
-      
+
       highest_26 = 0;
       lowest_26 = 0x6FFFFFFF;
-      for(int i=0; i<26; i++){
-         if (high_array[i] > highest_26){
+      for(int i=0; i<26; i++)
+        {
+         if(high_array[i] > highest_26)
+           {
             highest_26 = high_array[i];
-         }
-         if (low_array[i] < lowest_26){
+           }
+         if(low_array[i] < lowest_26)
+           {
             lowest_26 = low_array[i];
-         }
-      }
-      
-      if (previous_ask < highest_26 && ask > highest_26) {
-         printf("ask has got above highest on 26 candlesticks. current ask = " + ask);
-         PlaySound("alert.wav");
-      }
+           }
+        }
 
-      if (previous_ask > lowest_26 && ask < lowest_26) {
-         printf("ask has got below lowest on 26 candlesticks. current ask = " + ask);
+      if(previous_bid < highest_26 && bid > highest_26)
+        {
+         printf("bid has got above highest on 26 candlesticks. current bid = " + bid);
          PlaySound("alert.wav");
-      }
-      
+        }
+
+      if(previous_bid > lowest_26 && bid < lowest_26)
+        {
+         printf("bid has got below lowest on 26 candlesticks. current bid= " + bid);
+         PlaySound("alert.wav");
+        }
+
       previous_ask = ask;
+      previous_bid = bid;
 
       //done = true;
       ArrayFree(open_array);
