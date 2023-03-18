@@ -105,11 +105,13 @@ void OnTick()
       if(highest_26 != previous_highest_26)
         {
          printf("new current highest 26 = " + highest_26);
+         previous_highest_26 = highest_26;
         }
 
       if(lowest_26 != previous_lowest_26)
         {
          printf("new current lowest 26 = " + lowest_26);
+         previous_lowest_26 = lowest_26;
         }
 
       //printf("lowest on 26 = " + lowest_26);
