@@ -4,8 +4,8 @@
 //|                            https://ichimoku-expert.blogspot.com |
 //+-----------------------------------------------------------------+
 
-//IchimokuUltimateTraderEA_2023.mq5 For METATRADER5
-#property copyright "Copyright 2023, Investdata Systems"
+//IchimokuUltimateTraderEA_2023.mq5
+#property copyright "Copyright 2023, Investdata Systems France"
 #property link      "https://ichimoku-expert.blogspot.com"
 #property version   "1.02"
 
@@ -1385,7 +1385,56 @@ double GetPositionsProfitForSymbol(string symbolName)
 //+------------------------------------------------------------------+
 bool BUY(string symbol,double takeprofit_pips=0.00250,double stoploss_pips=0.01000)
   {
-  return true;
+   MqlTick lasttick;
+   SymbolInfoTick(symbol,lasttick);
+   double spread=lasttick.ask-lasttick.bid; // spread = prix de vente - prix d'achat
+   double price = SymbolInfoDouble(symbol,SYMBOL_ASK);
+
+   MqlTradeRequest request={0};
+   MqlTradeResult  result={0};
+   request.action=TRADE_ACTION_DEAL;                     // type of trade operation
+   request.symbol=symbol;                                // symbol
+   request.volume=0.1;                                     // volume of 0.1 lot
+   request.type=ORDER_TYPE_BUY;                          // order type
+   request.price=SymbolInfoDouble(symbol,SYMBOL_ASK);    // price for opening
+
+                                                         //request.sl = price-(price/100)*2;
+//request.tp = lasttick.bid+(lasttick.bid/100)/2;
+
+   double stoploss=0,takeprofit=0;
+//if(Digits()==5)
+//{
+   stoploss=price-stoploss_pips;
+   takeprofit=lasttick.bid+spread+takeprofit_pips;
+//} else {
+//string msg=symbol+" : No OrderSend because digits != 5";
+//printf(msg);
+//SendNotification(msg);
+//return false;
+//}
+
+//if(lasttick.bid>2)
+//{
+//string msg=symbol+" : No OrderSend because lasttick.bid>2";
+//printf(msg);
+//SendNotification(msg);
+//return false;
+//}
+
+   request.sl = stoploss;
+   request.tp = takeprofit;
+//request.deviation=5;                                     // allowed deviation from the price
+//request.magic    =EXPERT_MAGIC;                          // MagicNumber of the order
+   if(!OrderSend(request,result))
+     {
+      PrintFormat(symbol+" : OrderSend error %d",GetLastError());     // if unable to send the request, output the error code
+      return false;
+     }
+   else
+     {
+      printf(symbol+" : OrderSend ok");
+      return true;
+     }
   }
 //+------------------------------------------------------------------+
 //|                                                                  |
