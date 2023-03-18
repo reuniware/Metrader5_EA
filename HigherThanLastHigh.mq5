@@ -102,6 +102,16 @@ void OnTick()
            }
         }
 
+      if(highest_26 != previous_highest_26)
+        {
+         printf("new current highest 26 = " + highest_26);
+        }
+
+      if(lowest_26 != previous_lowest_26)
+        {
+         printf("new current lowest 26 = " + lowest_26);
+        }
+
       //printf("lowest on 26 = " + lowest_26);
       //printf("highest on 26 = " + highest_26);
       //done = true;
@@ -120,15 +130,17 @@ void OnTick()
 
       previous_ask = ask;
       previous_bid = bid;
-      
-      if (previous_highest_26 == 0) {
+
+      if(previous_highest_26 == 0)
+        {
          previous_highest_26 = highest_26;
          printf("current highest 26 = " + highest_26);
-      }
-      if (previous_lowest_26 == 0) {
+        }
+      if(previous_lowest_26 == 0)
+        {
          previous_lowest_26 = lowest_26;
          printf("current lowest 26 = " + lowest_26);
-      }
+        }
 
       //done = true;
       //ArrayFree(open_array);
