@@ -50,6 +50,8 @@ double close_array[];
 double previous_ask, previous_bid;
 double highest_26 = 0;
 double lowest_26 = 0;
+datetime highest_26_datetime;
+datetime lowest_26_datetime;
 double previous_highest_26 = 0;
 double previous_lowest_26 = 0;
 int i;
@@ -66,6 +68,7 @@ void OnTick()
         {
          //Print("mql_rates array:");
          //ArrayPrint(mql_rates);
+         //printf(mql_rates[0].time);
         }
       else
          Print("CopyRates(Symbol(), PERIOD_CURRENT,1, 10, mql_rates). Error ", GetLastError());
@@ -96,22 +99,24 @@ void OnTick()
          if(mql_rates[i].high > highest_26)
            {
             highest_26 = mql_rates[i].high;
+            highest_26_datetime = mql_rates[i].time;
            }
          if(mql_rates[i].low < lowest_26)
            {
             lowest_26 = mql_rates[i].low;
+            lowest_26_datetime = mql_rates[i].time;
            }
         }
 
       if(highest_26 != previous_highest_26)
         {
-         printf("new current highest 26 = " + highest_26);
+         printf("new current highest 26 = " + highest_26 + " at " + highest_26_datetime);
          previous_highest_26 = highest_26;
         }
 
       if(lowest_26 != previous_lowest_26)
         {
-         printf("new current lowest 26 = " + lowest_26);
+         printf("new current lowest 26 = " + lowest_26 + " at " + lowest_26_datetime);
          previous_lowest_26 = lowest_26;
         }
 
