@@ -7,7 +7,6 @@
 #property link      "https://www.mql5.com"
 #property version   "1.00"
 
-int numO, numH, numL, numC;
 double bid, ask;
 double previous_ask, previous_bid;
 double highest_26 = 0;
