@@ -175,7 +175,10 @@ void OnTick()
                if(mql_rates[1].open < kijun_sen_bufferM1[1])
                   if(mql_rates[1].close > kijun_sen_bufferM1[1])
                      printf("Price has got above its kijun sen");
-
+                     
+               // Measuring percentages of high of low wicks and if higher wick is greatest that lower wick then
+               // assuming than there is a higher probability of going down and if lower wick is greatest than higher wick
+               // then assuming than there is a higher probability of going up... Measurements on the previous candlestick.
                if(mql_rates[1].open > mql_rates[1].close)
                  {
                   //bougie verte
@@ -183,6 +186,10 @@ void OnTick()
                   double diff_open_low = ((mql_rates[1].open - mql_rates[1].low)/mql_rates[1].low)*100;
                   printf("previous diff between high and close = " + string(diff_high_close));
                   printf("previous diff between open and low = " + string(diff_open_low));
+                  if(diff_high_close > diff_open_low)
+                     printf("higher probability of price going down");
+                  else
+                     printf("higher probability of price going up");
                  }
                else
                   if(mql_rates[1].close > mql_rates[1].open)
@@ -192,6 +199,10 @@ void OnTick()
                      double diff_close_low = ((mql_rates[1].close - mql_rates[1].low)/mql_rates[1].low)*100;
                      printf("previous diff between high and open = " + string(diff_high_open));
                      printf("previous diff between close and low = " + string(diff_close_low));
+                     if(diff_high_open > diff_close_low)
+                        printf("higher probability of price going down");
+                     else
+                        printf("higher probability of price going up");
                     }
 
               }
