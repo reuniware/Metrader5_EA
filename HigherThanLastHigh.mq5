@@ -22,7 +22,7 @@ int i;
 //+------------------------------------------------------------------+
 int OnInit()
   {
-   //printf(TerminalInfoString(TERMINAL_PATH));
+//printf(TerminalInfoString(TERMINAL_PATH));
    bid = 0;
    ask = 0;
    previous_ask = 0;
@@ -76,7 +76,7 @@ void OnTick()
 
       highest_26 = 0;
       lowest_26 = 0x6FFFFFFF;
-      for(i=0; i<26; i++)
+      for(i=1; i<27; i++)
         {
          if(mql_rates[i].high > highest_26)
            {
@@ -129,10 +129,84 @@ void OnTick()
         }
 
       //done = true;
-      ArrayFree(mql_rates);
       //ArrayFree(high_array);
       //ArrayFree(low_array);
       //ArrayFree(close_array);
+
+      int tenkan_sen = 9;              // period of Tenkan-sen
+      int kijun_sen = 26;              // period of Kijun-sen
+      int senkou_span_b = 52;          // period of Senkou Span B
+
+      double tenkan_sen_bufferM1[];
+      double kijun_sen_bufferM1[];
+      double senkou_span_a_bufferM1[];
+      double senkou_span_b_bufferM1[];
+      double chikou_span_bufferM1[];
+
+      ArraySetAsSeries(tenkan_sen_bufferM1,true);
+      ArraySetAsSeries(kijun_sen_bufferM1,true);
+      ArraySetAsSeries(senkou_span_a_bufferM1,true);
+      ArraySetAsSeries(senkou_span_b_bufferM1,true);
+      ArraySetAsSeries(chikou_span_bufferM1,true);
+
+      int max = 64;
+      int handleM1;
+      handleM1 = iIchimoku(Symbol(), PERIOD_CURRENT, tenkan_sen, kijun_sen, senkou_span_b);
+      if(handleM1 != INVALID_HANDLE)
+        {
+         int nbt=-1,nbk=-1,nbssa=-1,nbssb=-1,nbc=-1;
+         nbt = CopyBuffer(handleM1, TENKANSEN_LINE, 0, max, tenkan_sen_bufferM1);
+         nbk = CopyBuffer(handleM1, KIJUNSEN_LINE, 0, max, kijun_sen_bufferM1);
+         nbssa = CopyBuffer(handleM1, SENKOUSPANA_LINE, 0, max, senkou_span_a_bufferM1);
+         nbssb = CopyBuffer(handleM1, SENKOUSPANB_LINE, 0, max, senkou_span_b_bufferM1);
+         nbc=CopyBuffer(handleM1, CHIKOUSPAN_LINE, 0, max, chikou_span_bufferM1);
+
+         if(nbk > 0)
+           {
+            //ArrayPrint(kijun_sen_bufferM1);
+            //ArrayPrint(mql_rates);
+            //printf("KS = " + kijun_sen_bufferM1[0]);
+            if(isNewBar())
+              {
+               if(mql_rates[1].open > kijun_sen_bufferM1[1])
+                  if(mql_rates[1].close < kijun_sen_bufferM1[1])
+                     printf("Price has got below its kijun sen");
+
+               if(mql_rates[1].open < kijun_sen_bufferM1[1])
+                  if(mql_rates[1].close > kijun_sen_bufferM1[1])
+                     printf("Price has got above its kijun sen");
+
+               if(mql_rates[1].open > mql_rates[1].close)
+                 {
+                  //bougie verte
+                  double diff_high_close = ((mql_rates[1].high - mql_rates[1].close)/mql_rates[1].close)*100;
+                  double diff_open_low = ((mql_rates[1].open - mql_rates[1].low)/mql_rates[1].low)*100;
+                  printf("previous diff between high and close = " + string(diff_high_close));
+                  printf("previous diff between open and low = " + string(diff_open_low));
+                 }
+               else
+                  if(mql_rates[1].close > mql_rates[1].open)
+                    {
+                     //bougie rouge
+                     double diff_high_open = ((mql_rates[1].high - mql_rates[1].open)/mql_rates[1].open)*100;
+                     double diff_close_low = ((mql_rates[1].close - mql_rates[1].low)/mql_rates[1].low)*100;
+                     printf("previous diff between high and open = " + string(diff_high_open));
+                     printf("previous diff between close and low = " + string(diff_close_low));
+                    }
+
+              }
+
+
+           }
+
+        }
+
+      if(isNewBar())
+        {
+        }
+
+      ArrayFree(mql_rates);
+
      }
   }
 //+------------------------------------------------------------------+
