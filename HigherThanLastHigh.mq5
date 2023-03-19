@@ -6,12 +6,34 @@
 #property copyright "Copyright 2023, Invest Data Systems France."
 #property link      "https://www.mql5.com"
 #property version   "1.00"
+
+int numO, numH, numL, numC;
+double bid, ask;
+double previous_ask, previous_bid;
+double highest_26 = 0;
+double lowest_26 = 0;
+datetime highest_26_datetime;
+datetime lowest_26_datetime;
+double previous_highest_26 = 0;
+double previous_lowest_26 = 0;
+int i;
+
 //+------------------------------------------------------------------+
 //| Expert initialization function                                   |
 //+------------------------------------------------------------------+
 int OnInit()
   {
-//printf(TerminalInfoString(TERMINAL_PATH));
+   //printf(TerminalInfoString(TERMINAL_PATH));
+   bid = 0;
+   ask = 0;
+   previous_ask = 0;
+   previous_bid = 0;
+   highest_26 = 0;
+   lowest_26 = 0;
+   highest_26_datetime = NULL;
+   lowest_26_datetime = NULL;
+   previous_highest_26 = 0;
+   previous_lowest_26 = 0;
    return(INIT_SUCCEEDED);
   }
 //+------------------------------------------------------------------+
@@ -30,31 +52,6 @@ bool done = false;
 //+------------------------------------------------------------------+
 //|                                                                  |
 //+------------------------------------------------------------------+
-//double previous_ask = 0;
-double evol = 0;
-bool show_value_after = false;
-double greatest_dump = 0;
-double greatest_pump = 0;
-double pump_dump_trigger = 0.001;
-bool show_pump_and_dump = false;
-
-//+------------------------------------------------------------------+
-//|                                                                  |
-//+------------------------------------------------------------------+
-int numO, numH, numL, numC;
-double bid, ask;
-double open_array[];
-double high_array[];
-double low_array[];
-double close_array[];
-double previous_ask, previous_bid;
-double highest_26 = 0;
-double lowest_26 = 0;
-datetime highest_26_datetime;
-datetime lowest_26_datetime;
-double previous_highest_26 = 0;
-double previous_lowest_26 = 0;
-int i;
 void OnTick()
   {
    if(done == false)
@@ -74,20 +71,6 @@ void OnTick()
          Print("CopyRates(Symbol(), PERIOD_CURRENT,1, 10, mql_rates). Error ", GetLastError());
 
       //done = true;
-
-      // CopyOpen copies bid prices
-      //ArraySetAsSeries(open_array, true);
-      //numO=CopyOpen(Symbol(), PERIOD_CURRENT, 0, 32, open_array);
-      //ArraySetAsSeries(high_array, true);
-      //numH=CopyOpen(Symbol(), PERIOD_CURRENT, 0, 32, high_array);
-      //ArraySetAsSeries(low_array, true);
-      //numL=CopyOpen(Symbol(), PERIOD_CURRENT, 0, 32, low_array);
-      //ArraySetAsSeries(close_array, true);
-      //numC=CopyOpen(Symbol(), PERIOD_CURRENT, 0, 32, close_array);
-
-      /*printf("open 0 = " + open_array[0]);
-      printf("open 1 = " + open_array[1]);
-      printf("open 2 = " + open_array[2]);*/
 
       bid = SymbolInfoDouble(Symbol(), SYMBOL_BID);
       ask = SymbolInfoDouble(Symbol(), SYMBOL_ASK);
@@ -120,10 +103,6 @@ void OnTick()
          previous_lowest_26 = lowest_26;
         }
 
-      //printf("lowest on 26 = " + lowest_26);
-      //printf("highest on 26 = " + highest_26);
-      //done = true;
-
       if(previous_bid < highest_26 && bid > highest_26)
         {
          printf("bid has got above highest (" + highest_26 + ") on 26 candlesticks. current bid = " + bid);
@@ -151,7 +130,7 @@ void OnTick()
         }
 
       //done = true;
-      //ArrayFree(open_array);
+      ArrayFree(mql_rates);
       //ArrayFree(high_array);
       //ArrayFree(low_array);
       //ArrayFree(close_array);
