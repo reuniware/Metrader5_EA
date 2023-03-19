@@ -33,6 +33,7 @@ int OnInit()
    lowest_26_datetime = NULL;
    previous_highest_26 = 0;
    previous_lowest_26 = 0;
+
    return(INIT_SUCCEEDED);
   }
 //+------------------------------------------------------------------+
@@ -175,7 +176,7 @@ void OnTick()
                if(mql_rates[1].open < kijun_sen_bufferM1[1])
                   if(mql_rates[1].close > kijun_sen_bufferM1[1])
                      printf("Price has got above its kijun sen");
-                     
+
                // Measuring percentages of high of low wicks and if higher wick is greatest that lower wick then
                // assuming than there is a higher probability of going down and if lower wick is greatest than higher wick
                // then assuming than there is a higher probability of going up... Measurements on the previous candlestick.
@@ -252,3 +253,30 @@ bool isNewBar()
   }
 
 //+------------------------------------------------------------------+
+
+bool trade_done = false;
+void Trade()
+  {
+   if(trade_done == true)
+      return;
+
+   double ask = SymbolInfoDouble(Symbol(),SYMBOL_ASK);
+
+   MqlTradeRequest request= {};
+   MqlTradeResult  result= {};
+   request.action    =TRADE_ACTION_DEAL;
+   request.symbol    =Symbol();
+   request.volume    =1;
+   request.type      =ORDER_TYPE_BUY;
+   request.price     =ask;
+   request.deviation=10;
+   request.magic     =123456;
+   request.sl = ask - ask/100*0.1;
+   request.tp = ask + ask/100*0.5;
+   request.type_filling    =ORDER_FILLING_IOC;
+   if(!OrderSend(request,result))
+      PrintFormat("OrderSend error %d",GetLastError());
+   PrintFormat("retcode=%u  deal=%I64u  order=%I64u",result.retcode,result.deal,result.order);
+
+//trade_done = true;
+  }
