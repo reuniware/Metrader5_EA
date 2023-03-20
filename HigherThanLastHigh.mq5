@@ -138,59 +138,60 @@ void OnTick()
       int kijun_sen = 26;              // period of Kijun-sen
       int senkou_span_b = 52;          // period of Senkou Span B
 
-      double tenkan_sen_bufferM1[];
-      double kijun_sen_bufferM1[];
-      double senkou_span_a_bufferM1[];
-      double senkou_span_b_bufferM1[];
-      double chikou_span_bufferM1[];
+      double tenkan_sen_buffer[];
+      double kijun_sen_buffer[];
+      double senkou_span_a_buffer[];
+      double senkou_span_b_buffer[];
+      double chikou_span_buffer[];
 
-      ArraySetAsSeries(tenkan_sen_bufferM1,true);
-      ArraySetAsSeries(kijun_sen_bufferM1,true);
-      ArraySetAsSeries(senkou_span_a_bufferM1,true);
-      ArraySetAsSeries(senkou_span_b_bufferM1,true);
-      ArraySetAsSeries(chikou_span_bufferM1,true);
+      ArraySetAsSeries(tenkan_sen_buffer,true);
+      ArraySetAsSeries(kijun_sen_buffer,true);
+      ArraySetAsSeries(senkou_span_a_buffer,true);
+      ArraySetAsSeries(senkou_span_b_buffer,true);
+      ArraySetAsSeries(chikou_span_buffer,true);
 
       int max = 64;
-      int handleM1;
-      handleM1 = iIchimoku(Symbol(), PERIOD_CURRENT, tenkan_sen, kijun_sen, senkou_span_b);
-      if(handleM1 != INVALID_HANDLE)
+      int handle;
+      handle = iIchimoku(Symbol(), PERIOD_CURRENT, tenkan_sen, kijun_sen, senkou_span_b);
+      if(handle != INVALID_HANDLE)
         {
          int nbt=-1,nbk=-1,nbssa=-1,nbssb=-1,nbc=-1;
-         nbt = CopyBuffer(handleM1, TENKANSEN_LINE, 0, max, tenkan_sen_bufferM1);
-         nbk = CopyBuffer(handleM1, KIJUNSEN_LINE, 0, max, kijun_sen_bufferM1);
-         nbssa = CopyBuffer(handleM1, SENKOUSPANA_LINE, 0, max, senkou_span_a_bufferM1);
-         nbssb = CopyBuffer(handleM1, SENKOUSPANB_LINE, 0, max, senkou_span_b_bufferM1);
-         nbc=CopyBuffer(handleM1, CHIKOUSPAN_LINE, 0, max, chikou_span_bufferM1);
+         nbt = CopyBuffer(handle, TENKANSEN_LINE, 0, max, tenkan_sen_buffer);
+         nbk = CopyBuffer(handle, KIJUNSEN_LINE, 0, max, kijun_sen_buffer);
+         nbssa = CopyBuffer(handle, SENKOUSPANA_LINE, 0, max, senkou_span_a_buffer);
+         nbssb = CopyBuffer(handle, SENKOUSPANB_LINE, 0, max, senkou_span_b_buffer);
+         nbc=CopyBuffer(handle, CHIKOUSPAN_LINE, 0, max, chikou_span_buffer);
 
          if(nbk > 0)
            {
-            //ArrayPrint(kijun_sen_bufferM1);
+            //ArrayPrint(kijun_sen_buffer);
             //ArrayPrint(mql_rates);
-            //printf("KS = " + kijun_sen_bufferM1[0]);
+            //printf("KS = " + kijun_sen_buffer[0]);
             if(isNewBar())
               {
-               if(mql_rates[1].open > kijun_sen_bufferM1[1])
-                  if(mql_rates[1].close < kijun_sen_bufferM1[1])
+               if(mql_rates[1].open > kijun_sen_buffer[1])
+                  if(mql_rates[1].close < kijun_sen_buffer[1])
                      printf("Price has got below its kijun sen");
 
-               if(mql_rates[1].open < kijun_sen_bufferM1[1])
-                  if(mql_rates[1].close > kijun_sen_bufferM1[1])
+               if(mql_rates[1].open < kijun_sen_buffer[1])
+                  if(mql_rates[1].close > kijun_sen_buffer[1])
                      printf("Price has got above its kijun sen");
 
                // Measuring percentages of high of low wicks and if higher wick is greatest that lower wick then
                // assuming than there is a higher probability of going down and if lower wick is greatest than higher wick
                // then assuming than there is a higher probability of going up... Measurements on the previous candlestick.
+               bool showWicksProbability = false; /********/
                if(mql_rates[1].open > mql_rates[1].close)
                  {
                   //bougie verte
                   double diff_high_close = ((mql_rates[1].high - mql_rates[1].close)/mql_rates[1].close)*100;
                   double diff_open_low = ((mql_rates[1].open - mql_rates[1].low)/mql_rates[1].low)*100;
-                  printf("previous diff between high and close = " + string(diff_high_close));
-                  printf("previous diff between open and low = " + string(diff_open_low));
+                  if (showWicksProbability) printf("previous diff between high and close = " + string(diff_high_close));
+                  if (showWicksProbability) printf("previous diff between open and low = " + string(diff_open_low));
                   if(diff_high_close > diff_open_low)
-                     printf("higher probability of price going down");
+                     if (showWicksProbability) printf("higher probability of price going down");
                   else
-                     printf("higher probability of price going up");
+                     if (showWicksProbability) printf("higher probability of price going up");
                  }
                else
                   if(mql_rates[1].close > mql_rates[1].open)
@@ -198,12 +199,12 @@ void OnTick()
                      //bougie rouge
                      double diff_high_open = ((mql_rates[1].high - mql_rates[1].open)/mql_rates[1].open)*100;
                      double diff_close_low = ((mql_rates[1].close - mql_rates[1].low)/mql_rates[1].low)*100;
-                     printf("previous diff between high and open = " + string(diff_high_open));
-                     printf("previous diff between close and low = " + string(diff_close_low));
+                     if (showWicksProbability) printf("previous diff between high and open = " + string(diff_high_open));
+                     if (showWicksProbability) printf("previous diff between close and low = " + string(diff_close_low));
                      if(diff_high_open > diff_close_low)
-                        printf("higher probability of price going down");
+                        if (showWicksProbability) printf("higher probability of price going down");
                      else
-                        printf("higher probability of price going up");
+                        if (showWicksProbability) printf("higher probability of price going up");
                     }
 
               }
