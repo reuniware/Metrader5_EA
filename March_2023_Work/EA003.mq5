@@ -1,5 +1,5 @@
 //+------------------------------------------------------------------+
-//|                                                        EA002.mq5 |
+//|                                                        EA003.mq5 |
 //|                          Copyright 2023, Invest Data Systems FR. |
 //|                                             https://www.mql5.com |
 //| BTCUSD 01 01 2023 to 19 03 2023 M1 (nb lots = 4.7)               |
