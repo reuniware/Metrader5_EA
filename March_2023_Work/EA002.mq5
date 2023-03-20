@@ -325,6 +325,10 @@ bool isNewBar()
 
 CTrade         m_trade;                      // object of CTrade class
 
+double tp = 0.05; // take profit in %
+double sl = 0.05; // stop loss in %
+double lots = 4.7; // number of lots for each trade
+
 //+------------------------------------------------------------------+
 //|                                                                  |
 //+------------------------------------------------------------------+
@@ -340,8 +344,8 @@ void Trade_buy_2()
    ushort TakeProfit=60;
    ushort StopLoss=60;
 
-   double StopLossLevel = tick.bid - (tick.bid/100*0.05);
-   double TakeProfitLevel = tick.ask + (tick.ask/100*0.05);
+   double StopLossLevel = tick.bid - (tick.bid/100*sl);
+   double TakeProfitLevel = tick.ask + (tick.ask/100*tp);
 
    if(!m_trade.Buy(4.7, Symbol(), tick.ask, StopLossLevel, TakeProfitLevel))
      {
@@ -373,8 +377,8 @@ void Trade_sell_2()
    ushort TakeProfit=60;
    ushort StopLoss=60;
 
-   double StopLossLevel = tick.ask + (tick.ask/100*0.05);
-   double TakeProfitLevel = tick.bid - (tick.bid/100*0.05);
+   double StopLossLevel = tick.ask + (tick.ask/100*sl);
+   double TakeProfitLevel = tick.bid - (tick.bid/100*tp);
 
    if(!m_trade.Sell(4.7, Symbol(), tick.ask, StopLossLevel, TakeProfitLevel))
      {
