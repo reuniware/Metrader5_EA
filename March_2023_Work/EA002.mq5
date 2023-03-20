@@ -328,26 +328,25 @@ CTrade         m_trade;                      // object of CTrade class
 double tp = 0.05; // take profit in %
 double sl = 0.05; // stop loss in %
 double lots = 4.7; // number of lots for each trade
+MqlTick tick;
+double StopLossLevel;
+double TakeProfitLevel;
 
 //+------------------------------------------------------------------+
 //|                                                                  |
 //+------------------------------------------------------------------+
 void Trade_buy_2()
   {
-   MqlTick tick;
    if(!SymbolInfoTick(Symbol(),tick))
      {
       Alert(__FUNCTION__,", ERROR SymbolInfoTick");
       return;
      }
 
-   ushort TakeProfit=60;
-   ushort StopLoss=60;
+   StopLossLevel = tick.bid - (tick.bid/100*sl);
+   TakeProfitLevel = tick.ask + (tick.ask/100*tp);
 
-   double StopLossLevel = tick.bid - (tick.bid/100*sl);
-   double TakeProfitLevel = tick.ask + (tick.ask/100*tp);
-
-   if(!m_trade.Buy(4.7, Symbol(), tick.ask, StopLossLevel, TakeProfitLevel))
+   if(!m_trade.Buy(lots, Symbol(), tick.ask, StopLossLevel, TakeProfitLevel))
      {
       //--- failure message
       Print("Buy() method failed. Return code=", m_trade.ResultRetcode(),
@@ -367,20 +366,16 @@ void Trade_buy_2()
 
 void Trade_sell_2()
   {
-   MqlTick tick;
    if(!SymbolInfoTick(Symbol(),tick))
      {
       Alert(__FUNCTION__,", ERROR SymbolInfoTick");
       return;
      }
 
-   ushort TakeProfit=60;
-   ushort StopLoss=60;
+   StopLossLevel = tick.ask + (tick.ask/100*sl);
+   TakeProfitLevel = tick.bid - (tick.bid/100*tp);
 
-   double StopLossLevel = tick.ask + (tick.ask/100*sl);
-   double TakeProfitLevel = tick.bid - (tick.bid/100*tp);
-
-   if(!m_trade.Sell(4.7, Symbol(), tick.ask, StopLossLevel, TakeProfitLevel))
+   if(!m_trade.Sell(lots, Symbol(), tick.ask, StopLossLevel, TakeProfitLevel))
      {
       //--- failure message
       Print("Sell() method failed. Return code=", m_trade.ResultRetcode(),
