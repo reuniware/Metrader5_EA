@@ -1,7 +1,10 @@
 //+------------------------------------------------------------------+
-//|                                           HigherThanLastHigh.mq5 |
+//|                                                        EA002.mq5 |
 //|                          Copyright 2023, Invest Data Systems FR. |
 //|                                             https://www.mql5.com |
+//| BTCUSD 01 01 2023 to 19 03 2023 M1 (nb lots = 4.7)               |
+//| Capital 100000 Total profit 312554                               |
+//| Broker WSOT-Trading Arena                                        |
 //+------------------------------------------------------------------+
 #property copyright "Copyright 2023, Invest Data Systems France."
 #property link      "https://www.mql5.com"
