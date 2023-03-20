@@ -74,6 +74,8 @@ void OnTick()
 
       bid = SymbolInfoDouble(Symbol(), SYMBOL_BID);
       ask = SymbolInfoDouble(Symbol(), SYMBOL_ASK);
+      
+      bool showHighestsAndLowests = false; /********/
 
       highest_26 = 0;
       lowest_26 = 0x6FFFFFFF;
@@ -93,26 +95,26 @@ void OnTick()
 
       if(highest_26 != previous_highest_26)
         {
-         printf("new current highest 26 = " + highest_26 + " at " + highest_26_datetime);
+         if (showHighestsAndLowests) printf("new current highest 26 = " + highest_26 + " at " + highest_26_datetime);
          previous_highest_26 = highest_26;
         }
 
       if(lowest_26 != previous_lowest_26)
         {
-         printf("new current lowest 26 = " + lowest_26 + " at " + lowest_26_datetime);
+         if (showHighestsAndLowests) printf("new current lowest 26 = " + lowest_26 + " at " + lowest_26_datetime);
          previous_lowest_26 = lowest_26;
         }
 
       if(previous_bid < highest_26 && bid > highest_26)
         {
-         printf("bid has got above highest (" + highest_26 + ") on 26 candlesticks. current bid = " + bid);
-         PlaySound("alert.wav");
+         if (showHighestsAndLowests) printf("bid has got above highest (" + highest_26 + ") on 26 candlesticks. current bid = " + bid);
+         if (showHighestsAndLowests) PlaySound("alert.wav");
         }
 
       if(previous_bid > lowest_26 && bid < lowest_26)
         {
-         printf("bid has got below lowest (" + lowest_26 + ") on 26 candlesticks. current bid= " + bid);
-         PlaySound("alert.wav");
+         if (showHighestsAndLowests) printf("bid has got below lowest (" + lowest_26 + ") on 26 candlesticks. current bid= " + bid);
+         if (showHighestsAndLowests) PlaySound("alert.wav");
         }
 
       previous_ask = ask;
@@ -121,12 +123,12 @@ void OnTick()
       if(previous_highest_26 == 0)
         {
          previous_highest_26 = highest_26;
-         printf("current highest 26 = " + highest_26);
+         if (showHighestsAndLowests) printf("current highest 26 = " + highest_26);
         }
       if(previous_lowest_26 == 0)
         {
          previous_lowest_26 = lowest_26;
-         printf("current lowest 26 = " + lowest_26);
+         if (showHighestsAndLowests) printf("current lowest 26 = " + lowest_26);
         }
 
       //done = true;
@@ -155,12 +157,12 @@ void OnTick()
       handle = iIchimoku(Symbol(), PERIOD_CURRENT, tenkan_sen, kijun_sen, senkou_span_b);
       if(handle != INVALID_HANDLE)
         {
-         int nbt=-1,nbk=-1,nbssa=-1,nbssb=-1,nbc=-1;
+         int nbt = -1, nbk = -1, nbssa = -1, nbssb = -1, nbc = -1;
          nbt = CopyBuffer(handle, TENKANSEN_LINE, 0, max, tenkan_sen_buffer);
          nbk = CopyBuffer(handle, KIJUNSEN_LINE, 0, max, kijun_sen_buffer);
          nbssa = CopyBuffer(handle, SENKOUSPANA_LINE, 0, max, senkou_span_a_buffer);
          nbssb = CopyBuffer(handle, SENKOUSPANB_LINE, 0, max, senkou_span_b_buffer);
-         nbc=CopyBuffer(handle, CHIKOUSPAN_LINE, 0, max, chikou_span_buffer);
+         nbc = CopyBuffer(handle, CHIKOUSPAN_LINE, 0, max, chikou_span_buffer);
 
          if(nbk > 0)
            {
@@ -176,6 +178,14 @@ void OnTick()
                if(mql_rates[1].open < kijun_sen_buffer[1])
                   if(mql_rates[1].close > kijun_sen_buffer[1])
                      printf("Price has got above its kijun sen");
+
+               if(mql_rates[1].open > tenkan_sen_buffer[1])
+                  if(mql_rates[1].close < tenkan_sen_buffer[1])
+                     printf("Price has got below its tenkan sen");
+
+               if(mql_rates[1].open < tenkan_sen_buffer[1])
+                  if(mql_rates[1].close > tenkan_sen_buffer[1])
+                     printf("Price has got above its tenkan sen");
 
                // Measuring percentages of high of low wicks and if higher wick is greatest that lower wick then
                // assuming than there is a higher probability of going down and if lower wick is greatest than higher wick
