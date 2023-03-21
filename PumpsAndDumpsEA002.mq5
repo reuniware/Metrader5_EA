@@ -36,7 +36,7 @@ double evol = 0;
 bool show_value_after = true;
 double greatest_dump = 0;
 double greatest_pump = 0;
-double pump_dump_trigger = 15;
+double pump_dump_trigger = 15; // 15 usd between 2 ticks is a strong move on 21 03 2023 in the evening around 10pm UTC+2
 bool show_pump_and_dump = true;
 void OnTick()
   {
