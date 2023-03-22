@@ -37,7 +37,7 @@ double evol = 0;
 bool show_value_after = true;
 double greatest_dump = 0;
 double greatest_pump = 0;
-double pump_dump_trigger = 14; // 15 usd between 2 ticks is a strong move on BTCUSD on 21 03 2023 in the evening around 10pm UTC+2
+double pump_dump_trigger = 20; // 15 usd between 2 ticks is a strong move on BTCUSD on 21 03 2023 in the evening around 10pm UTC+2
 bool show_pump_and_dump = true;
 MqlRates mql_rates[];
 //+------------------------------------------------------------------+
@@ -106,7 +106,7 @@ void OnTick()
             if(previous_bid <= mql_rates[1].high && bid >= mql_rates[1].high)
               {
                PlaySound("alert2.wav");
-               printf("current price is gettig above previous candlestick's high");
+               printf("current price is getting above previous candlestick's high");
               }
            }
 
@@ -204,6 +204,23 @@ Samples for high volatility days
 2023.03.22 19:35:48.641	PumpsAndDumpsEA (BTCUSDT.cr,M3)	New Greatest Pump = 17.110000000000582 (28160.71)
 2023.03.22 19:35:51.601	PumpsAndDumpsEA (BTCUSDT.cr,M3)	New Greatest Dump = -60.2599999999984 (28002.34)
 2023.03.22 19:35:51.749	PumpsAndDumpsEA (BTCUSDT.cr,M5)	New Greatest Pump = 55.38000000000102 (28057.72)
+2023.03.22 19:45:18.139	PumpsAndDumpsEA (BTCUSDT.cr,H1)	New Greatest Pump = 14.549999999999272 (28199.59)
+2023.03.22 19:47:14.601	PumpsAndDumpsEA (BTCUSDT.cr,H1)	New Greatest Pump = 16.020000000000437 (28323.19)
+2023.03.22 19:47:14.662	PumpsAndDumpsEA (BTCUSDT.cr,H1)	New Greatest Dump = -16.020000000000437 (28307.17)
+2023.03.22 19:48:20.831	PumpsAndDumpsEA (BTCUSDT.cr,H1)	New Greatest Dump = -30.729999999999563 (28403.16)
+2023.03.22 19:51:30.405	PumpsAndDumpsEA (BTCUSDT.cr,M5)	New Greatest Dump = -14.789999999997235 (28359.99)
+2023.03.22 19:51:30.458	PumpsAndDumpsEA (BTCUSDT.cr,M5)	New Greatest Pump = 14.789999999997235 (28374.78)
+2023.03.22 19:51:30.511	PumpsAndDumpsEA (BTCUSDT.cr,M5)	New Greatest Dump = -16.779999999998836 (28358.0)
+2023.03.22 19:55:05.801	PumpsAndDumpsEA (BTCUSDT.cr,M5)	New Greatest Pump = 16.919999999998254 (28202.12)
+2023.03.22 19:55:27.279	PumpsAndDumpsEA (BTCUSDT.cr,M5)	New Greatest Dump = -21.349999999998545 (28078.65)
+2023.03.22 20:00:02.253	PumpsAndDumpsEA (BTCUSDT.cr,M5)	New Greatest Pump = 19.57999999999811 (28030.01)
+2023.03.22 20:06:36.026	PumpsAndDumpsEA (BTCUSDT.cr,H1)	New Greatest Dump = -21.62000000000262 (27519.01)
+2023.03.22 20:08:31.172	PumpsAndDumpsEA (BTCUSDT.cr,M30)	New Greatest Dump = -22.360000000000582 (27448.64)
+2023.03.22 20:08:35.184	PumpsAndDumpsEA (BTCUSDT.cr,M30)	New Greatest Dump = -32.2599999999984 (27404.5)
+2023.03.22 20:25:19.850	PumpsAndDumpsEA (BTCUSDT.cr,H1)	New Greatest Pump = 22.470000000001164 (27493.18)
+2023.03.22 20:25:21.960	PumpsAndDumpsEA (BTCUSDT.cr,H1)	New Greatest Pump = 22.830000000001746 (27450.31)
+2023.03.22 20:38:47.993	PumpsAndDumpsEA (BTCUSDT.cr,M30)	New Greatest Dump = -40.11000000000058 (27000.67)
+2023.03.22 20:38:48.104	PumpsAndDumpsEA (BTCUSDT.cr,M30)	New Greatest Pump = 31.090000000000146 (27031.76)
 
 ON 2023.03.22 :
 19:00
