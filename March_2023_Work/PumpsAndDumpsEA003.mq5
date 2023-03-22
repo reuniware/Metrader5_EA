@@ -205,4 +205,10 @@ Samples for high volatility days
 2023.03.22 19:35:51.601	PumpsAndDumpsEA (BTCUSDT.cr,M3)	New Greatest Dump = -60.2599999999984 (28002.34)
 2023.03.22 19:35:51.749	PumpsAndDumpsEA (BTCUSDT.cr,M5)	New Greatest Pump = 55.38000000000102 (28057.72)
 
+ON 2023.03.22 :
+19:00 USD		FOMC Economic Projections
+ 	 	USD		FOMC Statement
+ 	 	USD		Federal Funds Rate   5.00%	5.00%	4.75%	
+19:30 USD		FOMC Press Conference
+
 */
