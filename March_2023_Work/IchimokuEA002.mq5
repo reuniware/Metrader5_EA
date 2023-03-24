@@ -13,12 +13,27 @@ double bid, ask;
 
 input bool enableTrading = true;
 
+CTrade trade;
+MqlRates mql_rates[];
+double tenkan_sen_buffer[];
+double kijun_sen_buffer[];
+double senkou_span_a_buffer[];
+double senkou_span_b_buffer[];
+double chikou_span_buffer[];
+
 //+------------------------------------------------------------------+
 //| Expert initialization function                                   |
 //+------------------------------------------------------------------+
 int OnInit()
   {
 //printf(TerminalInfoString(TERMINAL_PATH));
+   ArraySetAsSeries(mql_rates, true);
+   ArraySetAsSeries(tenkan_sen_buffer,true);
+   ArraySetAsSeries(kijun_sen_buffer,true);
+   ArraySetAsSeries(senkou_span_a_buffer,true);
+   ArraySetAsSeries(senkou_span_b_buffer,true);
+   ArraySetAsSeries(chikou_span_buffer,true);
+
    return(INIT_SUCCEEDED);
   }
 //+------------------------------------------------------------------+
@@ -48,13 +63,6 @@ bool done = false;
 //+------------------------------------------------------------------+
 //|                                                                  |
 //+------------------------------------------------------------------+
-CTrade trade;
-MqlRates mql_rates[];
-double tenkan_sen_buffer[];
-double kijun_sen_buffer[];
-double senkou_span_a_buffer[];
-double senkou_span_b_buffer[];
-double chikou_span_buffer[];
 
 //+------------------------------------------------------------------+
 //|                                                                  |
@@ -65,7 +73,6 @@ void OnTick()
    if(isNewBar() == false)
       return;
 
-   ArraySetAsSeries(mql_rates, true);
    if(CopyRates(Symbol(), PERIOD_CURRENT, 0, 32, mql_rates)>0)
      {
      }
@@ -80,12 +87,6 @@ void OnTick()
    int tenkan_sen = 9;              // period of Tenkan-sen
    int kijun_sen = 26;              // period of Kijun-sen
    int senkou_span_b = 52;          // period of Senkou Span B
-
-   ArraySetAsSeries(tenkan_sen_buffer,true);
-   ArraySetAsSeries(kijun_sen_buffer,true);
-   ArraySetAsSeries(senkou_span_a_buffer,true);
-   ArraySetAsSeries(senkou_span_b_buffer,true);
-   ArraySetAsSeries(chikou_span_buffer,true);
 
    int max = 64;
    int handle;
@@ -157,14 +158,13 @@ void OnTick()
 
         }
 
-
       ArrayFree(senkou_span_b_buffer);
       ArrayFree(senkou_span_a_buffer);
       ArrayFree(tenkan_sen_buffer);
       ArrayFree(kijun_sen_buffer);
       ArrayFree(chikou_span_buffer);
       ArrayFree(mql_rates);
-     
+
 
      }
   }
