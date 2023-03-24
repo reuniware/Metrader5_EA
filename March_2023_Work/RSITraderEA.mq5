@@ -3,8 +3,13 @@
 //|                          Copyright 2023, Invest Data Systems FR. |
 //|                                             https://www.mql5.com |
 //+------------------------------------------------------------------+
-// GBPUSD 5m 01 03 2023 - 23 03 2023 Capital 500 Profit total net 171
-// GBPUSD 5m 01 01 2023 - 23 03 2023 Capital 500 Profit total net 177
+// GBPUSD 5m 01 03 2023 - 23 03 2023 Capital 500 Profit total net 171 tp = 0.00100 sl = 0.00100
+// GBPUSD 5m 01 01 2023 - 23 03 2023 Capital 500 Profit total net 177 tp = 0.00100 sl = 0.00100
+// USDCHF h4 01 01 2023 - 23 03 2023 Capital 500 Profit total net 416 tp = 0.01000 sl = 0.01000
+// EURUSD h4 01 01 2023 - 23 03 2023 Capital 500 Profit total net 127 tp = 0.01000 sl = 0.01000
+// EURUSD h4 01 01 2023 - 23 03 2023 Capital 500 Profit total net 177 tp = 0.00500 sl = 0.00500
+// EURUSD h4 01 01 2023 - 23 03 2023 Capital 500 Profit total net 62  tp = 0.00250 sl = 0.00250
+
 
 #property copyright "Copyright 2023, Invest Data Systems France."
 #property link      "https://www.mql5.com"
@@ -80,10 +85,12 @@ void OnTick()
         {
          if(RSIValue<=30)
            {
+            CloseAllPositions();
             Trade_buy_2();
            }
          if(RSIValue>=70)
            {
+            CloseAllPositions();
             Trade_sell_2();
            }
         }
@@ -133,8 +140,8 @@ double lots = 0.1;// number of lots for each trade
 MqlTick tick;
 double StopLossLevel;
 double TakeProfitLevel;
-double sl_points = 0.00100;
-double tp_points = 0.00100;
+input double sl_points = 0.00100;
+input double tp_points = 0.00100;
 
 //+------------------------------------------------------------------+
 //|                                                                  |
