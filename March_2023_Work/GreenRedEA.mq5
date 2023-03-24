@@ -72,7 +72,7 @@ void OnTick()
                                      PERIOD_MN1
                                    };
 
-      int maxPeriod = 5;
+      int maxPeriod = 9;
       bool green[21], red[21];
 
       for(int i=0; i<maxPeriod; i++)
@@ -126,6 +126,20 @@ void OnTick()
          printf("All is red");
       else
          printf("All is not red");
+
+      if(allGreen)
+        {
+         Trade_buy_2();
+         trade_done = true;
+        }
+
+      if(allRed)
+        {
+         Trade_sell_2();
+         trade_done = true;
+        }
+
+
 
 
       //done = true;
