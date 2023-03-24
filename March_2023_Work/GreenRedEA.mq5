@@ -1,5 +1,5 @@
 //+------------------------------------------------------------------+
-//|                                           GreenRedEA.mq5 |
+//|                                                   GreenRedEA.mq5 |
 //|                          Copyright 2023, Invest Data Systems FR. |
 //|                                             https://www.mql5.com |
 //+------------------------------------------------------------------+
@@ -11,14 +11,11 @@
 
 double bid, ask;
 double previous_ask, previous_bid;
-double highest_26 = 0;
-double lowest_26 = 0;
-datetime highest_26_datetime;
-datetime lowest_26_datetime;
-double previous_highest_26 = 0;
-double previous_lowest_26 = 0;
 
 int nbTicks = 0;
+
+input bool trading_enabled = false;
+
 //+------------------------------------------------------------------+
 //| Expert initialization function                                   |
 //+------------------------------------------------------------------+
@@ -39,11 +36,7 @@ int OnInit()
 //+------------------------------------------------------------------+
 void OnDeinit(const int reason)
   {
-//---
-
   }
-
-
 
 //+------------------------------------------------------------------+
 //| Expert tick function                                             |
@@ -79,10 +72,8 @@ void OnTick()
                                      PERIOD_MN1
                                    };
 
-      bool green[21];
-      bool red[21];
-
       int maxPeriod = 5;
+      bool green[21], red[21];
 
       for(int i=0; i<maxPeriod; i++)
         {
@@ -92,18 +83,18 @@ void OnTick()
            {
             if(mql_rates[0].close > mql_rates[0].open)
               {
-               //printf("Green in " + EnumToString(periods[i]));
+               printf("Green in " + EnumToString(periods[i]));
                green[i] = true;
               }
             else
                if(mql_rates[0].close < mql_rates[0].open)
                  {
+                  printf("Red in " + EnumToString(periods[i]));
                   red[i] = true;
                  }
            }
          else
             Print("CopyRates(Symbol(), PERIOD_CURRENT, 1, 10, mql_rates). Error ", GetLastError());
-
         }
 
       bool allGreen = true;
@@ -116,16 +107,6 @@ void OnTick()
            }
         }
 
-      if(allGreen == true)
-        {
-         printf("All is green");
-         if(trade_done == false)
-           {
-            Trade_buy_2();
-            trade_done = true;
-           }
-        }
-        
       bool allRed = true;
       for(int i=0; i<maxPeriod; i++)
         {
@@ -136,28 +117,25 @@ void OnTick()
            }
         }
 
-      if(allRed == true)
-        {
+      if(allGreen)
+         printf("All is green");
+      else
+         printf("All is not green");
+
+      if(allRed)
          printf("All is red");
-         if(trade_done == false)
-           {
-            Trade_sell_2();
-            trade_done = true;
-           }
-        }
-      
+      else
+         printf("All is not red");
+
 
       //done = true;
 
       bid = SymbolInfoDouble(Symbol(), SYMBOL_BID);
       ask = SymbolInfoDouble(Symbol(), SYMBOL_ASK);
 
+      ArrayFree(mql_rates);
 
-      if(isNewBar())
-        {
-        }
-
-      //ArrayFree(mql_rates);
+      //trade_done = true;
 
      }
   }
