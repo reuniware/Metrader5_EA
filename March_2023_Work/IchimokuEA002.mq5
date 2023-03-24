@@ -1,5 +1,5 @@
 //+------------------------------------------------------------------+
-//|                                                IchimokuEA002.mq5 |
+//|                                           IchimokuEA002.mq5 |
 //|                          Copyright 2023, Invest Data Systems FR. |
 //|                                             https://www.mql5.com |
 //+------------------------------------------------------------------+
@@ -108,7 +108,7 @@ void OnTick()
 
          if(mql_rates[1].open < senkou_span_b_buffer[1] && mql_rates[1].close > senkou_span_b_buffer[1])
            {
-            printf("getting above the cloud");
+            printf("getting above the cloud SSB");
             printf("chikou span =" + string(chikou_span_buffer[26]) + " at " + string(mql_rates[27].time));
             printf("senkou span b cs=" + string(senkou_span_b_buffer[26]));
             printf("senkou span a cs=" + string(senkou_span_a_buffer[27]));
@@ -141,7 +141,8 @@ void OnTick()
                   printf("le prix est validé sur la bougie de " + string(mql_rates[1].time));
 
                   // Ici entrée en position (todo: checker les lignes sur UTs supérieures)
-                  Trade_buy_2();
+                  //Trade_buy_2();
+                  PlaySound("alert.wav");
 
                  }
 
