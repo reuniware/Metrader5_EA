@@ -9,7 +9,8 @@
 // EURUSD h4 01 01 2023 - 23 03 2023 Capital 500 Profit total net 127 tp = 0.01000 sl = 0.01000
 // EURUSD h4 01 01 2023 - 23 03 2023 Capital 500 Profit total net 177 tp = 0.00500 sl = 0.00500
 // EURUSD h4 01 01 2023 - 23 03 2023 Capital 500 Profit total net 62  tp = 0.00250 sl = 0.00250
-
+// AUDUSD h4 01 01 2022 - 23 03 2023 Capital 500 Profit total net 224 tp = 0.00250 sl = 0.00250
+// USDCAD h4 01 01 2022 - 23 03 2023 Capital 500 Profit total net 42  tp = 0.00250 sl = 0.00250
 
 #property copyright "Copyright 2023, Invest Data Systems France."
 #property link      "https://www.mql5.com"
