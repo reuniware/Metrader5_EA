@@ -1,5 +1,5 @@
 //+------------------------------------------------------------------+
-//|                                                IchimokuEA002.mq5 |
+//|                                           HigherThanLastHigh.mq5 |
 //|                          Copyright 2023, Invest Data Systems FR. |
 //|                                             https://www.mql5.com |
 //+------------------------------------------------------------------+
@@ -49,14 +49,23 @@ bool done = false;
 //|                                                                  |
 //+------------------------------------------------------------------+
 CTrade trade;
+MqlRates mql_rates[];
+double tenkan_sen_buffer[];
+double kijun_sen_buffer[];
+double senkou_span_a_buffer[];
+double senkou_span_b_buffer[];
+double chikou_span_buffer[];
+
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
 void OnTick()
   {
 
    if(isNewBar() == false)
       return;
 
-   MqlRates mql_rates[];
-   ArraySetAsSeries(mql_rates,true);
+   ArraySetAsSeries(mql_rates, true);
    if(CopyRates(Symbol(), PERIOD_CURRENT, 0, 32, mql_rates)>0)
      {
      }
@@ -71,12 +80,6 @@ void OnTick()
    int tenkan_sen = 9;              // period of Tenkan-sen
    int kijun_sen = 26;              // period of Kijun-sen
    int senkou_span_b = 52;          // period of Senkou Span B
-
-   double tenkan_sen_buffer[];
-   double kijun_sen_buffer[];
-   double senkou_span_a_buffer[];
-   double senkou_span_b_buffer[];
-   double chikou_span_buffer[];
 
    ArraySetAsSeries(tenkan_sen_buffer,true);
    ArraySetAsSeries(kijun_sen_buffer,true);
@@ -110,36 +113,38 @@ void OnTick()
             printf("senkou span a cs=" + string(senkou_span_a_buffer[27]));
             printf("tenkan cs=" + string(tenkan_sen_buffer[27]));
             printf("kijun cs=" + string(kijun_sen_buffer[26]));
-            
+
             double cs = chikou_span_buffer[26];
             double ssb_cs = senkou_span_b_buffer[26];
             double ssa_cs = senkou_span_a_buffer[27];
             double tenkan_cs = tenkan_sen_buffer[27];
             double kijun_cs = kijun_sen_buffer[26];
-            
-            if (cs > ssb_cs && cs > ssa_cs && cs > tenkan_cs && cs > kijun_cs) {
+
+            if(cs > ssb_cs && cs > ssa_cs && cs > tenkan_cs && cs > kijun_cs)
+              {
                printf("chikou span est validée sur la bougie de " + string(mql_rates[27].time));
-               
+
                printf("ssb bougie précédente de [" + string(mql_rates[1].time) + "] = " + string(senkou_span_b_buffer[1]));
                printf("ssa bougie précédente de [" + string(mql_rates[1].time) + "] = " + string(senkou_span_a_buffer[1]));
                printf("tenkan bougie précédente de [" + string(mql_rates[1].time) + "] = " + string(tenkan_sen_buffer[1]));
                printf("kijun bougie précédente de [" + string(mql_rates[1].time) + "] = " + string(kijun_sen_buffer[1]));
-               
+
                double close = mql_rates[1].close;
                double ssa = senkou_span_a_buffer[1];
                double ssb = senkou_span_b_buffer[1];
                double tenkan = senkou_span_b_buffer[1];
                double kijun = kijun_sen_buffer[1];
-               
-               if (close > ssa && close > ssb && close > tenkan && close > kijun) {
+
+               if(close > ssa && close > ssb && close > tenkan && close > kijun)
+                 {
                   printf("le prix est validé sur la bougie de " + string(mql_rates[1].time));
-                  
+
                   // Ici entrée en position (todo: checker les lignes sur UTs supérieures)
                   Trade_buy_2();
-                  
-               }
-               
-            }
+
+                 }
+
+              }
            }
 
          /*if(chikou_span_buffer[25] > mql_rates[27].high)
@@ -153,7 +158,13 @@ void OnTick()
         }
 
 
+      ArrayFree(senkou_span_b_buffer);
+      ArrayFree(senkou_span_a_buffer);
+      ArrayFree(tenkan_sen_buffer);
+      ArrayFree(kijun_sen_buffer);
+      ArrayFree(chikou_span_buffer);
       ArrayFree(mql_rates);
+     
 
      }
   }
