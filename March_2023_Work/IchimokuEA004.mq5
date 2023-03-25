@@ -3,8 +3,10 @@
 //|                          Copyright 2023, Invest Data Systems FR. |
 //|                                             https://www.mql5.com |
 //+------------------------------------------------------------------+
-// WSOT Trading Arena - BTCUSD 01 03 2023 - 24 03 2023 m1 Capital 500 Profit Total Net 185644 Nb Trades 8378
-// WSOT Trading Arena - BTCUSD 01 01 2023 - 24 03 2023 m1 Capital 500 Profit Total Net 524299 Nb Trades 26241
+// WSOT Trading Arena - BTCUSD 01 03 2023 - 24 03 2023 m1 Capital 500 Profit Total Net 185644 Nb Trades 8378      sl 0.002 tp 0.008
+// WSOT Trading Arena - BTCUSD 01 01 2023 - 24 03 2023 m1 Capital 500 Profit Total Net 524299 Nb Trades 26241     sl 0.002 tp 0.008
+// WSOT Trading Arena - BTCUSD 01 01 2023 - 24 03 2023 m1 Capital 500 Profit Total Net 524299 Nb Trades 551406    sl 0.002 tp 0.05
+
 #property copyright "Copyright 2023, Invest Data Systems France."
 #property link      "https://www.mql5.com"
 #property version   "1.00"
@@ -68,9 +70,28 @@ bool done = false;
 //+------------------------------------------------------------------+
 //|                                                                  |
 //+------------------------------------------------------------------+
+CPositionInfo cpositioninfo;
 void OnTick()
   {
 //printf("ontick");
+
+   /*
+   // Fermeture des positions pour le cas où on ne définit pas le SL et TP dans l'ouverture du trade.
+   // Le comportement n'est pas le même qu'avec les mêmes valeurs définies dans l'ouverture du trade (.008 et 0.002)...
+   bid = SymbolInfoDouble(Symbol(), SYMBOL_BID);
+   for(int j = PositionsTotal() - 1; j >= 0; j--) // loop all Open Positions
+      if(m_position.SelectByIndex(j))  // select a position
+        {
+        //printf("position ticket = " + string(m_position.Ticket()));
+         if(bid/m_position.PriceOpen()>=0.008)
+           {
+            m_trade_2.PositionClose(m_position.Ticket()); // then delete it --period
+           }
+         if(bid/m_position.PriceOpen()<=0.002)
+           {
+            m_trade_2.PositionClose(m_position.Ticket()); // then delete it --period
+           }           
+        }*/
 
    if(isNewBar() == false)
       return;
