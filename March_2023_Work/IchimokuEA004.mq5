@@ -3,7 +3,8 @@
 //|                          Copyright 2023, Invest Data Systems FR. |
 //|                                             https://www.mql5.com |
 //+------------------------------------------------------------------+
-// WSOT Trading Arena - BTCUSD 01 01 2023 - 24 03 2023 m1 Capital 500 Profit Total Net 4874 Nb Trades 26241
+// WSOT Trading Arena - BTCUSD 01 03 2023 - 24 03 2023 m1 Capital 500 Profit Total Net 185644 Nb Trades 8378
+// WSOT Trading Arena - BTCUSD 01 01 2023 - 24 03 2023 m1 Capital 500 Profit Total Net 524299 Nb Trades 26241
 #property copyright "Copyright 2023, Invest Data Systems France."
 #property link      "https://www.mql5.com"
 #property version   "1.00"
