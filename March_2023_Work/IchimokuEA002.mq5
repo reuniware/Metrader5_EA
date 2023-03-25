@@ -133,7 +133,7 @@ void OnTick()
                double close = mql_rates[1].close;
                double ssa = senkou_span_a_buffer[1];
                double ssb = senkou_span_b_buffer[1];
-               double tenkan = senkou_span_b_buffer[1];
+               double tenkan = tenkan_sen_buffer[1];
                double kijun = kijun_sen_buffer[1];
 
                if(close > ssa && close > ssb && close > tenkan && close > kijun)
