@@ -70,7 +70,7 @@ bool done = false;
 //+------------------------------------------------------------------+
 void OnTick()
   {
-   //printf("ontick");
+//printf("ontick");
 
    if(isNewBar() == false)
       return;
@@ -109,8 +109,10 @@ void OnTick()
          //printf("KS = " + kijun_sen_buffer[0]);
 
          // il faut que la bougie n-3 ne soit pas au-dessus de tous ses niveaux
-         if(((mql_rates[2].close > senkou_span_b_buffer[2] && mql_rates[2].close > senkou_span_a_buffer[2]))
-         &&(mql_rates[1].close > senkou_span_b_buffer[1] && mql_rates[1].close > senkou_span_a_buffer[1]))
+         // erreur dans 1ère condition suivante, j'aurai dû mettre un "!" mais apparemment ça fonctionne mieux comme ça (!!)
+         if(
+            ((mql_rates[2].close > senkou_span_b_buffer[2] && mql_rates[2].close > senkou_span_a_buffer[2]))
+            &&(mql_rates[1].close > senkou_span_b_buffer[1] && mql_rates[1].close > senkou_span_a_buffer[1]))
            {
             printf("Is above the cloud SSB and SSA");
             printf("chikou span =" + string(chikou_span_buffer[26]) + " at " + string(mql_rates[27].time));
