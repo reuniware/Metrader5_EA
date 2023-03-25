@@ -108,8 +108,10 @@ void OnTick()
          //ArrayPrint(mql_rates);
          //printf("KS = " + kijun_sen_buffer[0]);
 
-         // il faut que la bougie n-3 ne soit pas au-dessus de tous ses niveaux
-         // erreur dans 1ère condition suivante, j'aurai dû mettre un "!" mais apparemment ça fonctionne mieux comme ça (!!)
+         // Condition codée dans IchimokuEA003 : Il faut que la bougie n-3 ne soit pas au-dessus de tous ses niveaux
+         // Condition codée par erreur dans IchimokuEA004 :
+         //    Erreur dans 1ère condition suivante, j'aurai dû mettre un "!" mais apparemment ça fonctionne mieux comme ça (!!)
+         //    Donc => Si bougies n-3 et n-2 au-dessus de tous leurs niveaux ET leurs Chikou Span idem
          if(
             ((mql_rates[2].close > senkou_span_b_buffer[2] && mql_rates[2].close > senkou_span_a_buffer[2]))
             &&(mql_rates[1].close > senkou_span_b_buffer[1] && mql_rates[1].close > senkou_span_a_buffer[1]))
