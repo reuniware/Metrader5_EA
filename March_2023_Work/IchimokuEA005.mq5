@@ -161,7 +161,7 @@ void OnTick()
                double ssb = senkou_span_b_buffer[1];
                double tenkan = tenkan_sen_buffer[1];
                double kijun = kijun_sen_buffer[1];
-               
+
                if(close > ssa && close > ssb /*&& close > tenkan */&& close > kijun)
                  {
                   printf("le prix est validé sur la bougie de " + string(mql_rates[1].time));
@@ -288,6 +288,9 @@ CTrade         m_trade;                      // object of CTrade class
 input double tp = 0.05;//0.008; // take profit in %
 input double sl = 0.002; // stop loss in %
 input double lots = 0.5; // number of lots for each trade
+// If these 2 following parameters = 0 then previous tp and sl in % will be used.
+input double sl_points = 0.0; // if different of 0 then will be substracted to price for stoploss price.
+input double tp_points = 0.0; // if different of 0 then will be added to price for takeprofit price.
 MqlTick tick;
 double StopLossLevel;
 double TakeProfitLevel;
@@ -310,8 +313,16 @@ void Trade_buy_2()
       return;
      }
 
-   StopLossLevel = tick.bid - (tick.bid/100*sl);
-   TakeProfitLevel = tick.ask + (tick.ask/100*tp);
+   if(sl_points == 0 && tp_points == 0)
+     {
+      StopLossLevel = tick.bid - (tick.bid/100*sl);
+      TakeProfitLevel = tick.ask + (tick.ask/100*tp);
+     }
+   else
+     {
+      StopLossLevel = tick.bid - sl_points;
+      TakeProfitLevel = tick.ask + tp_points;
+     }
 
    if(!m_trade.Buy(lots, Symbol(), tick.ask, StopLossLevel, TakeProfitLevel))
      {
@@ -345,8 +356,16 @@ void Trade_sell_2()
       return;
      }
 
-   StopLossLevel = tick.ask + (tick.ask/100*sl);
-   TakeProfitLevel = tick.bid - (tick.bid/100*tp);
+   if(sl_points == 0 && tp_points == 0)
+     {
+      StopLossLevel = tick.ask + (tick.ask/100*sl);
+      TakeProfitLevel = tick.bid - (tick.bid/100*tp);
+     }
+   else
+     {
+      StopLossLevel = tick.ask + sl_points;
+      TakeProfitLevel = tick.bid - tp_points;
+     }
 
    if(!m_trade.Sell(lots, Symbol(), tick.ask, StopLossLevel, TakeProfitLevel))
      {
