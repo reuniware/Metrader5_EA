@@ -288,6 +288,9 @@ bool isNewBar()
 CTrade         m_trade;                      // object of CTrade class
 
 input double lots = 0.5; // number of lots for each trade
+input double SL_POINTS = 5000;
+input double TP_POINTS = 5000;
+
 MqlTick tick;
 double StopLossLevel;
 double TakeProfitLevel;
@@ -312,9 +315,10 @@ void Trade_buy_2()
 
    double Price = SymbolInfoDouble(_Symbol,SYMBOL_ASK);
    double point = SymbolInfoDouble(_Symbol,SYMBOL_POINT);
-   double SLPoint = 5000 * point;
+   double SLPoint = SL_POINTS * point;
+   double TPPoint = TP_POINTS * point;
    double Stop_Loss = Price - SLPoint;
-   double Take_Profit = Price + SLPoint;
+   double Take_Profit = Price + TPPoint;
 
    StopLossLevel = Stop_Loss;
    TakeProfitLevel = Take_Profit;
@@ -353,9 +357,10 @@ void Trade_sell_2()
 
    double Price = SymbolInfoDouble(_Symbol,SYMBOL_BID);
    double point = SymbolInfoDouble(_Symbol,SYMBOL_POINT);
-   double SLPoint = 5000 * point;
+   double SLPoint = SL_POINTS * point;
+   double TPPoint = TP_POINTS * point;
    double Stop_Loss = Price + SLPoint;
-   double Take_Profit = Price - SLPoint;
+   double Take_Profit = Price - TPPoint;
 
    StopLossLevel = Stop_Loss;
    TakeProfitLevel = Take_Profit;
