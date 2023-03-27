@@ -147,7 +147,7 @@ void OnTick()
          // Condition codée par erreur dans IchimokuEA004 :
          //    Erreur dans 1ère condition suivante, j'aurai dû mettre un "!" mais apparemment ça fonctionne mieux comme ça (!!)
          //    Donc => Si bougies n-3 et n-2 au-dessus de tous leurs niveaux ET leurs Chikou Span idem
-         if( (mql_rates[0].close > Highest26) &&
+         if((mql_rates[0].close > Highest26) &&
             ((mql_rates[2].close > senkou_span_b_buffer[2] && mql_rates[2].close > senkou_span_a_buffer[2]))
             &&(mql_rates[1].close > senkou_span_b_buffer[1] && mql_rates[1].close > senkou_span_a_buffer[1]))
            {
@@ -193,7 +193,7 @@ void OnTick()
            }
 
          // Nouveau condition ajoutée dans IchimokuEA005
-         if( (mql_rates[0].close < Lowest26) &&
+         if((mql_rates[0].close < Lowest26) &&
             ((mql_rates[2].close < senkou_span_b_buffer[2] && mql_rates[2].close < senkou_span_a_buffer[2]))
             &&(mql_rates[1].close < senkou_span_b_buffer[1] && mql_rates[1].close < senkou_span_a_buffer[1]))
            {
@@ -303,8 +303,8 @@ bool isNewBar()
 CTrade         m_trade;                      // object of CTrade class
 
 input double lots = 0.5; // number of lots for each trade
-input double SL_POINTS = 5000;
-input double TP_POINTS = 5000;
+input double SL_POINTS = 56;
+input double TP_POINTS = 1391;
 
 MqlTick tick;
 double StopLossLevel;
@@ -332,8 +332,16 @@ void Trade_buy_2()
    double point = SymbolInfoDouble(_Symbol,SYMBOL_POINT);
    double SLPoint = SL_POINTS * point;
    double TPPoint = TP_POINTS * point;
-   double Stop_Loss = Price - SLPoint;
-   double Take_Profit = Price + TPPoint;
+   double Stop_Loss = 0;
+   if(SLPoint > 0)
+     {
+      Stop_Loss = Price - SLPoint;
+     }
+   double Take_Profit = 0;
+   if(TPPoint > 0)
+     {
+      Take_Profit = Price + TPPoint;
+     }
 
    StopLossLevel = Stop_Loss;
    TakeProfitLevel = Take_Profit;
@@ -374,8 +382,16 @@ void Trade_sell_2()
    double point = SymbolInfoDouble(_Symbol,SYMBOL_POINT);
    double SLPoint = SL_POINTS * point;
    double TPPoint = TP_POINTS * point;
-   double Stop_Loss = Price + SLPoint;
-   double Take_Profit = Price - TPPoint;
+   double Stop_Loss = 0;
+   if(Stop_Loss > 0)
+     {
+      double Stop_Loss = Price + SLPoint;
+     }
+   double Take_Profit = 0;
+   if(Take_Profit > 0)
+     {
+      Take_Profit = Price - TPPoint;
+     }
 
    StopLossLevel = Stop_Loss;
    TakeProfitLevel = Take_Profit;
