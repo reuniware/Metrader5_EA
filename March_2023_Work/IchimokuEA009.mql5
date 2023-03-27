@@ -106,14 +106,22 @@ void OnTick()
          if(m_position.Symbol()==Symbol() /*&& m_position.Magic()==InpMagic*/)
            {
             profit += m_position.Commission() + m_position.Swap() + m_position.Profit();
-            if(profit>0)
+            if(profit>=0)
               {
                //printf("Profit=" + string(profit));
-               if(profit>=0.10 || profit<=-0.10)
+               if(profit>=1)
                  {
                   totalProfit += profit;
-                  if(profit>=0.10) nbWon++;
-                  if(profit<=-0.10) nbLost++;
+                  nbWon++;
+                  m_trade_2.PositionClose(m_position.Ticket()); // then delete it --period
+                 }
+              }
+            if(profit<0)
+              {
+               if(profit<=-0.25)
+                 {
+                  totalProfit += profit;
+                  nbLost++;
                   m_trade_2.PositionClose(m_position.Ticket()); // then delete it --period
                  }
               }
@@ -356,7 +364,7 @@ bool isNewBar()
 CTrade         m_trade;                      // object of CTrade class
 
 //Darwinex-Demo GDAXI 0.05 Lots (capital 500€)
-input double lots = 0.05; // number of lots for each trade
+input double lots = 0.01; // number of lots for each trade
 input double SL_POINTS = 0;// SL in points 56;
 input double TP_POINTS = 0;// TP in points 1391;
 input bool trade_long = true;
