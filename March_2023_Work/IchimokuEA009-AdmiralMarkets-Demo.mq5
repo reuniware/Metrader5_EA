@@ -99,7 +99,8 @@ void OnTick()
             m_trade_2.PositionClose(m_position.Ticket()); // then delete it --period
            }
         }*/
-
+        
+   // Parameters that works from 01 01 2023 to 26 03 2023 on M5 with capital = 500 USD Leverage 1:100 and 0.01 Lots on BTCUSD
    double profit=0.0;
 
    for(int i=PositionsTotal()-1; i>=0; i--)
@@ -110,7 +111,7 @@ void OnTick()
             if(profit>=0)
               {
                //printf("Profit=" + string(profit));
-               if(profit>=5)
+               if(profit>=8.7)
                  {
                   totalProfit += profit;
                   nbWon++;
@@ -119,7 +120,7 @@ void OnTick()
               }
             if(profit<0)
               {
-               if(profit<=-5)
+               if(profit<=-15)
                  {
                   totalProfit += profit;
                   nbLost++;
@@ -369,7 +370,7 @@ input double lots = 0.01; // number of lots for each trade
 input double SL_POINTS = 0;// SL in points 56;
 input double TP_POINTS = 0;// TP in points 1391;
 input bool trade_long = true;
-input bool trade_short = true;
+input bool trade_short = false;
 input bool only_one_trade = true;
 
 MqlTick tick;
