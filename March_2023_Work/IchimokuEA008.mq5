@@ -320,8 +320,8 @@ CTrade         m_trade;                      // object of CTrade class
 
 //Darwinex-Demo GDAXI 0.05 Lots (capital 500€)
 input double lots = 0.05; // number of lots for each trade
-input double SL_POINTS = 0;//56;
-input double TP_POINTS = 0;//1391;
+input double SL_POINTS = 0;// SL in points 56;
+input double TP_POINTS = 0;// TP in points 1391;
 
 MqlTick tick;
 double StopLossLevel;
