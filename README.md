@@ -59,6 +59,10 @@ It writes few outputs, but accurate ones. It scans for prices that are getting o
 <=> Current japanese candlestick open price is over the lower line of the kumo and current close price is under it
 
 
+# Update 28 03 2023
 
+Initially this repository had been created to host only one Metatrader 5 Expert Advisor.
+
+Now it will host all my work around Metatrader 5 (and maybe MT4 also).
 
 
