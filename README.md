@@ -61,7 +61,7 @@ It writes few outputs, but accurate ones. It scans for prices that are getting o
 
 # Update 28 03 2023
 
-Initially this repository had been created to host only one Metatrader 5 Expert Advisor.
+Initially this repository had been created some years ago to host only one Metatrader 5 Expert Advisor.
 
 Now it will host all my work around Metatrader 5 (and maybe MT4 also).
 
