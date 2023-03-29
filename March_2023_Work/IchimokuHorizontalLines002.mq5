@@ -197,7 +197,11 @@ void OnChartEvent(const int id,
             Print("Pressed KEY_NUMLOCK_LEFT");
             break;
          case KEY_LEFT:
-            Print("Pressed KEY_LEFT");
+            //Print("Pressed KEY_LEFT");
+            max-=100;
+            if (max < 0) max = 0;
+            Comment("max=" + string(max));
+            IchimokuHorizontalLines();
             break;
          case KEY_NUMLOCK_UP:
             Print("Pressed KEY_NUMLOCK_UP");
@@ -212,7 +216,10 @@ void OnChartEvent(const int id,
             Print("Pressed KEY_NUMLOCK_RIGHT");
             break;
          case KEY_RIGHT:
-            Print("Pressed KEY_RIGHT");
+            //Print("Pressed KEY_RIGHT");
+            max+=100;
+            Comment("max=" + string(max));
+            IchimokuHorizontalLines();
             break;
          case KEY_NUMLOCK_DOWN:
             Print("Pressed KEY_NUMLOCK_DOWN");
