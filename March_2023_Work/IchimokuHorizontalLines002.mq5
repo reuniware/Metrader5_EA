@@ -125,7 +125,7 @@ void IchimokuHorizontalLines()
          //for(int i=0; i<nbk-minNumberOfSameConsecutiveValuesNeeded_KS; i++)
         {
          currentKijun = kijun_sen_buffer[i];
-         if(currentKijun == previousKijun)
+         if(currentKijun == previousKijun && currentKijun != EMPTY_VALUE)
            {
             nbConsecutiveSameKijun++;
             printf("Increasing nb consecutive same kijun " + string(currentKijun) + " ; nb = " + string(nbConsecutiveSameKijun));
@@ -137,12 +137,13 @@ void IchimokuHorizontalLines()
                if(nbConsecutiveSameKijun>1)
                  {
                   printf("Will draw a line at " + string(previousKijun));
-                  if(!ObjectCreate(cid,"kijun"+i,OBJ_HLINE,0,0,previousKijun) || GetLastError()!=0)
+                  if(!ObjectCreate(cid,"kijun"+i,OBJ_HLINE,0,0,NormalizeDouble(previousKijun, _Digits)) || GetLastError()!=0)
                      Print("Error creating object: ",GetLastError());
                   else
                     {
                      ObjectSetInteger(0,"kijun"+i,OBJPROP_COLOR,clrDarkTurquoise);
-                     //ChartRedraw(cid);
+                     ObjectSetInteger(0,"kijun"+i,OBJPROP_STYLE,STYLE_DASHDOT);
+                     ChartRedraw(cid);
                     }
 
                  }
@@ -207,7 +208,6 @@ void IchimokuHorizontalLines()
             else
               {
                ObjectSetInteger(0,"ssb"+i,OBJPROP_COLOR,clrTomato);
-               ObjectSetInteger(0,"ssb"+i,OBJPROP_STYLE,STYLE_DOT);
                //ObjectSetInteger(0,"ssb"+i,OBJPROP_WIDTH,1);
 
                //PlotIndexSetInteger(0,PLOT_LINE_STYLE,STYLE_DOT);
