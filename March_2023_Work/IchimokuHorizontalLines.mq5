@@ -62,6 +62,13 @@ color ExtClr[140]=
 //+------------------------------------------------------------------+
 //|                                                                  |
 //+------------------------------------------------------------------+
+input bool showTenkanLines = true;
+input bool showKijunLines = true;
+input bool showSSBLines = true;
+
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
 void IchimokuHorizontalLines()
   {
    long cid=ChartID();
@@ -88,8 +95,8 @@ void IchimokuHorizontalLines()
    ArraySetAsSeries(chikou_span_buffer,true);
 
    handleIchimoku=iIchimoku(Symbol(),Period(),tenkan_sen_param,kijun_sen_param,senkou_span_b_param);
-   //handleIchimoku=iIchimoku(Symbol(),PERIOD_D1,tenkan_sen_param,kijun_sen_param,senkou_span_b_param);
-   max=256;
+//handleIchimoku=iIchimoku(Symbol(),PERIOD_D1,tenkan_sen_param,kijun_sen_param,senkou_span_b_param);
+   max=512;
 
    int start=0; // bar index
    int count=max; // number of bars
@@ -97,89 +104,102 @@ void IchimokuHorizontalLines()
    ArraySetAsSeries(tm,true);
    CopyTime(Symbol(),Period(),start,count,tm);
 
-   nbt=-1;nbk=-1;nbssa=-1;nbssb=-1;nbc=-1;
+   nbt=-1;
+   nbk=-1;
+   nbssa=-1;
+   nbssb=-1;
+   nbc=-1;
    nbt = CopyBuffer(handleIchimoku, TENKANSEN_LINE, 0, max, tenkan_sen_buffer);
    nbk = CopyBuffer(handleIchimoku, KIJUNSEN_LINE, 0, max, kijun_sen_buffer);
    nbssa = CopyBuffer(handleIchimoku, SENKOUSPANA_LINE, 0, max, senkou_span_a_buffer);
    nbssb = CopyBuffer(handleIchimoku, SENKOUSPANB_LINE, 0, max, senkou_span_b_buffer);
    nbc=CopyBuffer(handleIchimoku,CHIKOUSPAN_LINE,0,max,chikou_span_buffer);
-   
-   // kijun sen horizontal lines
-   for(int i=0;i<nbk-minNumberOfSameConsecutiveValuesNeeded_KS;i+=minNumberOfSameConsecutiveValuesNeeded_KS)
+
+   if(showKijunLines)
      {
-      bool equal=true;
-      for(int j=0;j<minNumberOfSameConsecutiveValuesNeeded_KS-1;j++)
+      // kijun sen horizontal lines
+      for(int i=0; i<nbk-minNumberOfSameConsecutiveValuesNeeded_KS; i+=minNumberOfSameConsecutiveValuesNeeded_KS)
         {
-         if(kijun_sen_buffer[i+j]!=kijun_sen_buffer[i+j+1])
+         bool equal=true;
+         for(int j=0; j<minNumberOfSameConsecutiveValuesNeeded_KS-1; j++)
            {
-            equal=false;
-            continue;
+            if(kijun_sen_buffer[i+j]!=kijun_sen_buffer[i+j+1])
+              {
+               equal=false;
+               continue;
+              }
            }
-        }
-      if(equal==true)
-        {
-         //printf("one horizontal line found at "+tm[i]+" with kijun sen line = "+DoubleToString(kijun_sen_buffer[i]));
-         if(!ObjectCreate(cid,"kijun"+i,OBJ_HLINE,0,0,kijun_sen_buffer[i]) || GetLastError()!=0)
-            Print("Error creating object: ",GetLastError());
-         else
+         if(equal==true)
            {
-            ObjectSetInteger(0,"kijun"+i,OBJPROP_COLOR,clrIndianRed);
-            ChartRedraw(cid);
+            //printf("one horizontal line found at "+tm[i]+" with kijun sen line = "+DoubleToString(kijun_sen_buffer[i]));
+            if(!ObjectCreate(cid,"kijun"+i,OBJ_HLINE,0,0,kijun_sen_buffer[i]) || GetLastError()!=0)
+               Print("Error creating object: ",GetLastError());
+            else
+              {
+               ObjectSetInteger(0,"kijun"+i,OBJPROP_COLOR,clrIndianRed);
+               ChartRedraw(cid);
+              }
            }
         }
      }
 
-   // tenkan sen horizontal lines
-   for(int i=0;i<nbt-minNumberOfSameConsecutiveValuesNeeded_TS;i+=minNumberOfSameConsecutiveValuesNeeded_TS)
+   if(showTenkanLines)
      {
-      bool equal=true;
-      for(int j=0;j<minNumberOfSameConsecutiveValuesNeeded_TS-1;j++)
+      // tenkan sen horizontal lines
+      for(int i=0; i<nbt-minNumberOfSameConsecutiveValuesNeeded_TS; i+=minNumberOfSameConsecutiveValuesNeeded_TS)
         {
-         if(tenkan_sen_buffer[i+j]!=tenkan_sen_buffer[i+j+1])
+         bool equal=true;
+         for(int j=0; j<minNumberOfSameConsecutiveValuesNeeded_TS-1; j++)
            {
-            equal=false;
-            continue;
+            if(tenkan_sen_buffer[i+j]!=tenkan_sen_buffer[i+j+1])
+              {
+               equal=false;
+               continue;
+              }
            }
-        }
-      if(equal==true)
-        {
-         //printf("one horizontal line found at "+tm[i]+" with kijun sen line = "+DoubleToString(kijun_sen_buffer[i]));
-         if(!ObjectCreate(cid,"tenkan"+i,OBJ_HLINE,0,0,tenkan_sen_buffer[i]) || GetLastError()!=0)
-            Print("Error creating object: ",GetLastError());
-         else
+         if(equal==true)
            {
-            ObjectSetInteger(0,"tenkan"+i,OBJPROP_COLOR,clrDarkTurquoise);
-            ChartRedraw(cid);
+            //printf("one horizontal line found at "+tm[i]+" with kijun sen line = "+DoubleToString(kijun_sen_buffer[i]));
+            if(!ObjectCreate(cid,"tenkan"+i,OBJ_HLINE,0,0,tenkan_sen_buffer[i]) || GetLastError()!=0)
+               Print("Error creating object: ",GetLastError());
+            else
+              {
+               ObjectSetInteger(0,"tenkan"+i,OBJPROP_COLOR,clrDarkTurquoise);
+               ChartRedraw(cid);
+              }
            }
         }
      }
 
-   // senkou span b horizontal lines
-   for(int i=0;i<nbssb-minNumberOfSameConsecutiveValuesNeeded_SSB;i+=minNumberOfSameConsecutiveValuesNeeded_KS)
+   if(showSSBLines)
      {
-      bool equal=true;
-      for(int j=0;j<minNumberOfSameConsecutiveValuesNeeded_SSB-1;j++)
+      // senkou span b horizontal lines
+      for(int i=0; i<nbssb-minNumberOfSameConsecutiveValuesNeeded_SSB; i+=minNumberOfSameConsecutiveValuesNeeded_KS)
         {
-         if(senkou_span_b_buffer[i+j]!=senkou_span_b_buffer[i+j+1])
+         bool equal=true;
+         for(int j=0; j<minNumberOfSameConsecutiveValuesNeeded_SSB-1; j++)
            {
-            equal=false;
-            continue;
+            if(senkou_span_b_buffer[i+j]!=senkou_span_b_buffer[i+j+1])
+              {
+               equal=false;
+               continue;
+              }
            }
-        }
-      if(equal==true)
-        {
-         //printf("one horizontal line found at "+tm[i]+" with kijun sen line = "+DoubleToString(kijun_sen_buffer[i]));
-         if(!ObjectCreate(cid,"ssb"+i,OBJ_HLINE,0,0,senkou_span_b_buffer[i]) || GetLastError()!=0)
-            Print("Error creating object: ",GetLastError());
-         else
+         if(equal==true)
            {
-            ObjectSetInteger(0,"ssb"+i,OBJPROP_COLOR,clrTomato);
-            ObjectSetInteger(0,"ssb"+i,OBJPROP_STYLE,STYLE_DOT); 
-            //ObjectSetInteger(0,"ssb"+i,OBJPROP_WIDTH,1); 
+            //printf("one horizontal line found at "+tm[i]+" with kijun sen line = "+DoubleToString(kijun_sen_buffer[i]));
+            if(!ObjectCreate(cid,"ssb"+i,OBJ_HLINE,0,0,senkou_span_b_buffer[i]) || GetLastError()!=0)
+               Print("Error creating object: ",GetLastError());
+            else
+              {
+               ObjectSetInteger(0,"ssb"+i,OBJPROP_COLOR,clrTomato);
+               ObjectSetInteger(0,"ssb"+i,OBJPROP_STYLE,STYLE_DOT);
+               //ObjectSetInteger(0,"ssb"+i,OBJPROP_WIDTH,1);
 
-            //PlotIndexSetInteger(0,PLOT_LINE_STYLE,STYLE_DOT); 
+               //PlotIndexSetInteger(0,PLOT_LINE_STYLE,STYLE_DOT);
 
-            ChartRedraw(cid);
+               ChartRedraw(cid);
+              }
            }
         }
      }
