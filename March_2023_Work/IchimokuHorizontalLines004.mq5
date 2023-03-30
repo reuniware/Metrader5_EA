@@ -23,6 +23,7 @@ double chikou_span_buffer[];
 //+------------------------------------------------------------------+
 //|                                                                  |
 //+------------------------------------------------------------------+
+bool firstInitDone = false;
 int OnInit()
   {
    ArraySetAsSeries(mql_rates, true);
@@ -32,7 +33,11 @@ int OnInit()
    ArraySetAsSeries(senkou_span_b_buffer,true);
    ArraySetAsSeries(chikou_span_buffer,true);
 
-   IchimokuHorizontalLines();
+   if(!firstInitDone)
+     {
+      IchimokuHorizontalLines();
+      firstInitDone = true;
+     }
 
    return(INIT_SUCCEEDED);
   }
@@ -95,10 +100,10 @@ int nbt=-1, nbk=-1, nbssa=-1, nbssb=-1, nbc=-1;
 void IchimokuHorizontalLines()
   {
    maxBars = 60*24*365*50;
-   printf("maxBars=" + string(numCopied));
+//printf("maxBars=" + string(numCopied));
    numCopied = 0;
    numCopied = CopyRates(Symbol(), PERIOD_CURRENT, 0, maxBars, mql_rates);
-   printf("numCopied=" + string(numCopied));
+//printf("numCopied=" + string(numCopied));
 
 //if(numCopied == maxBars)
    if(numCopied > 0)
@@ -279,7 +284,7 @@ void process(char sIchimokuLineToProcess)
       if(currentValue == previousValue && currentValue != EMPTY_VALUE)
         {
          nbConsecutiveSameValue++;
-         printf("Increasing nb consecutive same value " + string(currentValue) + " ; nb = " + string(nbConsecutiveSameValue));
+         //printf("Increasing nb consecutive same value " + string(currentValue) + " ; nb = " + string(nbConsecutiveSameValue));
         }
       else
         {
@@ -287,16 +292,20 @@ void process(char sIchimokuLineToProcess)
            {
             if(nbConsecutiveSameValue >= minConsecutiveValues)
               {
-               printf("Will draw a line at " + string(previousValue));
-               bool res = ObjectCreate(cid, prefix + string(i), OBJ_HLINE, 0, 0, previousValue);
+               string strPeriod = EnumToString(Period());
+               StringReplace(strPeriod, "PERIOD_", "");
+               //printf(strPeriod);
+
+               //printf("Will draw a line at " + string(previousValue));
+               bool res = ObjectCreate(cid, prefix + strPeriod + string(i), OBJ_HLINE, 0, 0, previousValue);
                if(res)
                  {
-                  ObjectSetInteger(0, prefix+i, OBJPROP_COLOR, clrGray);
-                  ObjectSetInteger(0, prefix+i, OBJPROP_STYLE, STYLE_DOT);
-                  //ObjectSetInteger(0, prefix+i, OBJPROP_BACK, true); // background object
+                  ObjectSetInteger(0, prefix + strPeriod + i, OBJPROP_COLOR, clrGray);
+                  ObjectSetInteger(0, prefix + strPeriod + i, OBJPROP_STYLE, STYLE_DOT);
+                  //ObjectSetInteger(0, prefix + strPeriod + i, OBJPROP_BACK, true); // background object
                  }
               }
-            printf("Current value has changed, now = " + string(currentValue));
+            //printf("Current value has changed, now = " + string(currentValue));
             nbConsecutiveSameValue = 0;
            }
         }
