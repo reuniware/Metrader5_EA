@@ -33,8 +33,6 @@ Available commands (click on the chart before using them) :
 
 [a] : Draw Senkou Span A lines.
 
-<br/>
-
 # The n consecutive identical values parameter
 
 If we find n consecutive identical values for Kijun Sen then we have a line.
