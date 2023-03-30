@@ -2,6 +2,8 @@
 
 This Expert Advisor can be run on Metatrader 5.
 
+You must add the "Ichimoku Kinko Hyo" indicator to your chart for this EA to work.
+
 <br/>
 
 It can display all horizontal lines that correspond to :
