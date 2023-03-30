@@ -5,6 +5,7 @@
 //+------------------------------------------------------------------+
 #property copyright "Copyright 2023, InvestDataSystems"
 #property link      "https://tradingbot.wixsite.com/robots-de-trading"
+#property link      "https://www.botmonster.fr"
 #property version   "1.00"
 //+------------------------------------------------------------------+
 //| Expert initialization function                                   |
