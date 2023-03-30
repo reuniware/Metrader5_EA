@@ -84,6 +84,8 @@ int maxBars=26*8, numCopied;
 
 long cid;
 
+int nbt=-1, nbk=-1, nbssa=-1, nbssb=-1, nbc=-1;
+
 //+------------------------------------------------------------------+
 //|                                                                  |
 //+------------------------------------------------------------------+
@@ -91,17 +93,18 @@ void IchimokuHorizontalLines()
   {
    numCopied = 0;
    numCopied = CopyRates(Symbol(), PERIOD_CURRENT, 0, maxBars, mql_rates);
-   if (numCopied == maxBars) {
+   if(numCopied == maxBars)
+     {
       Comment(" price close 0 = " + string(mql_rates[0].close) + " " + string(mql_rates[0].time) + " Max Date = " + string(mql_rates[maxBars-1].time) + " Min Consecutive Kijuns = " + string(minConsecutiveKijuns));
-   }
-   
+     }
+
    /*if(CopyRates(Symbol(), PERIOD_CURRENT, 0, maxBars, mql_rates)>0)
      {
       else Comment("price close 0 = " + string(mql_rates[0].close) + " " + string(mql_rates[0].time) + " Max Date = " + string(mql_rates[maxBars-1].time) + " Min Consecutive Kijuns = " + string(minConsecutiveKijuns));
      }
    else
       Print("CopyRates(Symbol(), PERIOD_CURRENT,1, 10, mql_rates). Error ", GetLastError());*/
-      
+
    cid=ChartID();
    ObjectsDeleteAll(cid);
 
@@ -110,9 +113,6 @@ void IchimokuHorizontalLines()
    int senkou_span_b_param = 52;          // period of Senkou Span B
    int handleIchimoku=INVALID_HANDLE;
 //int max;
-   int nbt=-1,nbk=-1,nbssa=-1,nbssb=-1,nbc=-1;
-   int numO=-1,numH=-1,numL=-1,numC=-1;
-
 
    handleIchimoku=iIchimoku(Symbol(),Period(),tenkan_sen_param,kijun_sen_param,senkou_span_b_param);
 //handleIchimoku=iIchimoku(Symbol(),PERIOD_D1,tenkan_sen_param,kijun_sen_param,senkou_span_b_param);
@@ -134,47 +134,9 @@ void IchimokuHorizontalLines()
    nbssb = CopyBuffer(handleIchimoku, SENKOUSPANB_LINE, 0, maxBars, senkou_span_b_buffer);
    nbc= CopyBuffer(handleIchimoku,CHIKOUSPAN_LINE,0,maxBars,chikou_span_buffer);
 
-   double previousKijun = 0;
-   double currentKijun = 0;
-   int nbConsecutiveSameKijun = 0;
+
    if(showKijunLines)
-     {
-      // kijun sen horizontal lines
-      for(int i=0; i<nbk; i++)
-         //for(int i=0; i<nbk-minNumberOfSameConsecutiveValuesNeeded_KS; i++)
-        {
-         currentKijun = kijun_sen_buffer[i];
-         if(currentKijun == previousKijun && currentKijun != EMPTY_VALUE)
-           {
-            nbConsecutiveSameKijun++;
-            printf("Increasing nb consecutive same kijun " + string(currentKijun) + " ; nb = " + string(nbConsecutiveSameKijun));
-           }
-         else
-           {
-            if(currentKijun != previousKijun)
-              {
-               if(nbConsecutiveSameKijun>=minConsecutiveKijuns)
-                 {
-                  printf("Will draw a line at " + string(previousKijun));
-                  bool res = ObjectCreate(cid, "kijun" + string(i), OBJ_HLINE, 0, 0, previousKijun);
-                  if(res)
-                    {
-                     ObjectSetInteger(0, "kijun"+i, OBJPROP_COLOR, clrDarkTurquoise);
-                     ObjectSetInteger(0, "kijun"+i, OBJPROP_STYLE, STYLE_DOT);
-                    }
-                 }
-               printf("Current Kijun has changed, now = " + string(currentKijun));
-               nbConsecutiveSameKijun = 0;
-              }
-           }
-
-         previousKijun = currentKijun;
-        }
-      ChartRedraw(cid);
-      ChartNavigate(cid,CHART_END,0);
-
-
-     }
+      processKijun();
 
 
    ArrayFree(tm);
@@ -265,10 +227,57 @@ void OnChartEvent(const int id,
             if(lparam == 34)
               {
                minConsecutiveKijuns--;
-               if (minConsecutiveKijuns < 0) minConsecutiveKijuns = 0;
+               if(minConsecutiveKijuns < 0)
+                  minConsecutiveKijuns = 0;
                IchimokuHorizontalLines();
               }
         }
      }
+  }
+//+------------------------------------------------------------------+
+
+
+
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
+void processKijun()
+  {
+   double previousKijun = 0;
+   double currentKijun = 0;
+   int nbConsecutiveSameKijun = 0;
+// kijun sen horizontal lines
+   for(int i=0; i<nbk; i++)
+      //for(int i=0; i<nbk-minNumberOfSameConsecutiveValuesNeeded_KS; i++)
+     {
+      currentKijun = kijun_sen_buffer[i];
+      if(currentKijun == previousKijun && currentKijun != EMPTY_VALUE)
+        {
+         nbConsecutiveSameKijun++;
+         printf("Increasing nb consecutive same kijun " + string(currentKijun) + " ; nb = " + string(nbConsecutiveSameKijun));
+        }
+      else
+        {
+         if(currentKijun != previousKijun)
+           {
+            if(nbConsecutiveSameKijun>=minConsecutiveKijuns)
+              {
+               printf("Will draw a line at " + string(previousKijun));
+               bool res = ObjectCreate(cid, "kijun" + string(i), OBJ_HLINE, 0, 0, previousKijun);
+               if(res)
+                 {
+                  ObjectSetInteger(0, "kijun"+i, OBJPROP_COLOR, clrDarkTurquoise);
+                  ObjectSetInteger(0, "kijun"+i, OBJPROP_STYLE, STYLE_DOT);
+                 }
+              }
+            printf("Current Kijun has changed, now = " + string(currentKijun));
+            nbConsecutiveSameKijun = 0;
+           }
+        }
+
+      previousKijun = currentKijun;
+     }
+   ChartRedraw(cid);
+   ChartNavigate(cid,CHART_END,0);
   }
 //+------------------------------------------------------------------+
