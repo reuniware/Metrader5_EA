@@ -2,6 +2,8 @@
 
 This Expert Advisor can be run on Metatrader 5.
 
+<br/>
+
 It can display all horizontal lines that corresponds to :
 
 - Horizontal lines of Kijun Sen since all available history.
