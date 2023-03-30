@@ -87,6 +87,8 @@ int minConsecutiveValues=2; // Number of identical consecutive kijun values that
 //input bool showTenkanLines = false;
 bool showKijunLines = true;
 bool showTenkanLines = false;
+bool showSsbLines = false;
+bool showSsaLines = false;
 //input bool showSSBLines = false;
 
 int maxBars=26*8, numCopied;
@@ -109,7 +111,7 @@ void IchimokuHorizontalLines()
 //if(numCopied == maxBars)
    if(numCopied > 0)
      {
-      Comment("maxBars=[" + string(maxBars) + "] numCopied=[" + string(numCopied) + "] priceClose0=[" + string(mql_rates[0].close) + "] priceTime0=[" + string(mql_rates[0].time) + "] MaxDate=[" + string(mql_rates[numCopied-1].time) + "] MinConsecutiveKijuns=[" + string(minConsecutiveValues) + "]");
+      Comment("maxBars=[" + string(maxBars) + "] numCopied=[" + string(numCopied) + "] priceClose0=[" + string(mql_rates[0].close) + "] priceTime0=[" + string(mql_rates[0].time) + "] MaxDate=[" + string(mql_rates[numCopied-1].time) + "] minConsecutiveValues=[" + string(minConsecutiveValues) + "]");
      }
 
    cid=ChartID();
@@ -140,6 +142,10 @@ void IchimokuHorizontalLines()
       process('k');
    if(showTenkanLines)
       process('t');
+   if(showSsbLines)
+      process('b');
+   if(showSsaLines)
+      process('a');
 
    ArrayFree(tenkan_sen_buffer);
    ArrayFree(kijun_sen_buffer);
@@ -241,6 +247,8 @@ void OnChartEvent(const int id,
               {
                showKijunLines = true;
                showTenkanLines = false;
+               showSsbLines = false;
+               showSsaLines = false;
                IchimokuHorizontalLines();
                break;
               }
@@ -248,6 +256,26 @@ void OnChartEvent(const int id,
               {
                showKijunLines = false;
                showTenkanLines = true;
+               showSsbLines = false;
+               showSsaLines = false;
+               IchimokuHorizontalLines();
+               break;
+              }
+            if(letterPressed == "b")
+              {
+               showKijunLines = false;
+               showTenkanLines = false;
+               showSsbLines = true;
+               showSsaLines = false;
+               IchimokuHorizontalLines();
+               break;
+              }
+            if(letterPressed == "a")
+              {
+               showKijunLines = false;
+               showTenkanLines = false;
+               showSsbLines = false;
+               showSsaLines = true;
                IchimokuHorizontalLines();
                break;
               }
@@ -270,6 +298,8 @@ void OnChartEvent(const int id,
                msg += "[c] : Clear all lines.\r\n";
                msg += "[k] : Draw Kijun Sen lines.\r\n";
                msg += "[t] : Draw Tenkan Sen lines.\r\n";
+               msg += "[b] : Draw Senkou Span B lines.\r\n";
+               msg += "[a] : Draw Senkou Span A lines.\r\n";
                MessageBox(msg, "HELP");
                break;
               }
@@ -305,9 +335,20 @@ void process(char sIchimokuLineToProcess)
          prefix = "tenkan";
          nb = nbt;
          break;
+      case 'b':
+         prefix = "ssb";
+         nb = nbssb;
+         break;
+      case 'a':
+         prefix = "ssa";
+         nb = nbssa;
+         break;
       default:
          break;
      }
+
+   string strPeriod, objectName;
+   bool res;
 
    double previousValue = 0;
    double currentValue = 0;
@@ -321,6 +362,12 @@ void process(char sIchimokuLineToProcess)
       else
          if(sIchimokuLineToProcess == 't')
             currentValue = tenkan_sen_buffer[i];
+         else
+            if(sIchimokuLineToProcess == 'b')
+               currentValue = senkou_span_b_buffer[i];
+            else
+               if(sIchimokuLineToProcess == 'a')
+                  currentValue = senkou_span_a_buffer[i];
 
       if(currentValue == previousValue && currentValue != EMPTY_VALUE)
         {
@@ -333,14 +380,14 @@ void process(char sIchimokuLineToProcess)
            {
             if(nbConsecutiveSameValue >= minConsecutiveValues)
               {
-               string strPeriod = EnumToString(Period());
+               strPeriod = EnumToString(Period());
                StringReplace(strPeriod, "PERIOD_", "");
                //printf(strPeriod);
-               
-               string objectName = prefix + "_" + strPeriod + "_" + string(i) + "_" + string(previousValue) + "_" + mql_rates[i].time;
+
+               objectName = prefix + "_" + strPeriod + "_" + string(i) + "_" + mql_rates[i].time;
 
                //printf("Will draw a line at " + string(previousValue));
-               bool res = ObjectCreate(cid, objectName, OBJ_HLINE, 0, 0, previousValue);
+               res = ObjectCreate(cid, objectName, OBJ_HLINE, 0, 0, previousValue);
                if(res)
                  {
                   ObjectSetInteger(0, objectName, OBJPROP_COLOR, clrGray);
