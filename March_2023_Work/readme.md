@@ -45,3 +45,6 @@ You can modify this value with the UP or DOWN arrow keys on your keyboard.
 
 If you are an Ichimoku hacker then it will help you identify key levels to trade.
 
+If you are an Ichimoku specialist it will help you identify what key levels in the past still have an impact on the current price of an asset.
+
+
