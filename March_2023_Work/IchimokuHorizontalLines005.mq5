@@ -99,16 +99,26 @@ int nbt=-1, nbk=-1, nbssa=-1, nbssb=-1, nbc=-1;
 //+------------------------------------------------------------------+
 void IchimokuHorizontalLines()
   {
-   maxBars = 60*24*365*50;
+   maxBars = 60*24*365*100;
 //printf("maxBars=" + string(numCopied));
    numCopied = 0;
    numCopied = CopyRates(Symbol(), PERIOD_CURRENT, 0, maxBars, mql_rates);
 //printf("numCopied=" + string(numCopied));
 
+   string details = "";
+   if(showKijunLines)
+      details+= "Kijun;";
+   if(showTenkanLines)
+      details+= "Tenkan;";
+   if(showSsbLines)
+      details+= "SSB;";
+   if(showSsaLines)
+      details+= "SSA;";
+
 //if(numCopied == maxBars)
    if(numCopied > 0)
      {
-      Comment("maxBars=[" + string(maxBars) + "] numCopied=[" + string(numCopied) + "] priceClose0=[" + string(mql_rates[0].close) + "] priceTime0=[" + string(mql_rates[0].time) + "] MaxDate=[" + string(mql_rates[numCopied-1].time) + "] minConsecutiveValues=[" + string(minConsecutiveValues) + "]");
+      Comment("maxBars=[" + string(maxBars) + "] numCopied=[" + string(numCopied) + "] priceClose0=[" + string(mql_rates[0].close) + "] priceTime0=[" + string(mql_rates[0].time) + "] MaxDate=[" + string(mql_rates[numCopied-1].time) + "] minConsecutiveValues=[" + string(minConsecutiveValues) + "]" + " Showing=[" + details + "]");
      }
 
    cid=ChartID();
