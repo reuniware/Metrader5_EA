@@ -11,7 +11,7 @@ It can display all horizontal lines that corresponds to :
 
 The first time you launch this EA it will display Kijun Sen horinzontal lines.
 
-r : Reset lines for current chart and timeframe.
+[r] : Reset lines for current chart and timeframe.
 up/down : Increase/Decrease nb of consecutive same value for a line.
 c : Clear all lines.
 k : Draw Kijun Sen lines.
