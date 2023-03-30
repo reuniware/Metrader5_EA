@@ -39,3 +39,12 @@ How does it identify the lines. Eg for Kijun Sen lines :
 
 <br/>
 
+# The n consecutive identical values parameter
+
+If we find n consecutive identical values for Kijun Sen then we have a line.
+
+This is the "minConsecutiveValues" parameter.
+
+You can modify this value with the UP or DOWN arrow keys on your keyboard.
+
+
