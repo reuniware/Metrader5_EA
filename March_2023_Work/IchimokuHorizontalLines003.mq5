@@ -161,9 +161,17 @@ void OnChartEvent(const int id,
         {
          case KEY_NUMLOCK_LEFT:
             Print("Pressed KEY_NUMLOCK_LEFT");
+            // Decrease by 100 the number of bars to search for Kijun flat lines
             maxBars-=100;
             if(maxBars < 0)
                maxBars = 0;
+            Comment("maxBars=" + string(maxBars));
+            IchimokuHorizontalLines();
+            break;
+         case KEY_NUMLOCK_RIGHT:
+            Print("Pressed KEY_NUMLOCK_RIGHT");
+            // Increase by 100 the number of bars to search for Kijun flat lines
+            maxBars+=100;
             Comment("maxBars=" + string(maxBars));
             IchimokuHorizontalLines();
             break;
@@ -172,27 +180,23 @@ void OnChartEvent(const int id,
             break;
          case KEY_NUMLOCK_UP:
             Print("Pressed KEY_NUMLOCK_UP");
+            // Increase by 1 the number of bars to search for Kijun flat lines
             maxBars++;
+            Comment("maxBars=" + string(maxBars));
+            IchimokuHorizontalLines();
+            break;
+         case KEY_NUMLOCK_DOWN:
+            Print("Pressed KEY_NUMLOCK_DOWN");
+            // Decrease by 1 the number of bars to search for Kijun flat lines
+            maxBars--;
             Comment("maxBars=" + string(maxBars));
             IchimokuHorizontalLines();
             break;
          case KEY_UP:
             //Print("Pressed KEY_UP");
             break;
-         case KEY_NUMLOCK_RIGHT:
-            Print("Pressed KEY_NUMLOCK_RIGHT");
-            maxBars+=100;
-            Comment("maxBars=" + string(maxBars));
-            IchimokuHorizontalLines();
-            break;
          case KEY_RIGHT:
             //Print("Pressed KEY_RIGHT");
-            break;
-         case KEY_NUMLOCK_DOWN:
-            Print("Pressed KEY_NUMLOCK_DOWN");
-            maxBars--;
-            Comment("maxBars=" + string(maxBars));
-            IchimokuHorizontalLines();
             break;
          case KEY_DOWN:
             //Print("Pressed KEY_DOWN");
@@ -217,11 +221,13 @@ void OnChartEvent(const int id,
 
             if(lparam == 33)
               {
+              // Page Up key : Increase the minimum number of consecutive same value needed for identifying a flat (of kijun, tenkan etc...)
                minConsecutiveValues++;
                IchimokuHorizontalLines();
               }
             if(lparam == 34)
               {
+              // Page Down key : Decrease the minimum number of consecutive same value needed for identifying a flat (of kijun, tenkan etc...)
                minConsecutiveValues--;
                if(minConsecutiveValues < 0)
                   minConsecutiveValues = 0;
