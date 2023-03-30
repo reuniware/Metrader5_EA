@@ -47,7 +47,7 @@ If you are an Ichimoku trader then it will help you identify key levels to trade
 
 If you are an Ichimoku specialist it will help you identify what key levels in the past still have an impact on the current price of an asset.
 
-# Some tips.
+# Some tips
 
 You can draw some lines on an upper timeframe (eg. 1W) and then switch to a lower timeframe, and then you will see the 1W levels on the lower timeframe.
 
