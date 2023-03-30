@@ -95,7 +95,7 @@ void IchimokuHorizontalLines()
    numCopied = CopyRates(Symbol(), PERIOD_CURRENT, 0, maxBars, mql_rates);
    if(numCopied == maxBars)
      {
-      Comment("maxaBars = " + string(maxBars) + " price close 0 = " + string(mql_rates[0].close) + " " + string(mql_rates[0].time) + " Max Date = " + string(mql_rates[maxBars-1].time) + " Min Consecutive Kijuns = " + string(minConsecutiveValues));
+      Comment("maxBars = " + string(maxBars) + " price close 0 = " + string(mql_rates[0].close) + " " + string(mql_rates[0].time) + " Max Date = " + string(mql_rates[maxBars-1].time) + " Min Consecutive Kijuns = " + string(minConsecutiveValues));
      }
 
    cid=ChartID();
@@ -152,47 +152,50 @@ void OnChartEvent(const int id,
                   const string &sparam)
   {
 
+   short sym;
+   string letterPressed;
+
    if(id==CHARTEVENT_KEYDOWN)
      {
       switch((int)lparam)
         {
          case KEY_NUMLOCK_LEFT:
             Print("Pressed KEY_NUMLOCK_LEFT");
-            break;
-         case KEY_LEFT:
-            //Print("Pressed KEY_LEFT");
             maxBars-=100;
             if(maxBars < 0)
                maxBars = 0;
             Comment("maxBars=" + string(maxBars));
             IchimokuHorizontalLines();
             break;
+         case KEY_LEFT:
+            //Print("Pressed KEY_LEFT");
+            break;
          case KEY_NUMLOCK_UP:
             Print("Pressed KEY_NUMLOCK_UP");
-            break;
-         case KEY_UP:
-            //Print("Pressed KEY_UP");
             maxBars++;
             Comment("maxBars=" + string(maxBars));
             IchimokuHorizontalLines();
             break;
+         case KEY_UP:
+            //Print("Pressed KEY_UP");
+            break;
          case KEY_NUMLOCK_RIGHT:
             Print("Pressed KEY_NUMLOCK_RIGHT");
-            break;
-         case KEY_RIGHT:
-            //Print("Pressed KEY_RIGHT");
             maxBars+=100;
             Comment("maxBars=" + string(maxBars));
             IchimokuHorizontalLines();
             break;
+         case KEY_RIGHT:
+            //Print("Pressed KEY_RIGHT");
+            break;
          case KEY_NUMLOCK_DOWN:
             Print("Pressed KEY_NUMLOCK_DOWN");
-            break;
-         case KEY_DOWN:
-            //Print("Pressed KEY_DOWN");
             maxBars--;
             Comment("maxBars=" + string(maxBars));
             IchimokuHorizontalLines();
+            break;
+         case KEY_DOWN:
+            //Print("Pressed KEY_DOWN");
             break;
          case KEY_NUMPAD_5:
             Print("Pressed KEY_NUMPAD_5");
@@ -203,6 +206,15 @@ void OnChartEvent(const int id,
          default:
             Print("Pressed unlisted key " + lparam);
             Comment("Pressed unlisted key " + lparam);
+
+            sym = TranslateKey((int)lparam);
+            letterPressed = ShortToString(sym);
+            if(letterPressed == "k")
+              {
+
+               break;
+              }
+
             if(lparam == 33)
               {
                minConsecutiveValues++;
