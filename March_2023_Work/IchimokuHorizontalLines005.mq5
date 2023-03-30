@@ -334,13 +334,15 @@ void process(char sIchimokuLineToProcess)
                string strPeriod = EnumToString(Period());
                StringReplace(strPeriod, "PERIOD_", "");
                //printf(strPeriod);
+               
+               string objectName = prefix + "_" + strPeriod + "_" + string(i) + "_" + string(previousValue) + "_" + mql_rates[i].time;
 
                //printf("Will draw a line at " + string(previousValue));
-               bool res = ObjectCreate(cid, prefix + strPeriod + string(i), OBJ_HLINE, 0, 0, previousValue);
+               bool res = ObjectCreate(cid, objectName, OBJ_HLINE, 0, 0, previousValue);
                if(res)
                  {
-                  ObjectSetInteger(0, prefix + strPeriod + i, OBJPROP_COLOR, clrGray);
-                  ObjectSetInteger(0, prefix + strPeriod + i, OBJPROP_STYLE, STYLE_DOT);
+                  ObjectSetInteger(0, objectName, OBJPROP_COLOR, clrGray);
+                  ObjectSetInteger(0, objectName, OBJPROP_STYLE, STYLE_DOT);
                   //ObjectSetInteger(0, prefix + strPeriod + i, OBJPROP_BACK, true); // background object
                  }
               }
