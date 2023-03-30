@@ -51,5 +51,5 @@ If you are an Ichimoku specialist it will help you identify what key levels in t
 
 You can ask for lines on an upper timeframe (eg. 1W) and then switch to a lower timeframe, and then you will see the 1W levels on the lower timeframe.
 
-When you ask for lines, then just after use the up arrow to filter them.
+When you ask for lines, then just after use the up arrow to filter them. That will increase the "n consecutive identical values" parameter.
 
