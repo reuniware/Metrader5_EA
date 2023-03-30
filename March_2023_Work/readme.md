@@ -35,7 +35,7 @@ Available commands (click on the chart before using them) :
 
 # The n consecutive identical values parameter
 
-If we find n consecutive identical values for Kijun Sen then we have a line.
+If we find n consecutive identical values for Kijun Sen (or Tenkan Sen or SSB or SSA) then we have a line.
 
 This is the "minConsecutiveValues" parameter.
 
