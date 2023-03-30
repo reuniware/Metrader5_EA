@@ -75,11 +75,11 @@ color ExtClr[140]=
 //|                                                                  |
 //+------------------------------------------------------------------+
 int minConsecutiveKijuns=2; // Number of identical consecutive kijun values that will make a line drawn
-input bool showTenkanLines = false;
+//input bool showTenkanLines = false;
 input bool showKijunLines = true;
-input bool showSSBLines = false;
+//input bool showSSBLines = false;
 
-int maxBars=26*8;
+int maxBars=26*8, numCopied;
 
 long cid;
 
@@ -88,13 +88,19 @@ long cid;
 //+------------------------------------------------------------------+
 void IchimokuHorizontalLines()
   {
-   if(CopyRates(Symbol(), PERIOD_CURRENT, 0, maxBars, mql_rates)>0)
+   numCopied = 0;
+   numCopied = CopyRates(Symbol(), PERIOD_CURRENT, 0, maxBars, mql_rates);
+   if (numCopied == maxBars) {
+      Comment(" price close 0 = " + string(mql_rates[0].close) + " " + string(mql_rates[0].time) + " Max Date = " + string(mql_rates[maxBars-1].time) + " Min Consecutive Kijuns = " + string(minConsecutiveKijuns));
+   }
+   
+   /*if(CopyRates(Symbol(), PERIOD_CURRENT, 0, maxBars, mql_rates)>0)
      {
-      Comment("price close 0 = " + string(mql_rates[0].close) + " " + string(mql_rates[0].time) + " Max Date = " + string(mql_rates[maxBars-1].time) + " Min Consecutive Kijuns = " + string(minConsecutiveKijuns));
+      else Comment("price close 0 = " + string(mql_rates[0].close) + " " + string(mql_rates[0].time) + " Max Date = " + string(mql_rates[maxBars-1].time) + " Min Consecutive Kijuns = " + string(minConsecutiveKijuns));
      }
    else
-      Print("CopyRates(Symbol(), PERIOD_CURRENT,1, 10, mql_rates). Error ", GetLastError());
-
+      Print("CopyRates(Symbol(), PERIOD_CURRENT,1, 10, mql_rates). Error ", GetLastError());*/
+      
    cid=ChartID();
    ObjectsDeleteAll(cid);
 
