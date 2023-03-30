@@ -49,5 +49,5 @@ If you are an Ichimoku specialist it will help you identify what key levels in t
 
 # Some tips
 
-You can draw some lines on an upper timeframe (eg. 1W) and then switch to a lower timeframe, and then you will see the 1W levels on the lower timeframe.
+You can ask for lines on an upper timeframe (eg. 1W) and then switch to a lower timeframe, and then you will see the 1W levels on the lower timeframe.
 
