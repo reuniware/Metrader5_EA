@@ -11,7 +11,7 @@ It can display all horizontal lines that corresponds to :
 
 The first time you launch this EA it will display Kijun Sen horinzontal lines.
 
-
+<br/>
 
 Available commands (click on the chart before using them) :
 
