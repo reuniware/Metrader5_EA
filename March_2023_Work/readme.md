@@ -1,4 +1,4 @@
-<!-- # IchimokuHorizontalLines005.mq5 (source code) / IchimokuHorizontalLines005.ex5 (compiled)
+# IchimokuHorizontalLines005.mq5 (source code) / IchimokuHorizontalLines005.ex5 (compiled)
 
 This Expert Advisor can be run on Metatrader 5.
 
