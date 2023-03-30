@@ -13,7 +13,7 @@ It can display all horizontal lines that corresponds to :
 
 <br/>
 
-The first time you launch this EA it will display Kijun Sen horinzontal lines.
+As soon as you launch this EA (by attaching it to a chart) it will display Kijun Sen horinzontal lines.
 
 <br/>
 
