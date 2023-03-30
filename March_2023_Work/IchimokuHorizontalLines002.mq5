@@ -31,11 +31,6 @@ void OnTick()
 //---
 
   }
-//+------------------------------------------------------------------+
-input int minNumberOfSameConsecutiveValuesNeeded_KS=5;
-input int minNumberOfSameConsecutiveValuesNeeded_TS=5;
-input int minNumberOfSameConsecutiveValuesNeeded_SSB=5;
-//+------------------------------------------------------------------+
 //|                                                                  |
 //+------------------------------------------------------------------+
 color ExtClr[140]=
@@ -62,11 +57,12 @@ color ExtClr[140]=
 //+------------------------------------------------------------------+
 //|                                                                  |
 //+------------------------------------------------------------------+
+input int minConsecutiveKijuns=10; // Number of identical consecutive kijun values that will make a line drawn
 input bool showTenkanLines = false;
 input bool showKijunLines = true;
 input bool showSSBLines = false;
 
-int max=26*8;
+int maxBars=26*8;
 
 //+------------------------------------------------------------------+
 //|                                                                  |
@@ -86,7 +82,7 @@ void IchimokuHorizontalLines()
    int kijun_sen_param = 26;              // period of Kijun-sen
    int senkou_span_b_param = 52;          // period of Senkou Span B
    int handleIchimoku=INVALID_HANDLE;
-   //int max;
+//int max;
    int nbt=-1,nbk=-1,nbssa=-1,nbssb=-1,nbc=-1;
    int numO=-1,numH=-1,numL=-1,numC=-1;
 
@@ -100,7 +96,7 @@ void IchimokuHorizontalLines()
 //handleIchimoku=iIchimoku(Symbol(),PERIOD_D1,tenkan_sen_param,kijun_sen_param,senkou_span_b_param);
 
    int start=0; // bar index
-   int count=max; // number of bars
+   int count=maxBars; // number of bars
    datetime tm[]; // array storing the returned bar time
    ArraySetAsSeries(tm,true);
    CopyTime(Symbol(),Period(),start,count,tm);
@@ -110,11 +106,11 @@ void IchimokuHorizontalLines()
    nbssa=-1;
    nbssb=-1;
    nbc=-1;
-   nbt = CopyBuffer(handleIchimoku, TENKANSEN_LINE, 0, max, tenkan_sen_buffer);
-   nbk = CopyBuffer(handleIchimoku, KIJUNSEN_LINE, 0, max, kijun_sen_buffer);
-   nbssa = CopyBuffer(handleIchimoku, SENKOUSPANA_LINE, 0, max, senkou_span_a_buffer);
-   nbssb = CopyBuffer(handleIchimoku, SENKOUSPANB_LINE, 0, max, senkou_span_b_buffer);
-   nbc= CopyBuffer(handleIchimoku,CHIKOUSPAN_LINE,0,max,chikou_span_buffer);
+   nbt = CopyBuffer(handleIchimoku, TENKANSEN_LINE, 0, maxBars, tenkan_sen_buffer);
+   nbk = CopyBuffer(handleIchimoku, KIJUNSEN_LINE, 0, maxBars, kijun_sen_buffer);
+   nbssa = CopyBuffer(handleIchimoku, SENKOUSPANA_LINE, 0, maxBars, senkou_span_a_buffer);
+   nbssb = CopyBuffer(handleIchimoku, SENKOUSPANB_LINE, 0, maxBars, senkou_span_b_buffer);
+   nbc= CopyBuffer(handleIchimoku,CHIKOUSPAN_LINE,0,maxBars,chikou_span_buffer);
 
    double previousKijun = 0;
    double currentKijun = 0;
@@ -135,7 +131,7 @@ void IchimokuHorizontalLines()
            {
             if(currentKijun != previousKijun)
               {
-               if(nbConsecutiveSameKijun>=minNumberOfSameConsecutiveValuesNeeded_KS)
+               if(nbConsecutiveSameKijun>=minConsecutiveKijuns)
                  {
                   printf("Will draw a line at " + string(previousKijun));
                   if(!ObjectCreate(cid,"kijun"+i,OBJ_HLINE,0,0,NormalizeDouble(previousKijun, _Digits)) || GetLastError()!=0)
@@ -198,9 +194,10 @@ void OnChartEvent(const int id,
             break;
          case KEY_LEFT:
             //Print("Pressed KEY_LEFT");
-            max-=100;
-            if (max < 0) max = 0;
-            Comment("max=" + string(max));
+            maxBars-=100;
+            if(maxBars < 0)
+               maxBars = 0;
+            Comment("maxBars=" + string(maxBars));
             IchimokuHorizontalLines();
             break;
          case KEY_NUMLOCK_UP:
@@ -208,8 +205,8 @@ void OnChartEvent(const int id,
             break;
          case KEY_UP:
             //Print("Pressed KEY_UP");
-            max++;
-            Comment("max=" + string(max));
+            maxBars++;
+            Comment("maxBars=" + string(maxBars));
             IchimokuHorizontalLines();
             break;
          case KEY_NUMLOCK_RIGHT:
@@ -217,8 +214,8 @@ void OnChartEvent(const int id,
             break;
          case KEY_RIGHT:
             //Print("Pressed KEY_RIGHT");
-            max+=100;
-            Comment("max=" + string(max));
+            maxBars+=100;
+            Comment("maxBars=" + string(maxBars));
             IchimokuHorizontalLines();
             break;
          case KEY_NUMLOCK_DOWN:
@@ -226,8 +223,8 @@ void OnChartEvent(const int id,
             break;
          case KEY_DOWN:
             //Print("Pressed KEY_DOWN");
-            max--;
-            Comment("max=" + string(max));
+            maxBars--;
+            Comment("maxBars=" + string(maxBars));
             IchimokuHorizontalLines();
             break;
          case KEY_NUMPAD_5:
