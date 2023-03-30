@@ -35,8 +35,6 @@ Available commands (click on the chart before using them) :
 
 <br/>
 
-How does it identify the lines. Eg for Kijun Sen lines :
-
 # The n consecutive identical values parameter
 
 If we find n consecutive identical values for Kijun Sen then we have a line.
