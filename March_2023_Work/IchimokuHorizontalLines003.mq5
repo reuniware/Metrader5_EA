@@ -95,7 +95,7 @@ void IchimokuHorizontalLines()
    numCopied = CopyRates(Symbol(), PERIOD_CURRENT, 0, maxBars, mql_rates);
    if(numCopied == maxBars)
      {
-      Comment(" price close 0 = " + string(mql_rates[0].close) + " " + string(mql_rates[0].time) + " Max Date = " + string(mql_rates[maxBars-1].time) + " Min Consecutive Kijuns = " + string(minConsecutiveValues));
+      Comment("maxaBars = " + string(maxBars) + " price close 0 = " + string(mql_rates[0].close) + " " + string(mql_rates[0].time) + " Max Date = " + string(mql_rates[maxBars-1].time) + " Min Consecutive Kijuns = " + string(minConsecutiveValues));
      }
 
    cid=ChartID();
