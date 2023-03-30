@@ -98,13 +98,6 @@ void IchimokuHorizontalLines()
       Comment(" price close 0 = " + string(mql_rates[0].close) + " " + string(mql_rates[0].time) + " Max Date = " + string(mql_rates[maxBars-1].time) + " Min Consecutive Kijuns = " + string(minConsecutiveValues));
      }
 
-   /*if(CopyRates(Symbol(), PERIOD_CURRENT, 0, maxBars, mql_rates)>0)
-     {
-      else Comment("price close 0 = " + string(mql_rates[0].close) + " " + string(mql_rates[0].time) + " Max Date = " + string(mql_rates[maxBars-1].time) + " Min Consecutive Kijuns = " + string(minConsecutiveValues));
-     }
-   else
-      Print("CopyRates(Symbol(), PERIOD_CURRENT,1, 10, mql_rates). Error ", GetLastError());*/
-
    cid=ChartID();
    ObjectsDeleteAll(cid);
 
@@ -112,16 +105,11 @@ void IchimokuHorizontalLines()
    int kijun_sen_param = 26;              // period of Kijun-sen
    int senkou_span_b_param = 52;          // period of Senkou Span B
    int handleIchimoku=INVALID_HANDLE;
-//int max;
 
    handleIchimoku=iIchimoku(Symbol(),Period(),tenkan_sen_param,kijun_sen_param,senkou_span_b_param);
-//handleIchimoku=iIchimoku(Symbol(),PERIOD_D1,tenkan_sen_param,kijun_sen_param,senkou_span_b_param);
 
    int start=0; // bar index
    int count=maxBars; // number of bars
-   datetime tm[]; // array storing the returned bar time
-   ArraySetAsSeries(tm,true);
-   CopyTime(Symbol(),Period(),start,count,tm);
 
    nbt=-1;
    nbk=-1;
@@ -134,12 +122,8 @@ void IchimokuHorizontalLines()
    nbssb = CopyBuffer(handleIchimoku, SENKOUSPANB_LINE, 0, maxBars, senkou_span_b_buffer);
    nbc= CopyBuffer(handleIchimoku,CHIKOUSPAN_LINE,0,maxBars,chikou_span_buffer);
 
-
    if(showKijunLines)
       process('k');
-
-
-   ArrayFree(tm);
 
    ArrayFree(tenkan_sen_buffer);
    ArrayFree(kijun_sen_buffer);
