@@ -9,7 +9,9 @@
 #property copyright "Copyright 2023, InvestDataSystems"
 #property link      "https://tradingbot.wixsite.com/robots-de-trading"
 #property link      "https://www.botmonster.fr"
+#property link      "mailto:investdatasystems@yahoo.com"
 #property version   "1.00"
+
 //+------------------------------------------------------------------+
 //| Expert initialization function                                   |
 //+------------------------------------------------------------------+
@@ -46,19 +48,14 @@ int OnInit()
 //+------------------------------------------------------------------+
 void OnDeinit(const int reason)
   {
-//---
-
   }
 //+------------------------------------------------------------------+
 //| Expert tick function                                             |
 //+------------------------------------------------------------------+
 void OnTick()
   {
-//---
-
   }
-//|                                                                  |
-//+------------------------------------------------------------------+
+
 color ExtClr[140]=
   {
    clrAliceBlue,clrAntiqueWhite,clrAqua,clrAquamarine,clrAzure,clrBeige,clrBisque,clrBlack,clrBlanchedAlmond,
@@ -157,6 +154,7 @@ void IchimokuHorizontalLines()
 
   }
 //+------------------------------------------------------------------+
+
 
 #define KEY_NUMPAD_5       12
 #define KEY_LEFT           37
