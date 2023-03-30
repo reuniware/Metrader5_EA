@@ -194,12 +194,20 @@ void OnChartEvent(const int id,
             break;
          case KEY_UP:
             //Print("Pressed KEY_UP");
-            break;
-         case KEY_RIGHT:
-            //Print("Pressed KEY_RIGHT");
+            // Up key : Increase the minimum number of consecutive same value needed for identifying a flat (of kijun, tenkan etc...)
+            minConsecutiveValues++;
+            IchimokuHorizontalLines();
             break;
          case KEY_DOWN:
             //Print("Pressed KEY_DOWN");
+            // Down key : Decrease the minimum number of consecutive same value needed for identifying a flat (of kijun, tenkan etc...)
+            minConsecutiveValues--;
+            if(minConsecutiveValues < 0)
+               minConsecutiveValues = 0;
+            IchimokuHorizontalLines();
+            break;
+         case KEY_RIGHT:
+            //Print("Pressed KEY_RIGHT");
             break;
          case KEY_NUMPAD_5:
             Print("Pressed KEY_NUMPAD_5");
@@ -221,17 +229,9 @@ void OnChartEvent(const int id,
 
             if(lparam == 33)
               {
-              // Page Up key : Increase the minimum number of consecutive same value needed for identifying a flat (of kijun, tenkan etc...)
-               minConsecutiveValues++;
-               IchimokuHorizontalLines();
               }
             if(lparam == 34)
               {
-              // Page Down key : Decrease the minimum number of consecutive same value needed for identifying a flat (of kijun, tenkan etc...)
-               minConsecutiveValues--;
-               if(minConsecutiveValues < 0)
-                  minConsecutiveValues = 0;
-               IchimokuHorizontalLines();
               }
         }
      }
