@@ -41,4 +41,7 @@ This is the "minConsecutiveValues" parameter.
 
 You can modify this value with the UP or DOWN arrow keys on your keyboard.
 
+# Who can benefit from this EA ?
+
+If you are an Ichimoku hacker then it will help you identify key levels to trade.
 
