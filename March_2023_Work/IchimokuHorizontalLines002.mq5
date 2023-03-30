@@ -57,7 +57,7 @@ color ExtClr[140]=
 //+------------------------------------------------------------------+
 //|                                                                  |
 //+------------------------------------------------------------------+
-input int minConsecutiveKijuns=10; // Number of identical consecutive kijun values that will make a line drawn
+input int minConsecutiveKijuns=2; // Number of identical consecutive kijun values that will make a line drawn
 input bool showTenkanLines = false;
 input bool showKijunLines = true;
 input bool showSSBLines = false;
@@ -134,15 +134,12 @@ void IchimokuHorizontalLines()
                if(nbConsecutiveSameKijun>=minConsecutiveKijuns)
                  {
                   printf("Will draw a line at " + string(previousKijun));
-                  if(!ObjectCreate(cid,"kijun"+i,OBJ_HLINE,0,0,NormalizeDouble(previousKijun, _Digits)) || GetLastError()!=0)
-                     Print("Error creating object: ",GetLastError());
-                  else
+                  bool res = ObjectCreate(cid, "kijun" + string(i), OBJ_HLINE, 0, 0, previousKijun);
+                  if(res)
                     {
-                     ObjectSetInteger(0,"kijun"+i,OBJPROP_COLOR,clrDarkTurquoise);
-                     ObjectSetInteger(0,"kijun"+i,OBJPROP_STYLE,STYLE_DASHDOT);
-                     ChartRedraw(cid);
+                     ObjectSetInteger(0, "kijun"+i, OBJPROP_COLOR, clrDarkTurquoise);
+                     ObjectSetInteger(0, "kijun"+i, OBJPROP_STYLE, STYLE_DOT);
                     }
-
                  }
                printf("Current Kijun has changed, now = " + string(currentKijun));
                nbConsecutiveSameKijun = 0;
@@ -234,7 +231,8 @@ void OnChartEvent(const int id,
             Print("Pressed KEY_NUMLOCK_5");
             break;
          default:
-            Print("Pressed unlisted key");
+            Print("Pressed unlisted key " + lparam);
+            Comment("Pressed unlisted key " + lparam);
         }
      }
   }
