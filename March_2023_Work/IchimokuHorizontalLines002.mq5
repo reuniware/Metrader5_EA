@@ -265,6 +265,7 @@ void OnChartEvent(const int id,
             if(lparam == 34)
               {
                minConsecutiveKijuns--;
+               if (minConsecutiveKijuns < 0) minConsecutiveKijuns = 0;
                IchimokuHorizontalLines();
               }
         }
