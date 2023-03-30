@@ -9,8 +9,25 @@
 //+------------------------------------------------------------------+
 //| Expert initialization function                                   |
 //+------------------------------------------------------------------+
+MqlRates mql_rates[];
+double tenkan_sen_buffer[];
+double kijun_sen_buffer[];
+double senkou_span_a_buffer[];
+double senkou_span_b_buffer[];
+double chikou_span_buffer[];
+
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
 int OnInit()
   {
+   ArraySetAsSeries(mql_rates, true);
+   ArraySetAsSeries(tenkan_sen_buffer,true);
+   ArraySetAsSeries(kijun_sen_buffer,true);
+   ArraySetAsSeries(senkou_span_a_buffer,true);
+   ArraySetAsSeries(senkou_span_b_buffer,true);
+   ArraySetAsSeries(chikou_span_buffer,true);
+
    IchimokuHorizontalLines();
 
    return(INIT_SUCCEEDED);
@@ -57,26 +74,29 @@ color ExtClr[140]=
 //+------------------------------------------------------------------+
 //|                                                                  |
 //+------------------------------------------------------------------+
-input int minConsecutiveKijuns=2; // Number of identical consecutive kijun values that will make a line drawn
+int minConsecutiveKijuns=2; // Number of identical consecutive kijun values that will make a line drawn
 input bool showTenkanLines = false;
 input bool showKijunLines = true;
 input bool showSSBLines = false;
 
 int maxBars=26*8;
 
+long cid;
+
 //+------------------------------------------------------------------+
 //|                                                                  |
 //+------------------------------------------------------------------+
 void IchimokuHorizontalLines()
   {
-   long cid=ChartID();
-   ObjectsDeleteAll(cid);
+   if(CopyRates(Symbol(), PERIOD_CURRENT, 0, maxBars, mql_rates)>0)
+     {
+      Comment("price close 0 = " + string(mql_rates[0].close) + " " + string(mql_rates[0].time) + " Max Date = " + string(mql_rates[maxBars-1].time) + " Min Consecutive Kijuns = " + string(minConsecutiveKijuns));
+     }
+   else
+      Print("CopyRates(Symbol(), PERIOD_CURRENT,1, 10, mql_rates). Error ", GetLastError());
 
-   double tenkan_sen_buffer[];
-   double kijun_sen_buffer[];
-   double senkou_span_a_buffer[];
-   double senkou_span_b_buffer[];
-   double chikou_span_buffer[];
+   cid=ChartID();
+   ObjectsDeleteAll(cid);
 
    int tenkan_sen_param = 9;              // period of Tenkan-sen
    int kijun_sen_param = 26;              // period of Kijun-sen
@@ -86,11 +106,6 @@ void IchimokuHorizontalLines()
    int nbt=-1,nbk=-1,nbssa=-1,nbssb=-1,nbc=-1;
    int numO=-1,numH=-1,numL=-1,numC=-1;
 
-   ArraySetAsSeries(tenkan_sen_buffer,true);
-   ArraySetAsSeries(kijun_sen_buffer,true);
-   ArraySetAsSeries(senkou_span_a_buffer,true);
-   ArraySetAsSeries(senkou_span_b_buffer,true);
-   ArraySetAsSeries(chikou_span_buffer,true);
 
    handleIchimoku=iIchimoku(Symbol(),Period(),tenkan_sen_param,kijun_sen_param,senkou_span_b_param);
 //handleIchimoku=iIchimoku(Symbol(),PERIOD_D1,tenkan_sen_param,kijun_sen_param,senkou_span_b_param);
@@ -234,7 +249,17 @@ void OnChartEvent(const int id,
             break;
          default:
             Print("Pressed unlisted key " + lparam);
-            Comment("Pressed unlisted key " + lparam);            
+            Comment("Pressed unlisted key " + lparam);
+            if(lparam == 33)
+              {
+               minConsecutiveKijuns++;
+               IchimokuHorizontalLines();
+              }
+            if(lparam == 34)
+              {
+               minConsecutiveKijuns--;
+               IchimokuHorizontalLines();
+              }
         }
      }
   }
