@@ -37,3 +37,5 @@ Available commands (click on the chart before using them) :
 
 How does it identify the lines. Eg for Kijun Sen lines :
 
+<br/>
+
