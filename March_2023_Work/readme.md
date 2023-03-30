@@ -11,6 +11,8 @@ It can display all horizontal lines that corresponds to :
 - Horizontal lines of Senkou Span B since all available history.
 - Horizontal lines of Senkou Span A since all available history.
 
+<br/>
+
 The first time you launch this EA it will display Kijun Sen horinzontal lines.
 
 <br/>
