@@ -149,6 +149,8 @@ void IchimokuHorizontalLines()
          previousKijun = currentKijun;
         }
       ChartRedraw(cid);
+      ChartNavigate(cid,CHART_END,0);
+
 
      }
 
@@ -232,7 +234,7 @@ void OnChartEvent(const int id,
             break;
          default:
             Print("Pressed unlisted key " + lparam);
-            Comment("Pressed unlisted key " + lparam);
+            Comment("Pressed unlisted key " + lparam);            
         }
      }
   }
