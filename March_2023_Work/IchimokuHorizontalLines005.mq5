@@ -265,10 +265,12 @@ void OnChartEvent(const int id,
               }
             if(letterPressed == "h")
               {
-               string msg = "r : Reset lines for current chart and timeframe.\r\n";
-               msg += "up/down : Increase/Decrease nb of consecutive same value for a line.\r\n";
-               msg += "c : Clear all lines.\r\n";
-               MessageBox(msg);
+               string msg = "[r] : Reset lines for current chart and timeframe.\r\n";
+               msg += "[up]/[down] : Increase/Decrease nb of consecutive same value for a line.\r\n";
+               msg += "[c] : Clear all lines.\r\n";
+               msg += "[k] : Draw Kijun Sen lines.\r\n";
+               msg += "[t] : Draw Tenkan Sen lines.\r\n";
+               MessageBox(msg, "HELP");
                break;
               }
 
