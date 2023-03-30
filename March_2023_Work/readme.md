@@ -33,3 +33,7 @@ Available commands (click on the chart before using them) :
 
 [a] : Draw Senkou Span A lines.
 
+<br/>
+
+How does it identify the lines. Eg for Kijun Sen lines :
+
