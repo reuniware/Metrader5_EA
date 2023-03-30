@@ -8,7 +8,7 @@ You must add the "Ichimoku Kinko Hyo" indicator to your chart for this EA to wor
 
 It can display all horizontal lines that correspond to :
 
-- Horizontal lines of Kijun Sen since all available history.
+- Horizontal lines of Kijun Sen since all available history (by default).
 - Horizontal lines of Tenkan Sen since all available history.
 - Horizontal lines of Senkou Span B since all available history.
 - Horizontal lines of Senkou Span A since all available history.
