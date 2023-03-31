@@ -36,6 +36,7 @@ int OnInit()
    string exportDir = TerminalInfoString(TERMINAL_COMMONDATA_PATH);
    printf("You will find the report in the following folder :");
    printf(exportDir + "\\Files\\");
+   //FolderClean("Files", 0);
    filename = getTimestamp() + "_ichimoku.txt";
    printf("Report filename is : " + filename);
    file_handle = FileOpen(filename, FILE_WRITE|FILE_ANSI|FILE_COMMON);
@@ -175,7 +176,13 @@ void IchimokuHorizontalLines()
    if(showSsaLines)
       process('a');
 
-   for(double p_ = 0; p_<2; p_+=0.05)
+   /*for(int m=0; m<numCopied; m++)
+     {
+      log(string(kijun_sen_buffer[m]));
+     }*/
+
+
+   /*for(double p_ = 0; p_<2; p_+=0.05)
      {
       double p = NormalizeDouble(p_, 2);
       int nbFound = 0;
@@ -193,7 +200,9 @@ void IchimokuHorizontalLines()
          //printf(string(p) + " found " + string(nbFound) + " times.");
          log(string(p) + " found " + string(nbFound) + " times.");
         }
-     }
+     }*/
+
+
 
    ArrayFree(tenkan_sen_buffer);
    ArrayFree(kijun_sen_buffer);
