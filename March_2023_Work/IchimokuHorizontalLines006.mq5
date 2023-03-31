@@ -25,6 +25,7 @@ double senkou_span_a_buffer[];
 double senkou_span_b_buffer[];
 double chikou_span_buffer[];
 
+bool enableLogs = false;
 int file_handle = INVALID_HANDLE;
 string filename;
 //+------------------------------------------------------------------+
@@ -33,21 +34,24 @@ string filename;
 bool firstInitDone = false;
 int OnInit()
   {
-   string exportDir = TerminalInfoString(TERMINAL_COMMONDATA_PATH);
-   printf("You will find the report in the following folder :");
-   printf(exportDir + "\\Files\\");
-   //FolderClean("Files", 0);
-   filename = getTimestamp() + "_ichimoku.txt";
-   printf("Report filename is : " + filename);
-   file_handle = FileOpen(filename, FILE_WRITE|FILE_ANSI|FILE_COMMON);
-   if(file_handle > 0)
+   if(enableLogs)
      {
-      printf("File created ok");
-      FileClose(file_handle);
-     }
-   else
-     {
-      printf("Error file : " + GetLastError());
+      string exportDir = TerminalInfoString(TERMINAL_COMMONDATA_PATH);
+      printf("You will find the report in the following folder :");
+      printf(exportDir + "\\Files\\");
+      //FolderClean("Files", 0);
+      filename = getTimestamp() + "_ichimoku.txt";
+      printf("Report filename is : " + filename);
+      file_handle = FileOpen(filename, FILE_WRITE|FILE_ANSI|FILE_COMMON);
+      if(file_handle > 0)
+        {
+         printf("File created ok");
+         FileClose(file_handle);
+        }
+      else
+        {
+         printf("Error file : " + GetLastError());
+        }
      }
 
    ArraySetAsSeries(mql_rates, true);
@@ -493,6 +497,8 @@ string getTimestamp()
 //+------------------------------------------------------------------+
 void log(string str)
   {
+   if(!enableLogs)
+      return;
    printf(str);
    file_handle = FileOpen(filename, FILE_READ|FILE_WRITE|FILE_ANSI|FILE_COMMON);
    if(file_handle > 0)
