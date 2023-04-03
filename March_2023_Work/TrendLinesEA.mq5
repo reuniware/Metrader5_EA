@@ -8,21 +8,46 @@
 #property version   "1.00"
 
 long cid;
-int OnInit()
-  {
-   cid=ChartID();
-   processPoint1();
-   processPoint2();
-   Comment("Press the UP arrow to change the 2nd point of the trendline.");
-   return(INIT_SUCCEEDED);
-  }
-
 
 MqlRates mql_rates[];
 double maxPrice1=0, maxPrice2=0;
 datetime dtMaxPrice1, dtMaxPrice2;
-const int barsForTrendline = 30;
+int barsForTrendline = 30;
 string arrayDateTimesAndHighs[30];
+
+bool initDone = false;
+
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
+int OnInit()
+  {
+   if(initDone == true)
+     {
+      return(INIT_SUCCEEDED);
+     }
+
+   printf("onInit");
+
+   cid=ChartID();
+
+   maxPrice1 = 0;
+   maxPrice2 = 0;
+   dtMaxPrice1 = NULL;
+   dtMaxPrice2 = NULL;
+   barsForTrendline = 30;
+   ArrayFree(arrayDateTimesAndHighs);
+
+   processPoint1();
+   processPoint2();
+   Comment("Press the UP arrow to change the 2nd point of the trendline.");
+
+   initDone = true;
+
+   return(INIT_SUCCEEDED);
+  }
+
+
 
 //+------------------------------------------------------------------+
 //|                                                                  |
@@ -32,6 +57,8 @@ void processPoint1()
    ObjectsDeleteAll(cid);
 
    ArraySetAsSeries(mql_rates, true);
+
+   ArrayFree(arrayDateTimesAndHighs);
 
    int maxBars = 60*24*10;
    int numCopied = 0;
@@ -50,7 +77,10 @@ void processPoint1()
 
    for(int i=0; i<barsForTrendline; i++)
      {
-      arrayDateTimesAndHighs[i] = string(mql_rates[i].time) + "#" + string(mql_rates[i].high);
+      if(mql_rates[i].time > dtMaxPrice1)
+        {
+         arrayDateTimesAndHighs[i] = string(mql_rates[i].time) + "#" + string(mql_rates[i].high);
+        }
      }
 
   }
@@ -228,11 +258,13 @@ void OnChartEvent(const int id,
               }
             if(letterPressed == "r")
               {
+               initDone = false;
+               OnInit();
                break;
               }
             if(letterPressed == "c")
               {
-               long cid=ChartID();
+               cid=ChartID();
                ObjectsDeleteAll(cid);
               }
             if(letterPressed == "h")
