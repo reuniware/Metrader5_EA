@@ -28,6 +28,12 @@ int OnInit()
      }
 
    printf("onInit");
+   string msg = "Number of bars for finding trendlines = " + string(barsForTrendline);
+   //msg += "r\nUP/DOWN (Numeric keypad) to change the number of bars.";
+   msg += "\r\nPress the UP arrow to change the 2nd point of the trendline.";
+   Comment(msg);
+
+   ArraySetAsSeries(mql_rates, true);
 
    cid=ChartID();
 
@@ -39,7 +45,6 @@ int OnInit()
 
    processPoint1();
    processPoint2();
-   Comment("Press the UP arrow to change the 2nd point of the trendline.");
 
    initDone = true;
 
@@ -54,8 +59,6 @@ int OnInit()
 void processPoint1()
   {
    ObjectsDeleteAll(cid);
-
-   ArraySetAsSeries(mql_rates, true);
 
    ArrayFree(arrayDateTimesAndHighs);
 
@@ -124,12 +127,7 @@ void processPoint2()
    ObjectSetInteger(cid, "trendline1", OBJPROP_RAY_RIGHT, 1);
    ChartRedraw(cid);
 
-//ArrayPrint(arrayDateTimesAndHighs);
-//ArrayRemove(arrayDateTimesAndHighs, 5, 1);
-//ArrayPrint(arrayDateTimesAndHighs);
-
    ArrayFree(mql_rates);
-
   }
 
 //+------------------------------------------------------------------+
@@ -145,8 +143,19 @@ void OnDeinit(const int reason)
 //+------------------------------------------------------------------+
 void OnTick()
   {
-//---
-
+   double trendlinevalue = ObjectGetValueByTime(cid,"trendline1",TimeCurrent());
+   int numCopied = 0;
+   numCopied = CopyRates(Symbol(), PERIOD_CURRENT, 0, 1, mql_rates);
+   //printf(string(numCopied));
+   if(numCopied == 1) {
+      //printf(string(mql_rates[0].close));
+      if (mql_rates[0].open < trendlinevalue && mql_rates[0].close > trendlinevalue) {
+         PlaySound("alert.wav");
+      }
+   }
+   ArrayFree(mql_rates);
+   trendlinevalue = NULL;
+   numCopied = NULL;
   }
 //+------------------------------------------------------------------+
 
