@@ -1,6 +1,6 @@
 //+------------------------------------------------------------------+
 //|                                                 TrendLinesEA.mq5 |
-//|                                  Copyright 2023, MetaQuotes Ltd. |
+//|                        Copyright 2023, InvestDataSystems France. |
 //|                                             https://www.mql5.com |
 //+------------------------------------------------------------------+
 #property copyright "Copyright 2023, MetaQuotes Ltd."
