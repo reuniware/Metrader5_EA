@@ -13,5 +13,5 @@ For now it only draws upper trendlines.
 
 # Tips
 
-If you press the [up arrow] multiple times then there at some time no more trendline could be drawn. In that case, press [r] to reset the trend line at its initial state.
+If you press the [up arrow] multiple times then at some time no more trendline could be drawn. In that case, press [r] to reset the trend line at its initial state.
 
