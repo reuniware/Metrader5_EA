@@ -11,3 +11,7 @@ If like me you are too lazy to draw trendlines in Metatrader 5 then this EA will
 
 For now it only draws upper trendlines.
 
+# Tips
+
+If you press the [up arrow] multiple times then there at some time no more trendline could be drawn. In that case, press [r] to reset the trend line at its initial state.
+
