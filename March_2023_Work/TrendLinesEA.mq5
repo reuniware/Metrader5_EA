@@ -74,8 +74,8 @@ void processPoint1()
         }
      }
 
-   printf("1st point datetime = " + string(dtMaxPrice1));
-   printf("1st point price = " + string(maxPrice1));
+   printf("1st point datetime (dtMaxPrice1) = " + string(dtMaxPrice1));
+   printf("1st point price (maxPrice1) = " + string(maxPrice1));
 
    for(int i=0; i<barsForTrendline; i++)
      {
@@ -116,8 +116,8 @@ void processPoint2()
         }
      }
 
-   printf("2nd point datetime = " + string(dtMaxPrice2));
-   printf("2nd point price = " + string(maxPrice2));
+   printf("2nd point datetime (dtMaxPrice2) = " + string(dtMaxPrice2));
+   printf("2nd point price (maxPrice2) = " + string(maxPrice2));
 
    bool res;
    res = ObjectCreate(cid, "trendline1", OBJ_TREND, 0, dtMaxPrice1, maxPrice1, dtMaxPrice2, maxPrice2);
@@ -193,15 +193,15 @@ void OnChartEvent(const int id,
             break;
          case KEY_UP:
             Print("Pressed KEY_UP");
-            printf("ArraySize1=" + string(ArraySize(arrayDateTimesAndHighs)));
-            ArrayPrint(arrayDateTimesAndHighs);
+            //printf("ArraySize1=" + string(ArraySize(arrayDateTimesAndHighs)));
+            //ArrayPrint(arrayDateTimesAndHighs);
             for(int i=0; i<barsForTrendline; i++)
               {
                string strDateTimeAndHigh = arrayDateTimesAndHighs[i];
                string result[];
 
                int resultat = StringSplit(strDateTimeAndHigh, '#', result);
-               if(resultat > 0)
+               if(resultat > 0 && strDateTimeAndHigh != NULL)
                  {
                   //printf(result[0]);
                   //printf(result[1]);
@@ -214,14 +214,17 @@ void OnChartEvent(const int id,
                      ArrayRemove(arrayDateTimesAndHighs, i, 1);
                      break;
                     }
-                  printf("ArraySize2=" + string(ArraySize(arrayDateTimesAndHighs)));
-                  ArrayPrint(arrayDateTimesAndHighs);
+                  //printf("ArraySize2=" + string(ArraySize(arrayDateTimesAndHighs)));
+                  //ArrayPrint(arrayDateTimesAndHighs);
                   processPoint2();
                  }
                else
                  {
-                  processPoint1();
-                  processPoint2();
+                  /*printf("GetLastError()=" + string(GetLastError()));
+                  if(strDateTimeAndHigh == NULL)
+                     printf("strDateTimeAndHigh=NULL");*/
+                  //processPoint1();
+                  //processPoint2();
                  }
               }
             break;
