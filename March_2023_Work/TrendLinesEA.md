@@ -1,4 +1,4 @@
-# TrendLinesEA.mq5 (source code) / TrendLinesEA.ex (when compiled)
+# TrendLinesEA.mq5 (source code) / TrendLinesEA.ex5 (when compiled)
 
 If like me you are too lazy to draw trendlines in Metatrader 5 then this EA will help you a lot !
 
