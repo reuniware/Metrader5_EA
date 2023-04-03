@@ -12,8 +12,8 @@ long cid;
 MqlRates mql_rates[];
 double maxPrice1=0, maxPrice2=0;
 datetime dtMaxPrice1, dtMaxPrice2;
-int barsForTrendline = 30;
-string arrayDateTimesAndHighs[30];
+int barsForTrendline = 64;
+string arrayDateTimesAndHighs[64];
 
 bool initDone = false;
 
@@ -35,7 +35,6 @@ int OnInit()
    maxPrice2 = 0;
    dtMaxPrice1 = NULL;
    dtMaxPrice2 = NULL;
-   barsForTrendline = 30;
    ArrayFree(arrayDateTimesAndHighs);
 
    processPoint1();
@@ -74,6 +73,9 @@ void processPoint1()
          dtMaxPrice1 = mql_rates[i].time;
         }
      }
+
+   printf("1st point datetime = " + string(dtMaxPrice1));
+   printf("1st point price = " + string(maxPrice1));
 
    for(int i=0; i<barsForTrendline; i++)
      {
