@@ -13,6 +13,7 @@ int OnInit()
    cid=ChartID();
    processPoint1();
    processPoint2();
+   Comment("Press the UP arrow to change the 2nd point of the trendline.");
    return(INIT_SUCCEEDED);
   }
 
