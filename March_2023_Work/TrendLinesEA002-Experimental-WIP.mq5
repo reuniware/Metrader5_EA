@@ -135,17 +135,19 @@ void processPoint2()
                res = ObjectCreate(cid, "trendline1" + string(dt), OBJ_TREND, 0, dtMaxPrice1, maxPrice1, dtMaxPrice2, maxPrice2);
                ObjectSetInteger(cid, "trendline1" + string(dt), OBJPROP_RAY_RIGHT, 1);
                
+               color c = clrGray;
+               
                res = ObjectCreate(cid, "horizontal" + string(dt) + string(mql_rates[i].high), OBJ_HLINE, 0, 0, mql_rates[i].high);
-               res = ObjectSetInteger(cid, "horizontal" + string(dt) + string(mql_rates[i].high), OBJPROP_COLOR, clrBrown);
+               res = ObjectSetInteger(cid, "horizontal" + string(dt) + string(mql_rates[i].high), OBJPROP_COLOR, c);
 
                res = ObjectCreate(cid, "horizontal" + string(dt) + string(mql_rates[i].low), OBJ_HLINE, 0, 0, mql_rates[i].low);
-               res = ObjectSetInteger(cid, "horizontal" + string(dt) + string(mql_rates[i].low), OBJPROP_COLOR, clrBrown);
+               res = ObjectSetInteger(cid, "horizontal" + string(dt) + string(mql_rates[i].low), OBJPROP_COLOR, c);
 
                res = ObjectCreate(cid, "horizontal" + string(dt) + string(mql_rates[i].open), OBJ_HLINE, 0, 0, mql_rates[i].open);
-               res = ObjectSetInteger(cid, "horizontal" + string(dt) + string(mql_rates[i].open), OBJPROP_COLOR, clrBrown);
+               res = ObjectSetInteger(cid, "horizontal" + string(dt) + string(mql_rates[i].open), OBJPROP_COLOR, c);
 
                res = ObjectCreate(cid, "horizontal" + string(dt) + string(mql_rates[i].close), OBJ_HLINE, 0, 0, mql_rates[i].close);
-               res = ObjectSetInteger(cid, "horizontal" + string(dt) + string(mql_rates[i].close), OBJPROP_COLOR, clrBrown);
+               res = ObjectSetInteger(cid, "horizontal" + string(dt) + string(mql_rates[i].close), OBJPROP_COLOR, c);
 
                
                ChartRedraw(cid);
