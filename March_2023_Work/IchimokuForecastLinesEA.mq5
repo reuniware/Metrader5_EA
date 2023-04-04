@@ -82,22 +82,23 @@ void processPoint1()
 
 // Traitements
    double initialCandlestickValue;
-   
+
    double ssa_at_initial = senkou_span_a_buffer[0 + delta];
    double ssb_at_initial = senkou_span_b_buffer[0 + delta];
    printf("SSA at initial candlestick = " + string(ssa_at_initial));
    printf("SSB at initial candlestick = " + string(ssb_at_initial));
-   
+
    double high_initial = mql_rates[0 + delta].high;
    double low_initial = mql_rates[0 + delta].low;
-   
-   if (high_initial > ssa_at_initial && high_initial > ssb_at_initial /*&& MathAbs(high_initial - ssb_at_initial) > MathAbs(low_initial - ssb_at_initial)*/)
+
+   if(high_initial > ssa_at_initial && high_initial > ssb_at_initial /*&& MathAbs(high_initial - ssb_at_initial) > MathAbs(low_initial - ssb_at_initial)*/)
       initialCandlestickValue = high_initial;
-   else if (low_initial < ssa_at_initial && low_initial < ssb_at_initial)
-      initialCandlestickValue = low_initial;
-   
+   else
+      if(low_initial < ssa_at_initial && low_initial < ssb_at_initial)
+         initialCandlestickValue = low_initial;
+
    datetime dtInitialCandlestick = mql_rates[0 + delta].time;
-   
+
 
    double SSBValue, SSAValue, tenkanValue, kijunValue;
    datetime dtSSB, dtSSA;
@@ -130,8 +131,8 @@ void processPoint1()
    res = ObjectCreate(cid, "IFL1", OBJ_TREND, 0, dtInitialCandlestick, initialCandlestickValue, dtSSB, SSBValue);
    res = ObjectCreate(cid, "IFL2", OBJ_TREND, 0, dtInitialCandlestick, initialCandlestickValue, dtSSA, SSAValue);
 
-   //datetime dtNext = mql_rates[0].time + (mql_rates[0].time - mql_rates[1].time);
-   //res = ObjectCreate(cid, "vline", OBJ_VLINE, 0, dtNext, 0);
+//datetime dtNext = mql_rates[0].time + (mql_rates[0].time - mql_rates[1].time);
+//res = ObjectCreate(cid, "vline", OBJ_VLINE, 0, dtNext, 0);
 
 
    ChartRedraw(cid);
@@ -144,6 +145,7 @@ void processPoint1()
 
    IndicatorRelease(handleIchimoku);
 
+   ArrayFree(mql_rates);
   }
 
 
