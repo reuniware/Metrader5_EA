@@ -46,7 +46,8 @@ int nbt=-1, nbk=-1, nbssa=-1, nbssb=-1, nbc=-1;
 //+------------------------------------------------------------------+
 
 int delta = 0;
-
+bool forceUseHigh = false;
+bool forceUseLow = false;
 //+------------------------------------------------------------------+
 //|                                                                  |
 //+------------------------------------------------------------------+
@@ -93,10 +94,20 @@ void processPoint1()
    if(high_initial > ssa_at_initial && high_initial > ssb_at_initial /*&& MathAbs(high_initial - ssb_at_initial) > MathAbs(low_initial - ssb_at_initial)*/)
    {
       useHigh = true;
+      useLow = false;
    }
    if(low_initial < ssa_at_initial && low_initial < ssb_at_initial)
    {
       useLow = true;
+      useHigh = false;
+   }
+   
+   if (forceUseHigh) {
+      useHigh = true;
+      useLow = false;
+   } else if (forceUseLow) {
+      useLow = true;
+      useHigh = false;
    }
 
    if(useHigh)
@@ -235,20 +246,34 @@ void OnChartEvent(const int id,
             //Print("Pressed KEY_LEFT");
             break;
          case KEY_NUMLOCK_UP:
-            Print("Pressed KEY_NUMLOCK_UP");
+            //Print("Pressed KEY_NUMLOCK_UP");
             // Increase by 1 the number of bars to search for Kijun flat lines
+            Comment("forceUseHigh = true");
+            forceUseHigh = true;
+            forceUseLow = false;
+            processPoint1();
             break;
          case KEY_NUMLOCK_DOWN:
-            Print("Pressed KEY_NUMLOCK_DOWN");
+            //Print("Pressed KEY_NUMLOCK_DOWN");
             // Decrease by 1 the number of bars to search for Kijun flat lines
+            Comment("forceUseLow = true");
+            forceUseHigh = false;
+            forceUseLow = true;
+            processPoint1();
             break;
          case KEY_UP:
             //Print("Pressed KEY_UP");
+            Comment("");
+            forceUseHigh = false;
+            forceUseLow = false;
             delta++;
             processPoint1();
             break;
          case KEY_DOWN:
             //Print("Pressed KEY_DOWN");
+            Comment("");
+            forceUseHigh = false;
+            forceUseLow = false;
             delta--;
             if(delta < 0)
                delta = 0;
@@ -258,14 +283,14 @@ void OnChartEvent(const int id,
             //Print("Pressed KEY_RIGHT");
             break;
          case KEY_NUMPAD_5:
-            Print("Pressed KEY_NUMPAD_5");
+            //Print("Pressed KEY_NUMPAD_5");
             break;
          case KEY_NUMLOCK_5:
-            Print("Pressed KEY_NUMLOCK_5");
+            //Print("Pressed KEY_NUMLOCK_5");
             break;
          default:
-            Print("Pressed unlisted key " + lparam);
-            Comment("Pressed unlisted key " + lparam);
+            //Print("Pressed unlisted key " + lparam);
+            //Comment("Pressed unlisted key " + lparam);
             sym = TranslateKey((int)lparam);
             letterPressed = ShortToString(sym);
             if(letterPressed == "k")
