@@ -14,8 +14,17 @@ MqlRates mql_rates[];
 //+------------------------------------------------------------------+
 //|                                                                  |
 //+------------------------------------------------------------------+
+
+bool firstInitDone = false;
+
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
 int OnInit()
   {
+   if(firstInitDone)
+      return(INIT_SUCCEEDED);
+
    ArraySetAsSeries(mql_rates, true);
 
    ArraySetAsSeries(mql_rates, true);
@@ -28,6 +37,8 @@ int OnInit()
    cid=ChartID();
 
    processPoint1();
+
+   firstInitDone = true;
 
    return(INIT_SUCCEEDED);
   }
@@ -58,7 +69,7 @@ void processPoint1()
    int maxBars = 60*24*52*7*52;
    int numCopied = 0;
    numCopied = CopyRates(Symbol(), PERIOD_CURRENT, 0, maxBars, mql_rates);
-   //printf("numCopied=" + string(numCopied));
+//printf("numCopied=" + string(numCopied));
 
    int tenkan_sen_param = 9;              // period of Tenkan-sen
    int kijun_sen_param = 26;              // period of Kijun-sen
@@ -88,27 +99,31 @@ void processPoint1()
 
    double high_initial = mql_rates[0 + delta].high;
    double low_initial = mql_rates[0 + delta].low;
-   
+
    bool useHigh = false, useLow = false;
-   
+
    if(high_initial > ssa_at_initial && high_initial > ssb_at_initial /*&& MathAbs(high_initial - ssb_at_initial) > MathAbs(low_initial - ssb_at_initial)*/)
-   {
+     {
       useHigh = true;
       useLow = false;
-   }
+     }
    if(low_initial < ssa_at_initial && low_initial < ssb_at_initial)
-   {
+     {
       useLow = true;
       useHigh = false;
-   }
-   
-   if (forceUseHigh) {
+     }
+
+   if(forceUseHigh)
+     {
       useHigh = true;
       useLow = false;
-   } else if (forceUseLow) {
-      useLow = true;
-      useHigh = false;
-   }
+     }
+   else
+      if(forceUseLow)
+        {
+         useLow = true;
+         useHigh = false;
+        }
 
    if(useHigh)
       initialCandlestickValue = high_initial;
@@ -125,8 +140,8 @@ void processPoint1()
    kijunValue = kijun_sen_buffer[0 + delta];
    SSAValue = (tenkanValue + kijunValue)/2;
    dtSSA = dtInitialCandlestick + 26*(mql_rates[0].time - mql_rates[1].time);
-   //printf(string(mql_rates[0].time));
-   //printf(string(mql_rates[1].time));
+//printf(string(mql_rates[0].time));
+//printf(string(mql_rates[1].time));
 
    double higherHigh = 0, lowerLow = 0x6FFFFFFF;
    for(int i = 0 + delta; i < 0 + delta + 52 ; i++)
@@ -138,11 +153,11 @@ void processPoint1()
      }
    SSBValue = (higherHigh + lowerLow)/2;
    dtSSB = dtSSA;
-   //printf("dtInitialCandlestick = " + string(dtInitialCandlestick));
-   //printf("dtSSB = dtSSA = " + string(dtSSB));
+//printf("dtInitialCandlestick = " + string(dtInitialCandlestick));
+//printf("dtSSB = dtSSA = " + string(dtSSB));
 
    datetime diff = dtSSB - dtInitialCandlestick;
-   //printf("diff = " + string(diff));
+//printf("diff = " + string(diff));
 
    /*SSBValue = senkou_span_b_buffer[0 + delta];
    dtSSB = mql_rates[0 + delta].time;
@@ -172,10 +187,10 @@ void processPoint1()
    ArrayFree(chikou_span_buffer);
 
    IndicatorRelease(handleIchimoku);
-   
-   //for(int i=0; i<96; i++) {
-   //   printf(string(i) + " " + string(mql_rates[i].time) + " : " + string(mql_rates[i].open));
-   //}
+
+//for(int i=0; i<96; i++) {
+//   printf(string(i) + " " + string(mql_rates[i].time) + " : " + string(mql_rates[i].open));
+//}
 
    ArrayFree(mql_rates);
   }
@@ -317,6 +332,7 @@ void OnChartEvent(const int id,
               }
             if(letterPressed == "r")
               {
+               firstInitDone = false;
                OnInit();
                break;
               }
