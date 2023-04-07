@@ -393,13 +393,17 @@ void OnChartEvent(const int id,
             //Print("Pressed KEY_NUMLOCK_LEFT");
             ObjectSetInteger(cid, "IFL1", OBJPROP_RAY_RIGHT, 0);
             ObjectSetInteger(cid, "IFL2", OBJPROP_RAY_RIGHT, 0);
+            ObjectSetInteger(cid, "IFL1B", OBJPROP_RAY_RIGHT, 0);
+            ObjectSetInteger(cid, "IFL2B", OBJPROP_RAY_RIGHT, 0);
             ChartRedraw(cid);
             break;
          case KEY_NUMLOCK_RIGHT:
             //Print("Pressed KEY_NUMLOCK_RIGHT");
             ObjectSetInteger(cid, "IFL1", OBJPROP_RAY_RIGHT, 1);
             ObjectSetInteger(cid, "IFL2", OBJPROP_RAY_RIGHT, 1);
-            ChartRedraw(cid);
+            ObjectSetInteger(cid, "IFL1B", OBJPROP_RAY_RIGHT, 1);
+            ObjectSetInteger(cid, "IFL2B", OBJPROP_RAY_RIGHT, 1);
+           ChartRedraw(cid);
             break;
          case KEY_LEFT:
             //Print("Pressed KEY_LEFT");
