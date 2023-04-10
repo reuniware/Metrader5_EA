@@ -193,14 +193,17 @@ void processPoint1()
 //}
 
    ArrayFree(mql_rates);
-   
+
    processPoint2();
   }
 
 
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
 void processPoint2()
   {
-   //ObjectsDeleteAll(cid);
+//ObjectsDeleteAll(cid);
 
    int maxBars = 60*24*52*7*52;
    int numCopied = 0;
@@ -270,12 +273,12 @@ void processPoint2()
    datetime dtInitialCandlestick = mql_rates[0 + delta + 26].time;
 
    double SSBValue, SSAValue, tenkanValue, kijunValue;
-   datetime dtSSB, dtSSA;
+   datetime dtTenkan, dtKijun;
 
    tenkanValue = tenkan_sen_buffer[0 + delta];
    kijunValue = kijun_sen_buffer[0 + delta];
-   //SSAValue = (tenkanValue + kijunValue)/2;
-   dtSSA = dtInitialCandlestick + 26*(mql_rates[0].time - mql_rates[1].time);
+//SSAValue = (tenkanValue + kijunValue)/2;
+   dtTenkan = dtInitialCandlestick + 26*(mql_rates[0].time - mql_rates[1].time);
 //printf(string(mql_rates[0].time));
 //printf(string(mql_rates[1].time));
 
@@ -287,12 +290,12 @@ void processPoint2()
       if(mql_rates[i].low < lowerLow)
          lowerLow = mql_rates[i].low;
      }
-   //SSBValue = (higherHigh + lowerLow)/2;
-   dtSSB = dtSSA;
+//SSBValue = (higherHigh + lowerLow)/2;
+   dtKijun = dtTenkan;
 //printf("dtInitialCandlestick = " + string(dtInitialCandlestick));
 //printf("dtSSB = dtSSA = " + string(dtSSB));
 
-   datetime diff = dtSSB - dtInitialCandlestick;
+//   datetime diff = dtTenkan - dtInitialCandlestick;
 //printf("diff = " + string(diff));
 
    /*SSBValue = senkou_span_b_buffer[0 + delta];
@@ -304,11 +307,11 @@ void processPoint2()
    printf("ts = " + string(SSAValue));*/
 
    bool res;
-   res = ObjectCreate(cid, "IFL1B", OBJ_TREND, 0, dtInitialCandlestick, initialCandlestickValue, dtSSB, tenkanValue);
-   res = ObjectCreate(cid, "IFL2B", OBJ_TREND, 0, dtInitialCandlestick, initialCandlestickValue, dtSSA, kijunValue);
+   res = ObjectCreate(cid, "IFL1B", OBJ_TREND, 0, dtInitialCandlestick, initialCandlestickValue, dtTenkan, tenkanValue);
+   res = ObjectCreate(cid, "IFL2B", OBJ_TREND, 0, dtInitialCandlestick, initialCandlestickValue, dtTenkan, kijunValue);
 
    res = ObjectCreate(cid, "vlineInitialB", OBJ_VLINE, 0, dtInitialCandlestick, 0);
-   res = ObjectCreate(cid, "vlineSSASSBB", OBJ_VLINE, 0, dtSSB, 0);
+   res = ObjectCreate(cid, "vlineSSASSBB", OBJ_VLINE, 0, dtTenkan, 0);
 
 //datetime dtNext = mql_rates[0].time + (mql_rates[0].time - mql_rates[1].time);
 //res = ObjectCreate(cid, "vline", OBJ_VLINE, 0, dtNext, 0);
@@ -329,7 +332,7 @@ void processPoint2()
 //}
 
    ArrayFree(mql_rates);
-   
+
   }
 
 
@@ -347,21 +350,35 @@ void OnDeinit(const int reason)
 //+------------------------------------------------------------------+
 void OnTick()
   {
-   /*double trendlinevalue = ObjectGetValueByTime(cid,"trendline1",TimeCurrent());
+   double trendlinevalueIFL1 = ObjectGetValueByTime(cid,"IFL1",TimeCurrent());
+   double trendlinevalueIFL2 = ObjectGetValueByTime(cid,"IFL2",TimeCurrent());
    int numCopied = 0;
    numCopied = CopyRates(Symbol(), PERIOD_CURRENT, 0, 1, mql_rates);
-   //printf(string(numCopied));
+//printf(string(numCopied));
    if(numCopied == 1)
      {
+      //Comment("Price=" + string(mql_rates[0].close) + " IFL2=" + string(trendlinevalueIFL2));
       //printf(string(mql_rates[0].close));
-      if(mql_rates[0].open < trendlinevalue && mql_rates[0].close > trendlinevalue)
+      if(mql_rates[0].open > trendlinevalueIFL2 && mql_rates[0].close < trendlinevalueIFL2)
         {
+         Comment("Price is getting below IFL2");
          PlaySound("alert.wav");
         }
+      else
+         if(mql_rates[0].open < trendlinevalueIFL1 && mql_rates[0].close > trendlinevalueIFL1)
+           {
+            Comment("Price is getting above IFL1");
+            PlaySound("alert.wav");
+           }
+     }
+   else
+     {
+      Comment("numCopied=0");
      }
    ArrayFree(mql_rates);
-   trendlinevalue = NULL;
-   numCopied = NULL;*/
+   trendlinevalueIFL2 = NULL;
+   trendlinevalueIFL1 = NULL;
+   numCopied = NULL;
   }
 //+------------------------------------------------------------------+
 
@@ -403,7 +420,7 @@ void OnChartEvent(const int id,
             ObjectSetInteger(cid, "IFL2", OBJPROP_RAY_RIGHT, 1);
             ObjectSetInteger(cid, "IFL1B", OBJPROP_RAY_RIGHT, 1);
             ObjectSetInteger(cid, "IFL2B", OBJPROP_RAY_RIGHT, 1);
-           ChartRedraw(cid);
+            ChartRedraw(cid);
             break;
          case KEY_LEFT:
             //Print("Pressed KEY_LEFT");
