@@ -13,3 +13,5 @@ Numeric pad (2) : Will go to the next japanese candlestick and will draw an hori
 Up arrow : Will move the horizontal line up of one PIP.
 
 Down arrow : Will move the horizontal line down of one PIP.
+
+r : Will reset all (will redraw an horizontal line on the high price of the previous japanese candlestick).
