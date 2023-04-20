@@ -15,3 +15,5 @@ Up arrow : Will move the horizontal line up of one PIP.
 Down arrow : Will move the horizontal line down of one PIP.
 
 r : Will reset all (will redraw an horizontal line on the high price of the previous japanese candlestick).
+
+s : Save current horizontal line and draw a new one.
