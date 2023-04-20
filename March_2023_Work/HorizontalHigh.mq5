@@ -218,6 +218,8 @@ void OnChartEvent(const int id,
             if(letterPressed == "s")
               {
                index_for_saving++;
+               currentDelta = 0;
+               index = 1;
                break;
               }
             if(letterPressed == "r")
@@ -231,7 +233,7 @@ void OnChartEvent(const int id,
             if(letterPressed == "c")
               {
                cid=ChartID();
-               //ObjectsDeleteAll(cid);
+               ObjectsDeleteAll(cid);
                /*ObjectDelete(cid, "IFL1");
                ObjectDelete(cid, "IFL2");
                ObjectDelete(cid, "IFL1B");
