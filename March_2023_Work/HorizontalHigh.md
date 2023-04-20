@@ -6,4 +6,10 @@ By default when starting the EA, an horizontal line is drawn on the high price o
 
 How to use it :
 
-Numeric pad (8/2) : 
+Numeric pad (8) : Will go to the previous japanese candlestick and will draw an horizontal line based on its high price.
+
+Numeric pad (2) : Will go to the next japanese candlestick and will draw an horizontal line based on its high price.
+
+Up arrow : Will move the horizontal line up of one PIP.
+
+Down arrow : Will move the horizontal line down of one PIP.
