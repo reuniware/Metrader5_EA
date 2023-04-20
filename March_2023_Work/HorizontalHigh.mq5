@@ -41,6 +41,7 @@ int OnInit()
 int index = 1;
 double currentHigh = 0;
 double currentDelta = 0;
+int index_for_saving = 1;
 void processPoint1()
   {
   Comment(Point());
@@ -55,16 +56,15 @@ void processPoint1()
    numCopied = CopyRates(Symbol(), PERIOD_CURRENT, 0, maxBars, mql_rates);
 //printf("numCopied=" + string(numCopied));
 
-   ObjectDelete(cid, "high");
+   ObjectDelete(cid, "high" + string(index_for_saving));
    
    currentHigh = mql_rates[index].high + currentDelta;
    
    bool res;
-   res = ObjectCreate(cid, "high", OBJ_HLINE, 0, mql_rates[index].time, currentHigh);
+   res = ObjectCreate(cid, "high" + string(index_for_saving), OBJ_HLINE, 0, mql_rates[index].time, currentHigh);
 
 //datetime dtNext = mql_rates[0].time + (mql_rates[0].time - mql_rates[1].time);
 //res = ObjectCreate(cid, "vline", OBJ_VLINE, 0, dtNext, 0);
-
 
    ChartRedraw(cid);
 
@@ -215,8 +215,9 @@ void OnChartEvent(const int id,
               {
                break;
               }
-            if(letterPressed == "a")
+            if(letterPressed == "s")
               {
+               index_for_saving++;
                break;
               }
             if(letterPressed == "r")
