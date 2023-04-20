@@ -64,7 +64,11 @@ bool forceUseLow = false;
 //+------------------------------------------------------------------+
 void processPoint1()
   {
-   ObjectsDeleteAll(cid);
+//ObjectsDeleteAll(cid);
+   ObjectDelete(cid, "IFL1");
+   ObjectDelete(cid, "IFL2");
+   ObjectDelete(cid, "IFL1B");
+   ObjectDelete(cid, "IFL2B");
 
    int maxBars = 60*24*52*7*52;
    int numCopied = 0;
@@ -362,13 +366,13 @@ void OnTick()
       if(mql_rates[0].open > trendlinevalueIFL2 && mql_rates[0].close < trendlinevalueIFL2)
         {
          Comment("Price is getting below IFL2");
-         PlaySound("alert.wav");
+         //PlaySound("alert.wav");
         }
       else
          if(mql_rates[0].open < trendlinevalueIFL1 && mql_rates[0].close > trendlinevalueIFL1)
            {
             Comment("Price is getting above IFL1");
-            PlaySound("alert.wav");
+            //PlaySound("alert.wav");
            }
      }
    else
@@ -498,7 +502,11 @@ void OnChartEvent(const int id,
             if(letterPressed == "c")
               {
                cid=ChartID();
-               ObjectsDeleteAll(cid);
+               //ObjectsDeleteAll(cid);
+               ObjectDelete(cid, "IFL1");
+               ObjectDelete(cid, "IFL2");
+               ObjectDelete(cid, "IFL1B");
+               ObjectDelete(cid, "IFL2B");
               }
             if(letterPressed == "h")
               {
